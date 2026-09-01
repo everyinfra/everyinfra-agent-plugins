@@ -1,0 +1,11 @@
+<svg width="184" height="40" viewBox="0 0 184 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="4" width="32" height="32" rx="8" fill="#0E1015"/>
+  <g stroke="#FFFFFF" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 12H9.5V28H13"/>
+    <path d="M19 12H22.5V28H19"/>
+  </g>
+  <circle cx="16" cy="20" r="2.5" fill="#FFFFFF"/>
+  <text x="40" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="-0.3" fill="#0E1015">EveryInfra</text>
+  <rect x="146" y="12" width="34" height="16" rx="4" fill="#0E1015" fill-opacity="0.08"/>
+  <text x="149.5" y="23.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="0.5" fill="#566072">.com</text>
+</svg>

@@ -1,0 +1,48 @@
+name: Plugin bug report
+description: Report a reproducible package, manifest, installation, or skill-routing problem.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Do not include API keys, customer data, verification codes, proxy credentials, or private provider details.
+  - type: dropdown
+    id: host
+    attributes:
+      label: Agent host
+      options:
+        - Codex
+        - Claude Code
+        - Cursor
+        - GitHub Copilot-compatible client
+        - Other Agent Plugins 1.0 client
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Host and plugin versions
+      placeholder: "Host 1.2.3; EveryInfra plugin 0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Installation source
+      placeholder: Local path, repository path, or marketplace name
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Sanitized reproduction
+      description: Include the smallest steps and a redacted error. State whether the failure is in plugin loading, MCP connection, authentication, or a product operation.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true

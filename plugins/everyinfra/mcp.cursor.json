@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "everyinfra": {
+      "url": "https://api.everyinfra.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${EVERYINFRA_API_KEY}"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "everyinfra",
+  "displayName": "EveryInfra",
+  "version": "0.1.0",
+  "description": "Discover and safely use EveryInfra search, structured public data, AI, authorized captcha, number, email, and proxy workflows from Claude Code.",
+  "author": {
+    "name": "EveryInfra",
+    "url": "https://everyinfra.com"
+  },
+  "homepage": "https://api.everyinfra.com/docs",
+  "repository": "https://github.com/everyinfra/everyinfra-agent-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "api",
+    "mcp",
+    "everyinfra",
+    "everydata",
+    "everysearch",
+    "search",
+    "research",
+    "structured-data",
+    "bulk-export",
+    "data",
+    "captcha",
+    "phone-number",
+    "email",
+    "proxy"
+  ],
+  "defaultEnabled": false,
+  "skills": "./skills/",
+  "mcpServers": "./mcp.claude.json",
+  "userConfig": {
+    "api_token": {
+      "type": "string",
+      "title": "EveryInfra API key",
+      "description": "Bearer key used only for paid EveryInfra calls. Capability discovery remains public.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

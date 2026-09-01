@@ -1,0 +1,54 @@
+{
+  "name": "everyinfra",
+  "version": "0.1.0",
+  "description": "Discover and safely use EveryInfra search, structured public data, AI, authorized captcha, number, email, and proxy workflows from Codex.",
+  "author": {
+    "name": "EveryInfra",
+    "url": "https://everyinfra.com"
+  },
+  "homepage": "https://api.everyinfra.com/docs",
+  "repository": "https://github.com/everyinfra/everyinfra-agent-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "api",
+    "mcp",
+    "everyinfra",
+    "everydata",
+    "everysearch",
+    "search",
+    "research",
+    "structured-data",
+    "bulk-export",
+    "data",
+    "captcha",
+    "phone-number",
+    "email",
+    "proxy"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "EveryInfra",
+    "shortDescription": "Search, structured data, AI, captcha, email, numbers and proxies",
+    "longDescription": "Give Codex EveryInfra routing and outcome skills plus connection metadata for one remote MCP server. Discover live capabilities before paid search, structured-data, AI, or authorized captcha calls, and use bounded REST guidance for EveryNumber, EveryMail, and EveryProxy.",
+    "developerName": "EveryInfra",
+    "category": "Engineering",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://everyinfra.com",
+    "privacyPolicyURL": "https://everyinfra.com/privacy",
+    "termsOfServiceURL": "https://everyinfra.com/terms",
+    "brandColor": "#287A73",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg",
+    "logoDark": "./assets/logo-dark.svg",
+    "defaultPrompt": [
+      "Cross-check this current claim with cited sources.",
+      "Find the right public-data capability and export a bounded CSV.",
+      "Inspect options before an authorized captcha, email, number, or proxy action."
+    ]
+  }
+}

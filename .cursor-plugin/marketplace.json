@@ -1,0 +1,26 @@
+{
+  "name": "everyinfra",
+  "owner": {
+    "name": "EveryInfra"
+  },
+  "metadata": {
+    "description": "Self-hosted EveryInfra plugin catalog for Cursor"
+  },
+  "plugins": [
+    {
+      "name": "everyinfra",
+      "source": "plugins/everyinfra",
+      "description": "Search, structured public data, AI, authorized captcha, number, email, and proxy workflows through EveryInfra",
+      "category": "Developer Tools",
+      "tags": [
+        "api",
+        "mcp",
+        "search",
+        "structured-data",
+        "research",
+        "automation",
+        "everyinfra"
+      ]
+    }
+  ]
+}

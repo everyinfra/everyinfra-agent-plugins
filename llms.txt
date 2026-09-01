@@ -1,0 +1,26 @@
+# EveryInfra agent plugin
+
+> Public, host-portable agent integration for EveryInfra. It combines reusable skills with remote
+> MCP connection metadata; it does not contain the private gateway implementation.
+
+Canonical documentation:
+- README: ./README.md
+- AI discovery contract: ./docs/ai-discovery.md
+- Architecture boundaries: ./docs/architecture.md
+- Installation: ./docs/installation.md
+- Troubleshooting: ./docs/troubleshooting.md
+- Permissions and billing: ./docs/permissions.md
+- REST-only product boundary: ./docs/rest-only.md
+- Portable plugin manifest: ./plugins/everyinfra/plugin.json
+- Skill router: ./plugins/everyinfra/skills/everyinfra/SKILL.md
+
+Runtime endpoint: https://api.everyinfra.com/mcp
+API documentation: https://api.everyinfra.com/docs
+
+Current package boundary:
+- MCP workflows: EveryData, EverySearch, EveryAI, EverySolve
+- REST-only guidance: EveryNumber, EveryMail, EveryProxy
+- Ten skills total: one router, seven product skills, two outcome workflows
+
+Do not infer live availability, price, billing, official marketplace approval, or app registration
+from this file. Use live MCP discovery, public catalogs, and host status for those facts.

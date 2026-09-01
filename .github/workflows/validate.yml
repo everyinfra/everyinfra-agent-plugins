@@ -1,0 +1,60 @@
+name: Validate public plugin package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate plugin contracts
+        run: python3 scripts/validate.py
+
+      - name: Check JSON, YAML structure, SVG, and local links
+        run: python3 scripts/build_release.py --check-source
+
+      - name: Parse GitHub YAML with the runner standard library
+        shell: ruby {0}
+        run: |
+          require "yaml"
+          files = Dir[".github/**/*.{yml,yaml}"].sort
+          abort "no GitHub YAML files found" if files.empty?
+          files.each do |path|
+            YAML.safe_load(File.read(path), permitted_classes: [], aliases: false, filename: path)
+          end
+          puts "Parsed #{files.length} GitHub YAML files"
+
+      - name: Build and verify deterministic release archive
+        run: python3 scripts/build_release.py
+
+      - name: Rebuild archive and compare checksums
+        shell: bash
+        run: |
+          archive=(dist/*.zip)
+          test "${#archive[@]}" -eq 1
+          first_checksum="$(sha256sum "${archive[0]}")"
+          python3 scripts/build_release.py
+          second_checksum="$(sha256sum "${archive[0]}")"
+          test "$first_checksum" = "$second_checksum"
+
+      - name: Upload validated release archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: everyinfra-agent-plugins-release
+          path: dist/*.zip
+          if-no-files-found: error
+          retention-days: 7

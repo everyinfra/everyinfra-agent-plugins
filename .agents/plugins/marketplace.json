@@ -1,0 +1,20 @@
+{
+  "name": "everyinfra",
+  "interface": {
+    "displayName": "EveryInfra Agent Plugins"
+  },
+  "plugins": [
+    {
+      "name": "everyinfra",
+      "source": {
+        "source": "local",
+        "path": "./plugins/everyinfra"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

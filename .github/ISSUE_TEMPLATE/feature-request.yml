@@ -1,0 +1,30 @@
+name: Integration request
+description: Propose a portable workflow, host adapter, or documentation improvement.
+title: "[Request]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: User outcome
+      description: Describe the task an agent should complete, not only the desired file or tool name.
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Integration layer
+      options:
+        - Shared skill or workflow
+        - MCP connection or tool contract
+        - Host-specific plugin adapter
+        - Marketplace or distribution
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Runtime evidence and portability
+      description: Link public documentation or describe the live capability. Explain which hosts should share the behavior.

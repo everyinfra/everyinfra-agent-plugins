@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: EveryInfra account support
+    url: https://everyinfra.com
+    about: Use the published support channel for account, billing, or private operational issues.
+  - name: Security policy
+    url: https://github.com/everyinfra/everyinfra-agent-plugins/security/policy
+    about: Read the private security-reporting instructions before sharing sensitive evidence.
