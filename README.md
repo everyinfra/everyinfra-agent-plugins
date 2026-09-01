@@ -1,5 +1,9 @@
 # EveryInfra Agent Plugin
 
+[![Validate public plugin package](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
+[![Plugin version](https://img.shields.io/badge/plugin-v0.1.0-287A73.svg)](CHANGELOG.md)
+
 Install one package to give an AI agent reusable EveryInfra workflows **and** the metadata needed
 to connect to EveryInfra's remote MCP server. The repository supports Codex, Claude Code, Cursor,
 GitHub Copilot-compatible clients, and hosts that implement Agent Plugins 1.0.

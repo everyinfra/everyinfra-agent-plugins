@@ -4,6 +4,7 @@
 > MCP connection metadata; it does not contain the private gateway implementation.
 
 Canonical documentation:
+- Public source: https://github.com/everyinfra/everyinfra-agent-plugins
 - README: ./README.md
 - AI discovery contract: ./docs/ai-discovery.md
 - Architecture boundaries: ./docs/architecture.md
