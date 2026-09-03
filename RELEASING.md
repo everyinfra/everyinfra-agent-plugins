@@ -32,6 +32,40 @@ invent one only to make the files look symmetrical. The builder refuses mismatch
 versioned marketplace entries and names the archive
 `dist/everyinfra-agent-plugins-<version>.zip`.
 
+## Official MCP Registry
+
+`server.json` at the repository root describes the remote server for the
+[official MCP Registry](https://registry.modelcontextprotocol.io/). It declares
+`https://api.everyinfra.com/mcp` over Streamable HTTP and one required secret header
+(`Authorization: Bearer <api key>`); there is no package to publish first, because the
+registry hosts metadata only and this server is remote.
+
+The name is `io.github.everyinfra/everyinfra`. That namespace is reachable **only** by
+someone authenticated as the `everyinfra` GitHub organization, so no DNS TXT record and no
+custom-domain proof is needed. Domain-based auth would be required only if the name moved to
+a reverse-DNS form such as `com.everyinfra/*`.
+
+Validate without publishing at any time:
+
+```bash
+mcp-publisher validate
+```
+
+Publishing is a two-step flow and the first step is interactive, so it is done by a person:
+
+```bash
+mcp-publisher login github     # device-code flow in a browser
+mcp-publisher publish
+curl "https://registry.modelcontextprotocol.io/v0/servers?limit=100" | grep everyinfra
+```
+
+Keep `version` in `server.json` aligned with the plugin version. The registry does not
+currently allow arbitrary un-publishing of a version, so treat a publish as permanent and
+stabilise the namespace, version and file before running it.
+
+⚠ Registry inclusion proves namespace ownership and metadata shape. It is not a security
+review, and it does not mean any host has installed or approved the server.
+
 ## Local validation first
 
 Run the checks from the repository root before any commit, tag, upload, or marketplace submission:
