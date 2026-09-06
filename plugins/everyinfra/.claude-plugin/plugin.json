@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "everyinfra",
   "displayName": "EveryInfra",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Discover and safely use EveryInfra search, structured public data, AI, authorized captcha, number, email, and proxy workflows from Claude Code.",
   "author": {
     "name": "EveryInfra",

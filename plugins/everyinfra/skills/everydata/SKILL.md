@@ -20,3 +20,11 @@ Use the MCP tools `everyinfra_list_capabilities` and `everyinfra_call_api`.
 
 EveryData returns a normalized and redacted customer contract. Do not promise raw provider output,
 provider identity, private data, or fields not present in the live capability catalog.
+
+If the user wants model-assisted cleanup after collection, keep the result bound to its server-issued
+source reference and call MCP `tools/list` first. Use source-bound cleanup only when the live server
+advertises it; otherwise report it unavailable instead of sending detached data through general
+chat. Preserve the source version and submit idempotency key. Field discovery exposes bounded paths
+and types without example values; refresh recovery must find the original task before any new
+submit. Read [the cleanup reference](../everyinfra/references/data-cleanup.md) for the prepared
+15-operation boundary.

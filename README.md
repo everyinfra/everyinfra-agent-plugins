@@ -2,7 +2,7 @@
 
 [![Validate public plugin package](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
-[![Plugin version](https://img.shields.io/badge/plugin-v0.1.0-287A73.svg)](CHANGELOG.md)
+[![Plugin version](https://img.shields.io/badge/plugin-v0.2.0-287A73.svg)](CHANGELOG.md)
 
 Install one package to give an AI agent reusable EveryInfra workflows **and** the metadata needed
 to connect to EveryInfra's remote MCP server. The repository supports Codex, Claude Code, Cursor,
@@ -19,6 +19,11 @@ This is a plugin repository, not a copy of the EveryInfra backend. It contains:
 
 No API key, customer data, upstream provider credential, or private gateway source code belongs in
 this repository.
+
+> **Source-bound cleanup is live:** Production advertises two cleanup tools with 15 operations while
+> the existing `everyinfra_chat` compatibility path remains active. Cleanup is a bounded included
+> benefit for qualifying EveryData accounts, not unlimited free Gemini. The live entitlement
+> response determines each account's eligibility and remaining quota; no automatic grant is implied.
 
 ## MCP or plugin?
 
@@ -53,6 +58,8 @@ Example requests include:
 - "Discover the right public-data capability, then export a bounded CSV."
 - "Search public profiles, posts, comments, listings, or reviews as structured data."
 - "Run this text task through EveryAI."
+- "For this EveryData result, discover whether source-bound included cleanup is live; if it is not,
+  stop instead of using general chat."
 - "Solve this captcha for a target I am authorized to automate."
 - "Inspect available phone-number, transactional-email, or proxy options before I approve an
   order or send."
@@ -91,11 +98,21 @@ For an AI agent:
 The live capability catalog and tool schemas are authoritative. The package must not invent an MCP
 tool name, current price, availability state, or billing result.
 
+### Source-bound cleanup route
+
+The live contract uses two cleanup tools with 15 operations. Read
+[the cleanup reference](plugins/everyinfra/skills/everyinfra/references/data-cleanup.md) for the exact
+read/action split, qualifying-account limits, field discovery and original-task recovery behavior.
+Every execution still begins with MCP `tools/list`; if a host cannot discover the tools, ordinary
+user-supplied text may continue through the discovered chat compatibility path, while EveryData
+cleanup is reported unavailable in that host. Installing the package does not grant an account
+entitlement or prove a customer-specific end-to-end execution.
+
 ## Status: what exists today
 
 | Layer | Repository state | What is not implied |
 | --- | --- | --- |
-| Remote MCP | The manifests target `https://api.everyinfra.com/mcp` for four MCP-enabled product lines. | A configured URL is not proof that a paid call is authenticated. |
+| Remote MCP | Production advertises the original six tools plus two source-bound cleanup tools at `https://api.everyinfra.com/mcp`. | Discovery is not proof that an account is authenticated, eligible or activated. |
 | Plugin package | Portable and host-specific manifests, skills, MCP metadata, and assets are present. | Presence is not a clean-host installation test. |
 | Repository validator | Cross-host JSON, path, skill, MCP, and credential-safety checks are available. | Repository validation is not marketplace approval. |
 | Self-hosted catalogs | Four marketplace manifests are present in this repository. | A catalog file is not an official listing. |
@@ -114,6 +131,31 @@ manifest, prompt, committed file, or URL query string.
 ```bash
 export EVERYINFRA_API_KEY="your-key"
 ```
+
+### SDK release attachments for `v0.2.0`
+
+The `v0.2.0` GitHub Release distributes the official Python and Node clients as release attachments.
+These URLs are the supported direct-install path for this version; they do not claim that an npm or
+PyPI package with the same name has been published.
+
+Python 3.9 or newer:
+
+```bash
+python -m pip install \
+  https://github.com/everyinfra/everyinfra-agent-plugins/releases/download/v0.2.0/everyinfra-0.2.0-py3-none-any.whl
+```
+
+Node.js:
+
+```bash
+npm install \
+  https://github.com/everyinfra/everyinfra-agent-plugins/releases/download/v0.2.0/everyinfra-0.2.0.tgz
+```
+
+Both clients expose 15 source-bound cleanup methods, including source-field discovery, account task
+listing and original-task recovery by idempotency key. Installation does not prove that the cleanup
+tools are enabled for an account: use live MCP or REST discovery and the entitlement response before
+execution. Keep idempotency keys outside URLs, prompts and analytics.
 
 ### Codex
 

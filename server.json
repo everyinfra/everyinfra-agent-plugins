@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.everyinfra/everyinfra",
   "title": "EveryInfra",
-  "description": "One key for web data extraction, CAPTCHA solving, web search, and OpenAI-compatible models.",
-  "version": "0.1.0",
+  "description": "One key for structured public data, source-bound data cleanup, CAPTCHA solving, web search, and OpenAI-compatible models.",
+  "version": "0.2.0",
   "repository": {
     "url": "https://github.com/everyinfra/everyinfra-agent-plugins",
     "source": "github"
@@ -16,7 +16,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer token holding your EveryInfra API key, for example `Bearer omg_...`. Create one at https://everyinfra.com/app. The two catalog tools work without it; the four billed tools do not.",
+          "description": "Bearer token holding your EveryInfra API key, for example `Bearer omg_...`. Create one at https://everyinfra.com/app. Public discovery may work without it; authenticated tools, including conditional included cleanup, require it.",
           "isRequired": true,
           "isSecret": true
         }

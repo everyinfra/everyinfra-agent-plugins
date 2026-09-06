@@ -28,6 +28,7 @@ EverySolve, EveryNumber, EveryMail, or EveryProxy**, or when the user needs one 
 - structured public-platform data such as profiles, posts, comments, listings, or reviews;
 - a bounded, deduplicated CSV or JSON data export;
 - text generation through EveryInfra's OpenAI-compatible API;
+- source-bound cleanup of an EveryData result, only after live MCP discovery advertises it;
 - authorized captcha or anti-bot challenge handling;
 - authorized phone-number, transactional-email, or proxy workflows.
 
@@ -41,6 +42,7 @@ Use the narrow product or outcome skill when the requested route is already know
 | EveryData, EverySearch, EveryAI, EverySolve | Remote MCP | Discover live capabilities and schemas before paid calls. |
 | EveryNumber, EveryMail, EveryProxy | REST guidance | These skills do not create or imply MCP tools. |
 | Purchases, sends, rentals, solves, credential delivery | External action | Require user authorization for the concrete scope. |
+| EveryData source-bound cleanup | Remote MCP | Discover the tools, then inspect entitlement/source/fields/recipes; activation and submission are separate actions. |
 
 The package and the remote MCP server are independent layers: installing the package can expose
 workflows even when MCP authentication is incomplete, while connecting MCP directly can expose
@@ -50,6 +52,11 @@ app/connector is a further distribution state and is not implied by this directo
 The API key is supplied by the installing host and must never be stored in this package. The live
 capability catalog and tool schemas are authoritative for current parameters, prices, availability,
 and billing evidence.
+
+The live cleanup surface has 15 operations across separate read and action tools, including field
+discovery, task listing and original-task lookup by idempotency key. See
+[the cleanup reference](skills/everyinfra/references/data-cleanup.md); do not use general chat to
+imitate the conditional included-cleanup benefit. Discovery does not automatically grant eligibility.
 
 For host installation, status, and validation, start with the repository
 [README](../../README.md). For the integration model, see

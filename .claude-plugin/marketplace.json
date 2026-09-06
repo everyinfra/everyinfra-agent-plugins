@@ -11,7 +11,7 @@
       "name": "everyinfra",
       "source": "./plugins/everyinfra",
       "description": "Search, structured public data, AI, authorized captcha, number, email, and proxy workflows through EveryInfra",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "Developer Tools",
       "tags": [
         "api",
