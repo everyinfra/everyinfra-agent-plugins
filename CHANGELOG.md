@@ -6,6 +6,14 @@ All notable changes to this project are documented here. Versions follow Semanti
 
 No unreleased changes.
 
+## [0.2.0] - 2026-09-06
+
+- Add discovery-first routing for source-bound cleanup of authorized EveryData results.
+- Document the live two-tool, 15-operation cleanup contract, including field discovery and original-task recovery.
+- Keep ordinary user-supplied text on the existing `everyinfra_chat` compatibility path.
+- Add direct GitHub Release installation for the Python and Node 0.2.0 SDK attachments.
+- Preserve explicit entitlement activation, stable idempotency keys, bounded quota and no-store boundaries.
+
 ## [0.1.0] - 2026-09-02
 
 - Add Agent Plugins 1.0 portable manifest and remote MCP configuration.

@@ -40,7 +40,7 @@ plugin's `plugin_asdk_app...` identifier.
 
 ## Verify the connection
 
-1. Confirm the installed plugin version is `0.1.0` and that all ten skills are visible.
+1. Confirm the installed plugin version is `0.2.0` and that all ten skills are visible.
 2. Independently confirm the MCP origin is exactly `https://api.everyinfra.com/mcp`.
 3. Run a free capability-discovery operation before a paid call.
 4. Check that the result includes an explicit capability, availability, or billing state rather

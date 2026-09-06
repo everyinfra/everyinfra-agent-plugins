@@ -1,7 +1,7 @@
 {
   "name": "everyinfra",
-  "version": "0.1.0",
-  "description": "Discover and safely use EveryInfra search, structured public data, AI, authorized captcha, number, email, and proxy workflows from Codex.",
+  "version": "0.2.0",
+  "description": "Discover and safely use EveryInfra search, structured public data, source-bound cleanup, AI, authorized captcha, number, email, and proxy workflows from Codex.",
   "author": {
     "name": "EveryInfra",
     "url": "https://everyinfra.com"
@@ -20,6 +20,7 @@
     "structured-data",
     "bulk-export",
     "data",
+    "data-cleanup",
     "captcha",
     "phone-number",
     "email",
@@ -29,8 +30,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "EveryInfra",
-    "shortDescription": "Search, structured data, AI, captcha, email, numbers and proxies",
-    "longDescription": "Give Codex EveryInfra routing and outcome skills plus connection metadata for one remote MCP server. Discover live capabilities before paid search, structured-data, AI, or authorized captcha calls, and use bounded REST guidance for EveryNumber, EveryMail, and EveryProxy.",
+    "shortDescription": "Search, structured data, cleanup, AI and automation APIs",
+    "longDescription": "Give Codex EveryInfra routing and outcome skills plus one remote MCP connection. Discover live schemas before structured-data, source-bound cleanup, search, AI, or authorized captcha calls, and use bounded REST guidance for EveryNumber, EveryMail, and EveryProxy.",
     "developerName": "EveryInfra",
     "category": "Engineering",
     "capabilities": [
@@ -47,7 +48,7 @@
     "logoDark": "./assets/logo-dark.svg",
     "defaultPrompt": [
       "Cross-check this current claim with cited sources.",
-      "Find the right public-data capability and export a bounded CSV.",
+      "Find the right public-data capability, then preview source-bound cleanup or export a bounded CSV.",
       "Inspect options before an authorized captcha, email, number, or proxy action."
     ]
   }
