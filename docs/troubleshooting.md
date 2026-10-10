@@ -44,5 +44,5 @@ marketplace catalog updates may have different refresh cycles.
 
 Include the host and version, plugin version, installation source, affected skill or MCP tool,
 sanitized error category, and the smallest reproduction steps. Remove API keys, request payloads
-containing private data, customer identifiers, verification codes, proxy credentials, and provider
-details before sharing logs.
+containing private data, customer identifiers, verification codes, proxy credentials, and other
+secrets before sharing logs.

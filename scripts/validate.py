@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -54,6 +55,25 @@ REQUIRED_PUBLIC_FILES = (
     PLUGIN / "assets" / "logo.svg",
     PLUGIN / "assets" / "logo-dark.svg",
 )
+# Public-text blocklist: SHA-256 digests of lowercase terms that must not appear in public files,
+# grouped by term length. Only digests are stored, so the terms themselves stay out of this repository.
+BLOCKED_TERM_SHA256 = {
+    2: {
+        "a9ab292ea9feecdcdfd3d6dfae632d35e27923892feb884ddb36502a9e89a67d",
+        "ffdee717a579b55163b17a158aec447545aef28d989f95f47b8b75be9aba07aa",
+    },
+    4: {
+        "a4826fa1e4036d285d76df148a9c9546e59910e1a95da8c4b9997598b4bfbbb6",
+        "ee5a80cd15c51ce659df498fde630ca98ac8a6217c47205820d2a1da76ef382b",
+    },
+    5: {"954f775230679543d69509c294e19c393d50202fce576bcad71ac6add7b819d7"},
+    6: {"cbea6fa89a1a56837ec0cdcf534980a4679c118c10ad2d64fe15532bd9e2f132"},
+    7: {"51bab7a8adba778797f9123a2c604d12cddbec1dfd7df3891cff9382a104e518"},
+    8: {"1581e27de87bffae0bd4d745cd7964e68528d7a83e2e4c259a782d275df6f558"},
+    11: {"25904dfbcd8696a81fa6d9d63c751857242455c9d0c3ac90bfb25d5ac6e47789"},
+    16: {"f962d695e3503521af2f1e619525cf425b7e4b989b7f5c4b870c968da46ee6a8"},
+    20: {"deeeccd8d0c3fc67d116eebd983e7533925456eb8cb098339035ae52e104348d"},
+}
 
 
 def load_json(path: Path, errors: list[str]) -> dict[str, Any]:
@@ -126,12 +146,24 @@ def skill_frontmatter(path: Path, errors: list[str]) -> None:
         errors.append(f"{path.relative_to(REPO)} must declare a description")
 
 
+def contains_blocked_term(text: str) -> bool:
+    flat = re.sub(r"\s+", " ", text.lower())
+    for size, digests in BLOCKED_TERM_SHA256.items():
+        for start in range(len(flat) - size + 1):
+            if hashlib.sha256(flat[start:start + size].encode()).hexdigest() in digests:
+                return True
+    return False
+
+
 def scan_public_text(errors: list[str]) -> None:
     forbidden = {
         "local macOS path": re.compile(r"/Users/[A-Za-z0-9._-]+/"),
         "private key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
         "literal bearer token": re.compile(r"Authorization[^\n]{0,40}Bearer\s+(?!\$\{|<|your-|YOUR_)[A-Za-z0-9_-]{16,}"),
-        "EveryInfra live key": re.compile(r"\bomg_[A-Za-z0-9_-]{12,}\b"),
+        "EveryInfra API key": re.compile(r"\bei_[A-Za-z0-9_-]{12,}"),
+        "secret-like token": re.compile(
+            r"\b[a-z]{2,4}_(?=[A-Za-z0-9_-]*[A-Z])(?=[A-Za-z0-9_-]*[0-9])[A-Za-z0-9_-]{24,}"
+        ),
     }
     for path in REPO.rglob("*"):
         if not path.is_file() or path.suffix not in TEXT_SUFFIXES or ".git" in path.parts:
@@ -140,6 +172,8 @@ def scan_public_text(errors: list[str]) -> None:
         for label, pattern in forbidden.items():
             if pattern.search(text):
                 errors.append(f"{path.relative_to(REPO)} contains a forbidden {label}")
+        if contains_blocked_term(text):
+            errors.append(f"{path.relative_to(REPO)} contains private or legacy terminology")
 
 
 def validate_public_discovery(codex: dict[str, Any], errors: list[str]) -> None:

@@ -27,5 +27,5 @@ The user must authorize the actual scope of:
 - proxy package purchase and one-time credential delivery;
 - webhook, domain, credential, or account mutations.
 
-Keep verification codes, proxy passwords, email bodies, API keys, cookies and provider credentials
+Keep verification codes, proxy passwords, email bodies, API keys, cookies and other credentials
 out of normal chat output, command logs, source files and Git history.

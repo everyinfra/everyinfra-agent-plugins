@@ -1,14 +1,23 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.everyinfra/everyinfra",
+  "name": "io.github.xiaoxihexiaoyu/everyinfra",
   "title": "EveryInfra",
-  "description": "One key for structured public data, source-bound data cleanup, CAPTCHA solving, web search, and OpenAI-compatible models.",
-  "version": "0.2.0",
+  "description": "Structured data from 90 platforms (RedNote, Douyin, TikTok, Amazon), web search, CAPTCHA solving.",
+  "version": "1.1.0",
+  "websiteUrl": "https://everyinfra.com/en",
   "repository": {
     "url": "https://github.com/everyinfra/everyinfra-agent-plugins",
     "source": "github"
   },
-  "websiteUrl": "https://everyinfra.com",
+  "icons": [
+    {
+      "src": "https://everyinfra.com/brand/everyinfra-mark.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
@@ -16,9 +25,16 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer token holding your EveryInfra API key, for example `Bearer omg_...`. Create one at https://everyinfra.com/app. Public discovery may work without it; authenticated tools, including conditional included cleanup, require it.",
-          "isRequired": true,
-          "isSecret": true
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your EveryInfra API key (new keys start with ei_). Create one at https://everyinfra.com/app. Capability discovery works without it; tool calls need it.",
+              "isRequired": true,
+              "isSecret": true,
+              "format": "string",
+              "placeholder": "ei_..."
+            }
+          }
         }
       ]
     }

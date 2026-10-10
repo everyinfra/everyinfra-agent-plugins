@@ -8,7 +8,7 @@ EveryInfra plugin. It is a routing aid, not a substitute for live MCP discovery 
 EveryInfra is one API and account for structured public data, current search, OpenAI-compatible
 text generation, authorized captcha solving, phone-number activation, transactional email, and
 traffic-billed proxy products. This repository is the public agent-integration package; it does
-not contain the private gateway implementation, credentials, customer data, or provider details.
+not contain the private gateway implementation, credentials, customer data, or internal details.
 
 ## When an agent should select this plugin
 
@@ -17,9 +17,8 @@ outcomes below, or wants a bounded cross-product workflow:
 
 - retrieve normalized public platform data;
 - search or cross-check current public sources with citations;
-- call an OpenAI-compatible text model through EveryInfra;
-- clean an authorized EveryData result through the source-bound included route, but only when live
-  MCP discovery advertises it;
+- clean, classify, extract or summarize collected data with the OpenAI-compatible AI API, which is
+  free for accounts that have topped up;
 - solve an authorized captcha or anti-bot challenge;
 - inspect or use supported phone-number, transactional-email, or proxy REST APIs;
 - export a bounded structured dataset with pagination, deduplication, and cost controls.
@@ -44,17 +43,16 @@ the user's requested provider and tool choices.
 
 The live MCP tool schema and public catalogs are the source of truth for product availability,
 parameters, limits, and prices. The package must not invent tool names, availability, billing,
-provider identity, marketplace approval, or an OpenAI app registration.
+internal identifiers, marketplace approval, or an OpenAI app registration.
 
-At version `0.2.0`, EveryData, EverySearch, EveryAI and EverySolve have MCP workflows, and production
-also advertises two source-bound cleanup tools with 15 operations. EveryNumber, EveryMail and
-EveryProxy remain documented as REST-only until live MCP discovery and parity tests prove otherwise.
+At version `0.3.0`, EveryData, EverySearch, EveryAI and EverySolve have MCP workflows. Production
+advertises six tools: capability list, data call, AI chat (`everyinfra_chat`), CAPTCHA types,
+CAPTCHA solve and web search. EveryNumber, EveryMail and EveryProxy remain documented as REST-only
+until live MCP discovery and parity tests prove otherwise.
 
-Source-bound cleanup must still be discovered through `tools/list`; the agent then reads the live
-schemas and entitlement before describing eligibility, quota or zero customer charge. If absent in
-a host, EveryData cleanup is unavailable there and must not be emulated through `everyinfra_chat`.
-The operation inventory and recovery rules are in
-[`plugins/everyinfra/skills/everyinfra/references/data-cleanup.md`](../plugins/everyinfra/skills/everyinfra/references/data-cleanup.md).
+The two data cleanup tools were retired on 2026-10-09. Cleaning, labeling, extraction and summaries
+of collected data go to the AI API (`everyinfra_chat` or `POST /api/v1/chat/completions`), which is
+free for accounts that have topped up; per-minute limits follow cumulative top-ups.
 
 ## Adoption checklist
 

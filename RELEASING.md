@@ -40,10 +40,11 @@ versioned marketplace entries and names the archive
 (`Authorization: Bearer <api key>`); there is no package to publish first, because the
 registry hosts metadata only and this server is remote.
 
-The name is `io.github.everyinfra/everyinfra`. That namespace is reachable **only** by
-someone authenticated as the `everyinfra` GitHub organization, so no DNS TXT record and no
-custom-domain proof is needed. Domain-based auth would be required only if the name moved to
-a reverse-DNS form such as `com.everyinfra/*`.
+The published name is `io.github.xiaoxihexiaoyu/everyinfra`; directory listings and badges already
+point to it. That namespace is reachable **only** by someone authenticated as the
+`xiaoxihexiaoyu` GitHub account, so no DNS TXT record and no custom-domain proof is needed.
+Domain-based auth would be required only if the name moved to a reverse-DNS form such as
+`com.everyinfra/*`.
 
 Validate without publishing at any time:
 
@@ -59,9 +60,9 @@ mcp-publisher publish
 curl "https://registry.modelcontextprotocol.io/v0/servers?limit=100" | grep everyinfra
 ```
 
-Keep `version` in `server.json` aligned with the plugin version. The registry does not
-currently allow arbitrary un-publishing of a version, so treat a publish as permanent and
-stabilise the namespace, version and file before running it.
+`version` in `server.json` versions the Registry entry, not the plugin; raise it for every publish.
+The registry does not currently allow arbitrary un-publishing of a version, so treat a publish as
+permanent and stabilise the namespace, version and file before running it.
 
 ⚠ Registry inclusion proves namespace ownership and metadata shape. It is not a security
 review, and it does not mean any host has installed or approved the server.

@@ -27,8 +27,8 @@ EverySolve, EveryNumber, EveryMail, or EveryProxy**, or when the user needs one 
 - current web search, page reading, crawling, or cited cross-check research;
 - structured public-platform data such as profiles, posts, comments, listings, or reviews;
 - a bounded, deduplicated CSV or JSON data export;
-- text generation through EveryInfra's OpenAI-compatible API;
-- source-bound cleanup of an EveryData result, only after live MCP discovery advertises it;
+- cleaning, labeling, extraction, summaries or other text generation through EveryInfra's
+  OpenAI-compatible AI API;
 - authorized captcha or anti-bot challenge handling;
 - authorized phone-number, transactional-email, or proxy workflows.
 
@@ -42,7 +42,6 @@ Use the narrow product or outcome skill when the requested route is already know
 | EveryData, EverySearch, EveryAI, EverySolve | Remote MCP | Discover live capabilities and schemas before paid calls. |
 | EveryNumber, EveryMail, EveryProxy | REST guidance | These skills do not create or imply MCP tools. |
 | Purchases, sends, rentals, solves, credential delivery | External action | Require user authorization for the concrete scope. |
-| EveryData source-bound cleanup | Remote MCP | Discover the tools, then inspect entitlement/source/fields/recipes; activation and submission are separate actions. |
 
 The package and the remote MCP server are independent layers: installing the package can expose
 workflows even when MCP authentication is incomplete, while connecting MCP directly can expose
@@ -53,10 +52,9 @@ The API key is supplied by the installing host and must never be stored in this 
 capability catalog and tool schemas are authoritative for current parameters, prices, availability,
 and billing evidence.
 
-The live cleanup surface has 15 operations across separate read and action tools, including field
-discovery, task listing and original-task lookup by idempotency key. See
-[the cleanup reference](skills/everyinfra/references/data-cleanup.md); do not use general chat to
-imitate the conditional included-cleanup benefit. Discovery does not automatically grant eligibility.
+The former data cleanup tools were retired on 2026-10-09. Cleaning, labeling, extraction and
+summaries of collected data go through the AI API: the MCP tool `everyinfra_chat` or
+OpenAI-compatible `POST /api/v1/chat/completions`, free for accounts that have topped up.
 
 For host installation, status, and validation, start with the repository
 [README](../../README.md). For the integration model, see

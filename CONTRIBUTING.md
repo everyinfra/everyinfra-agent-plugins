@@ -5,8 +5,7 @@ Contributions that improve portability, safety, documentation, or task routing a
 ## Before changing a skill
 
 1. Confirm the behavior against the live public capability catalog or API documentation.
-2. Keep provider identities, private upstream fields and backend implementation details out of the
-   public contract.
+2. Keep internal implementation details and private fields out of the public contract.
 3. Never invent an MCP tool name. EveryNumber, EveryMail and EveryProxy remain REST-only until the
    remote MCP server actually advertises them.
 4. Make paid calls and external side effects explicit. Discovery and status reads must not silently

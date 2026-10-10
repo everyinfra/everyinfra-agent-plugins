@@ -1,12 +1,12 @@
 {
   "name": "everyinfra",
   "displayName": "EveryInfra",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Discover and safely use EveryInfra search, structured public data, AI, authorized captcha, number, email, and proxy workflows from Cursor.",
   "author": {
     "name": "EveryInfra"
   },
-  "homepage": "https://api.everyinfra.com/docs",
+  "homepage": "https://everyinfra.com/en/docs",
   "repository": "https://github.com/everyinfra/everyinfra-agent-plugins",
   "license": "Apache-2.0",
   "keywords": [

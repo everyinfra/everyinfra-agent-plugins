@@ -1,7 +1,7 @@
 # REST-only product boundary
 
-The remote MCP server currently exposes EveryData, EverySearch, EveryAI, EverySolve and source-bound
-EveryData cleanup. The skills for EveryNumber, EveryMail and EveryProxy are public operating guidance
+The remote MCP server currently exposes EveryData, EverySearch, EveryAI and EverySolve. The skills
+for EveryNumber, EveryMail and EveryProxy are public operating guidance
 for their REST APIs; they do not add MCP tools and must not imply that MCP can execute those products.
 
 ## EveryNumber

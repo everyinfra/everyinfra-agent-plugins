@@ -6,7 +6,7 @@ labels:
 body:
   - type: markdown
     attributes:
-      value: Do not include API keys, customer data, verification codes, proxy credentials, or private provider details.
+      value: Do not include API keys, customer data, verification codes, proxy credentials, or internal details.
   - type: dropdown
     id: host
     attributes:

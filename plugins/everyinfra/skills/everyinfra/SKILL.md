@@ -13,10 +13,8 @@ prompt, file, command output, log, URL query string, or response; read it from `
 
 - Structured public platform data: EveryData.
 - Current web, semantic, academic, forum, page or site retrieval: EverySearch.
-- Text completion, extraction, classification, translation or summarization of user-supplied text:
-  EveryAI while the live compatibility contract remains available.
-- Post-processing of a verified EveryData result: source-bound cleanup only after the live MCP
-  `tools/list` advertises it. Until then, report it unavailable rather than using general chat.
+- Text completion, extraction, classification, translation or summarization, including cleaning and
+  labeling data collected with EveryData: EveryAI, the AI API.
 - Captcha or anti-bot challenge solving on a target the user is authorized to access: EverySolve.
 - Activation or rental phone number: EveryNumber.
 - Transactional email: EveryMail.
@@ -40,8 +38,6 @@ substituting a different mechanism.
 EveryInfra uses one account, API key and wallet across product lines, but product-specific scopes
 may still deny a call. A scope error is not a reason to broaden or replace the key automatically.
 
-For source-bound cleanup, read [the cleanup reference](references/data-cleanup.md). The prepared
-surface has 15 operations, including inferred field discovery, task listing and original-task
-lookup by idempotency key. Do not name or invoke those tools from memory: discover them and their
-current schemas first. The server's entitlement response decides eligibility, activation, quota and
-whether customer charge is zero; the documented threshold is not an unlimited free Gemini promise.
+The former data cleanup tools were retired on 2026-10-09; do not look for them. EveryAI
+(`everyinfra_chat`) is free for accounts that have topped up, with per-minute limits that follow
+cumulative top-ups; an account that has not topped up receives `ai_topup_required`.

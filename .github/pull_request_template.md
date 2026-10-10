@@ -14,7 +14,7 @@ State which hosts are affected and which live public evidence supports any capab
 
 ## Safety
 
-- [ ] No credential, customer data, provider identity, or private gateway detail is included.
+- [ ] No credential, customer data, internal identifier, or private gateway detail is included.
 - [ ] Paid calls and external side effects remain explicit.
 - [ ] REST-only products are not described as MCP-enabled without live discovery and parity tests.
 - [ ] Prepared, validated, installed, submitted, and listed states are kept distinct.

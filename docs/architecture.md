@@ -80,12 +80,11 @@ official directory approved it.
 | Standalone remote MCP | Native Codex, Claude Code, and Cursor MCP configuration | Available now for the four MCP-enabled product lines. |
 | Marketplace listing | OpenAI universal directory, Claude official marketplace, Cursor Marketplace | Not submitted. Self-hosted manifests are preparation only. |
 
-## Comparable project: TikHub
+## Patterns from comparable plugin packages
 
-TikHub's public organization contains several different product forms. Only
-[`TikHub/tikhub-plugin`](https://github.com/TikHub/tikhub-plugin) is directly comparable to this
-repository. Its language SDKs, demo repository, n8n integration, and local MCP distribution are
-separate deliverables.
+Other data-API companies publish several different product forms: language SDKs, demo
+repositories, workflow-tool integrations, local MCP distributions and agent plugin packages. Only
+the agent plugin packages are directly comparable to this repository.
 
 The useful product patterns are:
 
@@ -95,12 +94,12 @@ The useful product patterns are:
 - make endpoint or capability discovery explicit instead of asking the model to guess names;
 - estimate cost and enforce hard pagination caps before bulk calls.
 
-EveryInfra already has a router and a runtime capability catalog, so it does not need to copy
-TikHub's offline 1,100-endpoint index or its `npx mcp-remote` bridge. The first two outcome skills are
-cited cross-check research and bounded bulk structured-data export. They explicitly report when an
-MCP result omits billing or availability rather than pretending those envelopes are observable.
-This is a product reference, not a schema authority; host manifests continue to follow their
-official specifications.
+EveryInfra already has a router and a runtime capability catalog, so it does not need an offline
+endpoint index or an `npx mcp-remote` bridge. The first two outcome skills are cited cross-check
+research and bounded bulk structured-data export. They explicitly report when an MCP result omits
+billing or availability rather than pretending those envelopes are observable. These are product
+references, not a schema authority; host manifests continue to follow their official
+specifications.
 
 ## EveryInfra completion gates
 

@@ -11,16 +11,17 @@ Canonical documentation:
 - Installation: ./docs/installation.md
 - Troubleshooting: ./docs/troubleshooting.md
 - Permissions and billing: ./docs/permissions.md
-- Source-bound cleanup transition: ./plugins/everyinfra/skills/everyinfra/references/data-cleanup.md
+- AI API: https://everyinfra.com/en/products/ai
 - REST-only product boundary: ./docs/rest-only.md
 - Portable plugin manifest: ./plugins/everyinfra/plugin.json
 - Skill router: ./plugins/everyinfra/skills/everyinfra/SKILL.md
 
 Runtime endpoint: https://api.everyinfra.com/mcp
-API documentation: https://api.everyinfra.com/docs
+API documentation: https://everyinfra.com/en/docs
 
 Current package boundary:
-- MCP workflows: EveryData, source-bound EveryData cleanup, EverySearch, EveryAI, EverySolve
+- MCP workflows: EveryData, EverySearch, EveryAI (AI API, free for accounts that have topped up),
+  EverySolve
 - REST-only guidance: EveryNumber, EveryMail, EveryProxy
 - Ten skills total: one router, seven product skills, two outcome workflows
 

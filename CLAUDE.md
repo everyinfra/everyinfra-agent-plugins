@@ -7,8 +7,7 @@ private gateway repository.
 
 - Keep MCP, Plugin, registered App/Connector, and Marketplace status distinct.
 - Treat live MCP discovery and public catalogs as runtime truth.
-- Never add credentials, customer data, provider identities, private upstream fields, or backend
-  implementation details.
+- Never add credentials, customer data, private fields, or internal implementation details.
 - Do not describe EveryNumber, EveryMail, or EveryProxy as MCP-enabled until production discovery
   and parity tests prove it.
 - Paid calls and external side effects must remain explicit and bounded.

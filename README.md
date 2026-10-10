@@ -2,7 +2,9 @@
 
 [![Validate public plugin package](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
-[![Plugin version](https://img.shields.io/badge/plugin-v0.2.0-287A73.svg)](CHANGELOG.md)
+[![Plugin version](https://img.shields.io/badge/plugin-v0.3.0-287A73.svg)](CHANGELOG.md)
+
+> **EveryInfra** is data infrastructure for developers and AI agents: one API key for 409 data capabilities across 90 platforms — [Xiaohongshu (RedNote)](https://everyinfra.com/en/xiaohongshu-api), [Douyin](https://everyinfra.com/en/douyin-api), [TikTok](https://everyinfra.com/en/tiktok-api), [Amazon](https://everyinfra.com/en/amazon-api) and [more](https://everyinfra.com/en/market) — plus [web search](https://everyinfra.com/en/products/search), [CAPTCHA solving](https://everyinfra.com/en/captcha) and an [OpenAI-compatible AI API](https://everyinfra.com/en/products/ai) that is free after a top-up. This repository packages the agent plugin and the remote MCP connection.
 
 Install one package to give an AI agent reusable EveryInfra workflows **and** the metadata needed
 to connect to EveryInfra's remote MCP server. The repository supports Codex, Claude Code, Cursor,
@@ -17,13 +19,13 @@ This is a plugin repository, not a copy of the EveryInfra backend. It contains:
 - presentation assets and safety boundaries for paid calls, credentials, billing, and external side
   effects.
 
-No API key, customer data, upstream provider credential, or private gateway source code belongs in
-this repository.
+No API key, customer data, credential, or private gateway source code belongs in this repository.
 
-> **Source-bound cleanup is live:** Production advertises two cleanup tools with 15 operations while
-> the existing `everyinfra_chat` compatibility path remains active. Cleanup is a bounded included
-> benefit for qualifying EveryData accounts, not unlimited free Gemini. The live entitlement
-> response determines each account's eligibility and remaining quota; no automatic grant is implied.
+> **Update (2026-10-09):** the two data cleanup tools have been retired. To clean, classify,
+> extract or summarize the data you collect, use the [AI API](https://everyinfra.com/en/products/ai):
+> OpenAI-compatible `POST /api/v1/chat/completions`, also available as the MCP tool
+> `everyinfra_chat`. It is free for accounts that have topped up, with per-minute limits that follow
+> cumulative top-ups. From version 0.3.0 the skills in this package route that work to the AI API.
 
 ## MCP or plugin?
 
@@ -58,8 +60,7 @@ Example requests include:
 - "Discover the right public-data capability, then export a bounded CSV."
 - "Search public profiles, posts, comments, listings, or reviews as structured data."
 - "Run this text task through EveryAI."
-- "For this EveryData result, discover whether source-bound included cleanup is live; if it is not,
-  stop instead of using general chat."
+- "Clean and label these collected comments with the AI API, and return JSON."
 - "Solve this captcha for a target I am authorized to automate."
 - "Inspect available phone-number, transactional-email, or proxy options before I approve an
   order or send."
@@ -98,21 +99,19 @@ For an AI agent:
 The live capability catalog and tool schemas are authoritative. The package must not invent an MCP
 tool name, current price, availability state, or billing result.
 
-### Source-bound cleanup route
+### AI API route
 
-The live contract uses two cleanup tools with 15 operations. Read
-[the cleanup reference](plugins/everyinfra/skills/everyinfra/references/data-cleanup.md) for the exact
-read/action split, qualifying-account limits, field discovery and original-task recovery behavior.
-Every execution still begins with MCP `tools/list`; if a host cannot discover the tools, ordinary
-user-supplied text may continue through the discovered chat compatibility path, while EveryData
-cleanup is reported unavailable in that host. Installing the package does not grant an account
-entitlement or prove a customer-specific end-to-end execution.
+Use the MCP tool `everyinfra_chat`, or REST `POST https://api.everyinfra.com/api/v1/chat/completions`
+with any OpenAI SDK (`base_url` = `https://api.everyinfra.com/api/v1`, same API key). It is free for
+accounts that have topped up; per-minute limits follow cumulative top-ups (50 under $100, 500 from
+$100, 5,000 from $500, all keys combined). It is meant for organizing the data you collect with
+EveryInfra.
 
 ## Status: what exists today
 
 | Layer | Repository state | What is not implied |
 | --- | --- | --- |
-| Remote MCP | Production advertises the original six tools plus two source-bound cleanup tools at `https://api.everyinfra.com/mcp`. | Discovery is not proof that an account is authenticated, eligible or activated. |
+| Remote MCP | Production advertises six tools at `https://api.everyinfra.com/mcp`: capability list, data call, AI chat, CAPTCHA types, CAPTCHA solve and web search. | Discovery is not proof that an account is authenticated or has the balance or top-up a call requires. |
 | Plugin package | Portable and host-specific manifests, skills, MCP metadata, and assets are present. | Presence is not a clean-host installation test. |
 | Repository validator | Cross-host JSON, path, skill, MCP, and credential-safety checks are available. | Repository validation is not marketplace approval. |
 | Self-hosted catalogs | Four marketplace manifests are present in this repository. | A catalog file is not an official listing. |
@@ -129,7 +128,7 @@ without one. Keep the key in the installing host's secret or environment configu
 manifest, prompt, committed file, or URL query string.
 
 ```bash
-export EVERYINFRA_API_KEY="your-key"
+export EVERYINFRA_API_KEY="ei_..."
 ```
 
 ### SDK release attachments for `v0.2.0`
@@ -151,11 +150,6 @@ Node.js:
 npm install \
   https://github.com/everyinfra/everyinfra-agent-plugins/releases/download/v0.2.0/everyinfra-0.2.0.tgz
 ```
-
-Both clients expose 15 source-bound cleanup methods, including source-field discovery, account task
-listing and original-task recovery by idempotency key. Installation does not prove that the cleanup
-tools are enabled for an account: use live MCP or REST discovery and the entitlement response before
-execution. Keep idempotency keys outside URLs, prompts and analytics.
 
 ### Codex
 

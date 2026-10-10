@@ -6,7 +6,7 @@ Start with the [installation guide](docs/installation.md),
 
 Use a public GitHub issue for reproducible installation, manifest, documentation, or skill-routing
 problems after the repository is published. Do not use a public issue for credentials, customer
-data, billing disputes, security vulnerabilities, or provider-sensitive information. Security
+data, billing disputes, security vulnerabilities, or internal details. Security
 reports follow [SECURITY.md](SECURITY.md); account-specific support uses the support channel
 published on `https://everyinfra.com`.
 

@@ -3,7 +3,7 @@
 ## Reporting a vulnerability
 
 Do not open a public issue for a vulnerability, leaked credential, customer data exposure, billing
-bypass, or provider credential disclosure. Use GitHub's private vulnerability reporting for this
+bypass, or internal credential disclosure. Use GitHub's private vulnerability reporting for this
 repository when it is available. If it is unavailable, use the support channel published on
 `https://everyinfra.com` and include only the minimum reproduction data.
 
