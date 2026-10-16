@@ -4,8 +4,8 @@
 
 ## 中文说明
 
-这里是 EveryInfra 在 WorkBuddy 开放平台上的连接器包（MCP + Skill）。连接器连到 EveryInfra 的远程
-MCP 服务 `https://api.everyinfra.com/mcp`，用户在 WorkBuddy 的表单里填写自己的 EveryInfra API Key
+这里是 EveryInfra 在 WorkBuddy 开放平台上的连接器包（MCP + Skill）。连接器连到 EveryInfra 远程 MCP
+服务的中国大陆入口 `https://api-cn.everyinfra.com/mcp`（与 `api.everyinfra.com` 是同一服务、同一套 API Key），用户在 WorkBuddy 的表单里填写自己的 EveryInfra API Key
 （`auth_mode: token`，Key 只保存在用户本机），调用按 EveryInfra 账户计费。
 
 **状态：已准备、已本地校验；未提交、未上架。** 目录里的文件不代表 WorkBuddy 已审核或已发布。
@@ -51,7 +51,7 @@ python3 scripts/build_workbuddy.py package                         # 校验后�
 返回条数，不记录价格和实时可用性；价格与可用性始终以 `everyinfra_list_capabilities` 返回为准。
 
 `check` 校验的规则来自 WorkBuddy 连接器文档：`source` 为 kebab-case 且与目录同名、名称/说明/中英文示例
-齐全（示例 2–5 条，中文说明 20–100 字）、只配置一个 HTTPS 远程 MCP、`${VAR}` 占位与表单字段一一对应且
+齐全（示例 2–5 条，中文说明 20–100 字）、只配置一个 HTTPS 远程 MCP（地址固定为大陆入口）、`${VAR}` 占位与表单字段一一对应且
 凭证字段为 password 类型、`minWorkbuddyVersion` 不低于所用字段的最低版本、技能 frontmatter 含
 `description`/`description_zh`/`description_en`/`version`/`author` 且是合法 YAML、技能没有引用被关闭的工具、
 文件中没有真实凭证。
@@ -65,7 +65,8 @@ python3 scripts/build_workbuddy.py package                         # 校验后�
 ## English
 
 This directory holds EveryInfra's connector packages for the WorkBuddy open platform (MCP + Skill).
-Each connector points at the remote MCP server `https://api.everyinfra.com/mcp`; the user enters
+Each connector points at the mainland China entry of the remote MCP server,
+`https://api-cn.everyinfra.com/mcp` (the same server and API keys as `api.everyinfra.com`); the user enters
 their own EveryInfra API key in WorkBuddy's form (`auth_mode: token`, stored on the user's device
 only), and calls are billed to their EveryInfra account.
 

@@ -38,7 +38,9 @@ DIST = REPO / "dist" / "workbuddy"
 MAIN = "everyinfra"
 VERSION = "1.0.0"
 AUTHOR = "EveryInfra"
-MCP_URL = "https://api.everyinfra.com/mcp"
+# WorkBuddy users are mostly in mainland China, so the connectors use the mainland API entry,
+# which serves the same MCP server and accepts the same API keys as api.everyinfra.com.
+MCP_URL = "https://api-cn.everyinfra.com/mcp"
 TOKEN_KEY = "EVERYINFRA_API_KEY"
 # Generous enough for the slowest synchronous call; WorkBuddy's default is 30 s.
 MCP_TIMEOUT_MS = 100_000
@@ -119,8 +121,8 @@ def token_schema() -> dict:
     return {
         "title": "连接 EveryInfra",
         "title_en": "Connect EveryInfra",
-        "description": "填写你的 EveryInfra API Key。Key 只保存在本机，连接时作为请求头发送给 api.everyinfra.com，用于调用和计费。",
-        "description_en": "Enter your EveryInfra API key. It is stored on this device only and sent to api.everyinfra.com as a request header for calls and billing.",
+        "description": "填写你的 EveryInfra API Key。Key 只保存在本机，连接时作为请求头发送给 api-cn.everyinfra.com，用于调用和计费。",
+        "description_en": "Enter your EveryInfra API key. It is stored on this device only and sent to api-cn.everyinfra.com as a request header for calls and billing.",
         "docUrl": "https://everyinfra.com/docs",
         "docLabel": "如何创建 API Key？",
         "docLabel_en": "How do I create an API key?",
