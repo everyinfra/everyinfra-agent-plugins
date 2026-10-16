@@ -1,0 +1,23 @@
+{
+  "name": "EveryInfra Douyin",
+  "name_zh": "EveryInfra 抖音数据",
+  "name_en": "EveryInfra Douyin Data",
+  "description": "Query public Douyin data with EveryInfra: video search, video details and transcripts, comments, profiles and posts, trending, creator search and analytics, product search.",
+  "description_zh": "查询抖音公开数据：视频搜索、视频详情与文稿、评论、用户主页与作品、热榜、达人搜索与分析、商品搜索。用 EveryInfra API Key 连接，按次计费。",
+  "description_en": "Query public Douyin data: video search, video details and transcripts, comments, profiles and posts, trending, creator search and analytics, product search. Connect with your EveryInfra API key; pay per call.",
+  "source": "everyinfra-douyin",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "看看抖音今天的热榜前 30",
+    "搜索抖音上关于咖啡探店的视频，整理点赞最多的 20 条",
+    "提取这条抖音视频的文稿"
+  ],
+  "examples_en": [
+    "Show today's top 30 on the Douyin trending list",
+    "Search Douyin videos about cafe visits and list the 20 most-liked",
+    "Get the transcript of this Douyin video"
+  ]
+}

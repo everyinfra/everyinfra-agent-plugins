@@ -117,6 +117,7 @@ EveryInfra.
 | Self-hosted catalogs | Four marketplace manifests are present in this repository. | A catalog file is not an official listing. |
 | OpenAI registered app | No `.app.json` or host-issued app ID is included. | Direct MCP metadata is not a registered ChatGPT connector. |
 | Official marketplaces | No submission or listing is claimed here. | Prepared metadata is not submitted, approved, or published metadata. |
+| WorkBuddy connectors | Connector packages for the WorkBuddy open platform are prepared under `workbuddy/` and pass `scripts/build_workbuddy.py check`. | Not submitted to or approved by WorkBuddy. |
 
 Release claims should distinguish **prepared**, **validated**, **installed**, **submitted**, and
 **listed**. Do not collapse them into one status.
@@ -227,6 +228,7 @@ plugins/everyinfra/.cursor-plugin/plugin.json Cursor package manifest
 plugins/everyinfra/mcp*.json                   Portable and host-specific MCP metadata
 plugins/everyinfra/skills/                     Router, product, and outcome skills
 plugins/everyinfra/assets/                     Plugin icon and light/dark logos
+workbuddy/                                     WorkBuddy connector packages (MCP + Skill)
 ```
 
 ## Validate and contribute

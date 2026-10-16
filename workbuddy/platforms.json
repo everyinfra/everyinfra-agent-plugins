@@ -1,0 +1,1424 @@
+{
+  "_comment": "Curated WorkBuddy platform skills. Edit names, triggers, examples and notes here; the actions block is refreshed from the public catalog with `python3 scripts/build_workbuddy.py refresh-catalog <catalog.json>`. Never store prices or live availability in this file.",
+  "standalone": [
+    "xiaohongshu",
+    "douyin",
+    "taobao",
+    "jd",
+    "alibaba1688",
+    "tiktok"
+  ],
+  "platforms": [
+    {
+      "platform": "xiaohongshu",
+      "name_zh": "小红书",
+      "name_en": "Xiaohongshu (RedNote)",
+      "triggers_zh": "小红书、RedNote、红书、笔记、种草",
+      "scope_zh": "关键词搜索笔记、笔记详情、评论与回复、用户搜索、用户主页与作品、话题、热榜",
+      "scope_en": "note search, note details, comments and replies, user search, profiles and posts, topics and trending",
+      "examples_zh": [
+        "搜索小红书上关于露营装备的笔记，按点赞排序，整理标题、点赞数和链接",
+        "看看小红书现在的热榜",
+        "把这篇小红书笔记下的评论整理出来，看看大家主要在讨论什么"
+      ],
+      "examples_en": [
+        "Search Xiaohongshu notes about camping gear sorted by likes and list titles, likes and links",
+        "Show the current Xiaohongshu trending list",
+        "Collect the comments under this Xiaohongshu note and summarize what people discuss"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "露营装备",
+          "sort": "most_liked"
+        }
+      },
+      "notes_zh": [
+        "search、user_posts 返回的正文可能是截断的摘要，要全文就用笔记链接调 note。",
+        "video_url 是带签名的播放地址，会过期；需要留存时请及时下载。"
+      ],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "content_type",
+            "date_range",
+            "page_token",
+            "sort"
+          ],
+          "returns_list": true,
+          "page_size": 20,
+          "page_size_varies": false,
+          "limit_ignored": true,
+          "max_limit": null
+        },
+        {
+          "action": "profile",
+          "label": "主页或对象详情",
+          "required": [
+            "user_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "user_posts",
+          "label": "用户内容",
+          "required": [
+            "user_id"
+          ],
+          "optional": [
+            "page_token"
+          ],
+          "returns_list": true,
+          "page_size": 20,
+          "page_size_varies": false,
+          "limit_ignored": true,
+          "max_limit": null
+        },
+        {
+          "action": "note",
+          "label": "笔记详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "video",
+          "label": "视频详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "comments",
+          "label": "评论",
+          "required": [
+            "url"
+          ],
+          "optional": [
+            "page_token",
+            "sort"
+          ],
+          "returns_list": true,
+          "page_size": 15,
+          "page_size_varies": false,
+          "limit_ignored": true,
+          "max_limit": null
+        },
+        {
+          "action": "comments_batch",
+          "label": "多链接评论批量采集",
+          "required": [
+            "urls"
+          ],
+          "optional": [
+            "sort"
+          ],
+          "returns_list": true,
+          "page_size": 15,
+          "page_size_varies": false,
+          "limit_ignored": true,
+          "max_limit": null
+        },
+        {
+          "action": "sub_comments",
+          "label": "评论回复",
+          "required": [
+            "url",
+            "comment_id"
+          ],
+          "optional": [
+            "page_token"
+          ],
+          "returns_list": true,
+          "page_size": 10,
+          "page_size_varies": false,
+          "limit_ignored": true,
+          "max_limit": null
+        },
+        {
+          "action": "search_users",
+          "label": "用户搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "follower_range",
+            "page_token",
+            "user_type"
+          ],
+          "returns_list": true,
+          "page_size": 20,
+          "page_size_varies": false,
+          "limit_ignored": true,
+          "max_limit": null
+        },
+        {
+          "action": "hashtag",
+          "label": "话题内容",
+          "required": [
+            "topic_id"
+          ],
+          "optional": [
+            "page_token",
+            "sort"
+          ],
+          "returns_list": true,
+          "page_size": 20,
+          "page_size_varies": true,
+          "limit_ignored": true,
+          "max_limit": null
+        },
+        {
+          "action": "trending",
+          "label": "热榜",
+          "required": [],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 30
+        }
+      ]
+    },
+    {
+      "platform": "douyin",
+      "name_zh": "抖音",
+      "name_en": "Douyin",
+      "triggers_zh": "抖音、短视频、达人、星图、带货、热榜",
+      "scope_zh": "视频搜索、视频详情与文稿、评论、用户主页与作品、热榜、达人搜索与分析、商品搜索",
+      "scope_en": "video search, video details and transcripts, comments, profiles and posts, trending, creator search and analytics, product search",
+      "examples_zh": [
+        "看看抖音今天的热榜前 30",
+        "搜索抖音上关于咖啡探店的视频，整理点赞最多的 20 条",
+        "提取这条抖音视频的文稿"
+      ],
+      "examples_en": [
+        "Show today's top 30 on the Douyin trending list",
+        "Search Douyin videos about cafe visits and list the 20 most-liked",
+        "Get the transcript of this Douyin video"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "咖啡探店",
+          "limit": 20
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "publish_time",
+            "sort"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "profile",
+          "label": "主页或对象详情",
+          "required": [
+            "user_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "user_posts",
+          "label": "用户内容",
+          "required": [
+            "user_id"
+          ],
+          "optional": [
+            "page_token",
+            "since"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "video",
+          "label": "视频详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "comments",
+          "label": "评论",
+          "required": [
+            "url"
+          ],
+          "optional": [
+            "page_token"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 150
+        },
+        {
+          "action": "trending",
+          "label": "热榜",
+          "required": [],
+          "optional": [
+            "boards"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 60
+        },
+        {
+          "action": "transcript",
+          "label": "视频文稿",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "creator_search",
+          "label": "达人搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "follower_range",
+            "user_type"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 20
+        },
+        {
+          "action": "creator_audience",
+          "label": "达人粉丝画像",
+          "required": [
+            "user_id"
+          ],
+          "optional": [
+            "dimension"
+          ],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "creator_trend",
+          "label": "达人涨粉趋势",
+          "required": [
+            "user_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "creator_benchmark",
+          "label": "达人同类对标",
+          "required": [
+            "user_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "xingtu_creator_search",
+          "label": "星图达人搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 20
+        },
+        {
+          "action": "xingtu_creator_analytics",
+          "label": "星图达人分析",
+          "required": [
+            "douyin_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "xingtu_rate_card",
+          "label": "星图达人报价",
+          "required": [
+            "douyin_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "xingtu_creator_rankings",
+          "label": "星图达人榜单",
+          "required": [
+            "industry",
+            "ranking_type",
+            "time_window"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 5
+        },
+        {
+          "action": "product_search",
+          "label": "商品搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 5
+        },
+        {
+          "action": "product_detail",
+          "label": "商品详情",
+          "required": [
+            "product_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "live_product_search",
+          "label": "直播商品搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 3
+        }
+      ]
+    },
+    {
+      "platform": "taobao",
+      "name_zh": "淘宝",
+      "name_en": "Taobao",
+      "triggers_zh": "淘宝、天猫、商品、价格、评价、店铺",
+      "scope_zh": "商品搜索、商品详情、评价、问大家、店铺资料",
+      "scope_en": "product search, product details, reviews, buyer questions and shop profiles",
+      "examples_zh": [
+        "搜索淘宝上的便携咖啡机，整理价格区间和销量靠前的商品",
+        "看看这件淘宝商品的评价，总结好评和差评集中在哪些点"
+      ],
+      "examples_en": [
+        "Search Taobao for portable coffee makers and summarize price ranges and top sellers",
+        "Summarize the main praise and complaints in the reviews of this Taobao product"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "便携咖啡机"
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "max_price",
+            "min_price",
+            "sort",
+            "tmall_only"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 20
+        },
+        {
+          "action": "product_detail",
+          "label": "商品详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "shop",
+          "label": "店铺资料",
+          "required": [
+            "shop"
+          ],
+          "optional": [
+            "seller",
+            "sort",
+            "user_id"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "reviews",
+          "label": "评价",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "questions",
+          "label": "问题列表",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        }
+      ]
+    },
+    {
+      "platform": "jd",
+      "name_zh": "京东",
+      "name_en": "JD.com",
+      "triggers_zh": "京东、JD、商品、SKU、价格、评价",
+      "scope_zh": "商品搜索、商品详情、全部 SKU 与价格、商品价格、评价、店铺资料",
+      "scope_en": "product search, product details, all SKUs and prices, product price, reviews and shop profiles",
+      "examples_zh": [
+        "搜索京东上的机械键盘，列出价格和店铺",
+        "查一下这个京东商品的全部规格和对应价格"
+      ],
+      "examples_en": [
+        "Search JD for mechanical keyboards and list prices and shops",
+        "List every SKU and its price for this JD product"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "机械键盘"
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 5
+        },
+        {
+          "action": "product_detail",
+          "label": "商品详情",
+          "required": [
+            "item_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "reviews",
+          "label": "评价",
+          "required": [
+            "item_id"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 10
+        },
+        {
+          "action": "shop",
+          "label": "店铺资料",
+          "required": [
+            "shop_id"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 24
+        },
+        {
+          "action": "product_price",
+          "label": "商品价格",
+          "required": [
+            "item_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "skus",
+          "label": "全部 SKU 与价格",
+          "required": [
+            "item_id"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        }
+      ]
+    },
+    {
+      "platform": "alibaba1688",
+      "name_zh": "1688",
+      "name_en": "1688.com",
+      "triggers_zh": "1688、阿里巴巴批发、货源、供应商、拿货、图搜同款",
+      "scope_zh": "货源搜索、商品详情、平台内以图搜同款",
+      "scope_en": "wholesale product search, product details and in-platform image search",
+      "examples_zh": [
+        "在 1688 上找帆布袋的货源，整理价格和起批量",
+        "用这张图片在 1688 上找同款货源"
+      ],
+      "examples_en": [
+        "Find canvas tote bag suppliers on 1688 and list prices and minimum order quantities",
+        "Use this image to find matching products on 1688"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "帆布袋"
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "city",
+            "max_price",
+            "min_price",
+            "sort"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "product_detail",
+          "label": "商品详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "image_search",
+          "label": "平台内商品图搜",
+          "required": [
+            "image_url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 5
+        }
+      ]
+    },
+    {
+      "platform": "tiktok",
+      "name_zh": "TikTok",
+      "name_en": "TikTok",
+      "triggers_zh": "TikTok、海外短视频、跨境达人、TikTok Shop",
+      "scope_zh": "视频搜索、视频详情与文稿、评论、用户主页与作品、话题、粉丝数、电商商品与带货达人",
+      "scope_en": "video search, video details and transcripts, comments, profiles and videos, hashtags, follower counts, shop products and creators",
+      "examples_zh": [
+        "搜索 TikTok 上关于 portable blender 的热门视频",
+        "把这几个 TikTok 视频下的评论导出成 CSV"
+      ],
+      "examples_en": [
+        "Find popular TikTok videos about portable blenders",
+        "Export the comments under these TikTok videos to CSV"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "portable blender",
+          "limit": 30
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "content_type"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 200
+        },
+        {
+          "action": "profile",
+          "label": "主页或对象详情",
+          "required": [
+            "username"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "user_videos",
+          "label": "用户视频",
+          "required": [
+            "username"
+          ],
+          "optional": [
+            "min_likes",
+            "sort",
+            "until"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "video",
+          "label": "视频详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "comments",
+          "label": "评论",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 200
+        },
+        {
+          "action": "hashtag",
+          "label": "话题内容",
+          "required": [
+            "hashtag"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 30
+        },
+        {
+          "action": "followers",
+          "label": "粉丝数量",
+          "required": [
+            "username"
+          ],
+          "optional": [
+            "channel"
+          ],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "transcript",
+          "label": "视频文稿",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "shop_search",
+          "label": "电商商品搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "country",
+            "page"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "shop_creator",
+          "label": "带货达人",
+          "required": [
+            "username"
+          ],
+          "optional": [
+            "country"
+          ],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        }
+      ]
+    },
+    {
+      "platform": "kuaishou",
+      "name_zh": "快手",
+      "name_en": "Kuaishou",
+      "triggers_zh": "快手、短视频",
+      "scope_zh": "视频搜索、用户作品",
+      "scope_en": "video search and user posts",
+      "examples_zh": [
+        "搜索快手上关于露营的视频，整理播放和点赞最高的 20 条"
+      ],
+      "examples_en": [
+        "Search Kuaishou videos about camping and list the 20 with the most views and likes"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "露营",
+          "limit": 20
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "user_posts",
+          "label": "用户内容",
+          "required": [
+            "user_id"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        }
+      ]
+    },
+    {
+      "platform": "bilibili",
+      "name_zh": "哔哩哔哩",
+      "name_en": "Bilibili",
+      "triggers_zh": "B站、哔哩哔哩、bilibili、弹幕、UP主",
+      "scope_zh": "视频搜索、视频详情、评论、弹幕、字幕、UP 主主页与作品",
+      "scope_en": "video search, video details, comments, danmaku, subtitles, uploader profiles and videos",
+      "examples_zh": [
+        "搜索 B 站上的机械键盘测评视频，整理播放量最高的 10 条",
+        "把这个 B 站视频的弹幕整理出来，看看观众在哪些地方讨论最多"
+      ],
+      "examples_en": [
+        "Search Bilibili for mechanical keyboard reviews and list the 10 most-viewed",
+        "Collect the danmaku of this Bilibili video and find where viewers comment most"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "机械键盘测评",
+          "limit": 10
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "sort"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "profile",
+          "label": "主页或对象详情",
+          "required": [
+            "user_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "user_posts",
+          "label": "用户内容",
+          "required": [
+            "user_id"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "video",
+          "label": "视频详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "comments",
+          "label": "评论",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "danmaku",
+          "label": "弹幕",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "subtitles",
+          "label": "字幕",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        }
+      ]
+    },
+    {
+      "platform": "weibo",
+      "name_zh": "微博",
+      "name_en": "Weibo",
+      "triggers_zh": "微博、热搜、舆情",
+      "scope_zh": "微博搜索、用户主页、评论、热搜榜",
+      "scope_en": "post search, profiles, comments and the trending list",
+      "examples_zh": [
+        "看看微博热搜榜现在有哪些话题",
+        "搜索微博上关于某个新品发布的讨论，整理主要观点"
+      ],
+      "examples_en": [
+        "Show the current Weibo trending topics",
+        "Search Weibo posts about a product launch and summarize the main opinions"
+      ],
+      "example_call": {
+        "action": "trending",
+        "params": {}
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "profile",
+          "label": "主页或对象详情",
+          "required": [
+            "user_id"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "comments",
+          "label": "评论",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "trending",
+          "label": "热榜",
+          "required": [],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 200
+        }
+      ]
+    },
+    {
+      "platform": "zhihu",
+      "name_zh": "知乎",
+      "name_en": "Zhihu",
+      "triggers_zh": "知乎、问答、回答、专栏",
+      "scope_zh": "内容搜索、问答与文章详情、评论与回复、用户主页与文章",
+      "scope_en": "content search, answer and article details, comments and replies, user profiles and articles",
+      "examples_zh": [
+        "搜索知乎上关于 AI 编程工具的讨论，整理高赞回答的主要观点"
+      ],
+      "examples_en": [
+        "Search Zhihu discussions about AI coding tools and summarize the top answers"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "AI 编程工具",
+          "limit": 20
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "content_type",
+            "sort"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "content_detail",
+          "label": "内容详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "content_comments",
+          "label": "内容评论",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "comment_replies",
+          "label": "评论回复",
+          "required": [
+            "url",
+            "comment_id"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "profile",
+          "label": "主页或对象详情",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "user_articles",
+          "label": "用户文章",
+          "required": [
+            "url"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        }
+      ]
+    },
+    {
+      "platform": "xianyu",
+      "name_zh": "闲鱼",
+      "name_en": "Xianyu",
+      "triggers_zh": "闲鱼、二手、转卖、二手价格",
+      "scope_zh": "二手商品搜索、商品详情",
+      "scope_en": "second-hand listing search and listing details",
+      "examples_zh": [
+        "搜索闲鱼上的二手富士相机，整理价格分布"
+      ],
+      "examples_en": [
+        "Search Xianyu for second-hand Fujifilm cameras and summarize the price distribution"
+      ],
+      "example_call": {
+        "action": "search",
+        "params": {
+          "keyword": "二手富士相机",
+          "limit": 30
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "item_detail",
+          "label": "商品详情",
+          "required": [
+            "urls"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        }
+      ]
+    },
+    {
+      "platform": "amazon",
+      "name_zh": "亚马逊",
+      "name_en": "Amazon",
+      "triggers_zh": "亚马逊、Amazon、跨境电商、BSR、畅销榜",
+      "scope_zh": "商品搜索、商品详情、评价、畅销榜、卖家搜索",
+      "scope_en": "product search, product details, reviews, bestsellers and seller search",
+      "examples_zh": [
+        "看看亚马逊上 standing desk 的畅销榜前 50",
+        "总结这个亚马逊商品的差评主要集中在哪些问题"
+      ],
+      "examples_en": [
+        "Show the top 50 Amazon bestsellers for standing desks",
+        "Summarize the main complaints in the reviews of this Amazon product"
+      ],
+      "example_call": {
+        "action": "bestsellers",
+        "params": {
+          "keyword": "standing desk",
+          "limit": 50
+        }
+      },
+      "notes_zh": [],
+      "actions": [
+        {
+          "action": "search",
+          "label": "关键词搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "domain",
+            "lang"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        },
+        {
+          "action": "profile",
+          "label": "主页或对象详情",
+          "required": [
+            "url"
+          ],
+          "optional": [
+            "lang"
+          ],
+          "returns_list": false,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "reviews",
+          "label": "评价",
+          "required": [
+            "url"
+          ],
+          "optional": [
+            "domain"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
+        },
+        {
+          "action": "bestsellers",
+          "label": "畅销榜",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "lang"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
+          "action": "sellers",
+          "label": "卖家搜索",
+          "required": [
+            "keyword"
+          ],
+          "optional": [
+            "lang"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 50
+        }
+      ]
+    }
+  ]
+}

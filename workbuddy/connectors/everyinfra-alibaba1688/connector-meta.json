@@ -1,0 +1,21 @@
+{
+  "name": "EveryInfra 1688.com",
+  "name_zh": "EveryInfra 1688数据",
+  "name_en": "EveryInfra 1688.com Data",
+  "description": "Query public 1688.com data with EveryInfra: wholesale product search, product details and in-platform image search.",
+  "description_zh": "查询1688公开数据：货源搜索、商品详情、平台内以图搜同款。用 EveryInfra API Key 连接，按次计费。",
+  "description_en": "Query public 1688.com data: wholesale product search, product details and in-platform image search. Connect with your EveryInfra API key; pay per call.",
+  "source": "everyinfra-alibaba1688",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "在 1688 上找帆布袋的货源，整理价格和起批量",
+    "用这张图片在 1688 上找同款货源"
+  ],
+  "examples_en": [
+    "Find canvas tote bag suppliers on 1688 and list prices and minimum order quantities",
+    "Use this image to find matching products on 1688"
+  ]
+}

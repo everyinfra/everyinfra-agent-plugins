@@ -1,0 +1,27 @@
+{
+  "name": "EveryInfra",
+  "name_zh": "万有引擎 EveryInfra",
+  "name_en": "EveryInfra",
+  "description": "Query public data from Xiaohongshu, Douyin, Taobao, JD, TikTok, Amazon and many more platforms, plus web search and multi-source fact checks.",
+  "description_zh": "查询小红书、抖音、淘宝、京东、TikTok、亚马逊等平台的公开数据，并支持网页检索与多来源核实。用你的 EveryInfra API Key 连接，按次计费，失败不扣费。",
+  "description_en": "Query public data from Xiaohongshu, Douyin, Taobao, JD, TikTok, Amazon and many more platforms, plus web search and multi-source fact checks. Connect with your EveryInfra API key; pay per call, no charge on failure.",
+  "source": "everyinfra",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "搜索小红书上关于露营装备的热门笔记，整理前 20 条的标题、点赞数和链接",
+    "看看抖音和微博现在的热榜都有什么",
+    "对比淘宝和京东上便携咖啡机的价格区间和销量靠前的店铺",
+    "核实一下：欧盟人工智能法案对通用模型的义务从哪天开始适用？给出原始出处",
+    "把这几个 TikTok 视频下的评论导出成 CSV"
+  ],
+  "examples_en": [
+    "Find the most-liked Xiaohongshu notes about camping gear and list the top 20 titles, likes and links",
+    "Show me what is trending on Douyin and Weibo right now",
+    "Compare price ranges and top-selling shops for portable coffee makers on Taobao and JD",
+    "Verify when the EU AI Act obligations for general-purpose models start to apply, with primary sources",
+    "Export the comments under these TikTok videos to CSV"
+  ]
+}

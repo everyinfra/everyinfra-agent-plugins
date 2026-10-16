@@ -1,0 +1,23 @@
+{
+  "name": "EveryInfra Xiaohongshu (RedNote)",
+  "name_zh": "EveryInfra 小红书数据",
+  "name_en": "EveryInfra Xiaohongshu (RedNote) Data",
+  "description": "Query public Xiaohongshu (RedNote) data with EveryInfra: note search, note details, comments and replies, user search, profiles and posts, topics and trending.",
+  "description_zh": "查询小红书公开数据：关键词搜索笔记、笔记详情、评论与回复、用户搜索、用户主页与作品、话题、热榜。用 EveryInfra API Key 连接，按次计费。",
+  "description_en": "Query public Xiaohongshu (RedNote) data: note search, note details, comments and replies, user search, profiles and posts, topics and trending. Connect with your EveryInfra API key; pay per call.",
+  "source": "everyinfra-xiaohongshu",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "搜索小红书上关于露营装备的笔记，按点赞排序，整理标题、点赞数和链接",
+    "看看小红书现在的热榜",
+    "把这篇小红书笔记下的评论整理出来，看看大家主要在讨论什么"
+  ],
+  "examples_en": [
+    "Search Xiaohongshu notes about camping gear sorted by likes and list titles, likes and links",
+    "Show the current Xiaohongshu trending list",
+    "Collect the comments under this Xiaohongshu note and summarize what people discuss"
+  ]
+}

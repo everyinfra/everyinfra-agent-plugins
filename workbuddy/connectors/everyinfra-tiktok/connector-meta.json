@@ -1,0 +1,21 @@
+{
+  "name": "EveryInfra TikTok",
+  "name_zh": "EveryInfra TikTok数据",
+  "name_en": "EveryInfra TikTok Data",
+  "description": "Query public TikTok data with EveryInfra: video search, video details and transcripts, comments, profiles and videos, hashtags, follower counts, shop products and creators.",
+  "description_zh": "查询TikTok公开数据：视频搜索、视频详情与文稿、评论、用户主页与作品、话题、粉丝数、电商商品与带货达人。用 EveryInfra API Key 连接，按次计费。",
+  "description_en": "Query public TikTok data: video search, video details and transcripts, comments, profiles and videos, hashtags, follower counts, shop products and creators. Connect with your EveryInfra API key; pay per call.",
+  "source": "everyinfra-tiktok",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "搜索 TikTok 上关于 portable blender 的热门视频",
+    "把这几个 TikTok 视频下的评论导出成 CSV"
+  ],
+  "examples_en": [
+    "Find popular TikTok videos about portable blenders",
+    "Export the comments under these TikTok videos to CSV"
+  ]
+}

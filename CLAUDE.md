@@ -15,6 +15,9 @@ private gateway repository.
 ## Change and validation workflow
 
 - Shared skills live only under `plugins/everyinfra/skills/`; host manifests are thin adapters.
+- `workbuddy/` holds WorkBuddy connectors with Chinese host-adapted skills. When a shared skill's
+  rule changes, update the matching WorkBuddy skill too; generated files come from
+  `scripts/build_workbuddy.py render`, and `scripts/build_workbuddy.py check` must pass.
 - Keep version-bearing manifests and marketplace entries aligned for releases.
 - Update `README.md`, `llms.txt`, and `docs/ai-discovery.md` when the public capability boundary
   changes.

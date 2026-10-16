@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "everyinfra": {
+      "type": "streamableHttp",
+      "url": "https://api.everyinfra.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${EVERYINFRA_API_KEY}"
+      },
+      "timeout": 100000,
+      "disabledTools": [
+        "everyinfra_chat",
+        "everyinfra_list_captcha_types",
+        "everyinfra_solve_captcha",
+        "everyinfra_search"
+      ]
+    }
+  }
+}

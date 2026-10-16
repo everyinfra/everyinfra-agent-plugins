@@ -1,0 +1,21 @@
+{
+  "name": "EveryInfra JD.com",
+  "name_zh": "EveryInfra 京东数据",
+  "name_en": "EveryInfra JD.com Data",
+  "description": "Query public JD.com data with EveryInfra: product search, product details, all SKUs and prices, product price, reviews and shop profiles.",
+  "description_zh": "查询京东公开数据：商品搜索、商品详情、全部 SKU 与价格、商品价格、评价、店铺资料。用 EveryInfra API Key 连接，按次计费。",
+  "description_en": "Query public JD.com data: product search, product details, all SKUs and prices, product price, reviews and shop profiles. Connect with your EveryInfra API key; pay per call.",
+  "source": "everyinfra-jd",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "搜索京东上的机械键盘，列出价格和店铺",
+    "查一下这个京东商品的全部规格和对应价格"
+  ],
+  "examples_en": [
+    "Search JD for mechanical keyboards and list prices and shops",
+    "List every SKU and its price for this JD product"
+  ]
+}

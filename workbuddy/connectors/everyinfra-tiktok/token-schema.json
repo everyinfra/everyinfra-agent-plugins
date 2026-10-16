@@ -1,0 +1,22 @@
+{
+  "title": "连接 EveryInfra",
+  "title_en": "Connect EveryInfra",
+  "description": "填写你的 EveryInfra API Key。Key 只保存在本机，连接时作为请求头发送给 api.everyinfra.com，用于调用和计费。",
+  "description_en": "Enter your EveryInfra API key. It is stored on this device only and sent to api.everyinfra.com as a request header for calls and billing.",
+  "docUrl": "https://everyinfra.com/docs",
+  "docLabel": "如何创建 API Key？",
+  "docLabel_en": "How do I create an API key?",
+  "fields": [
+    {
+      "key": "EVERYINFRA_API_KEY",
+      "label": "API Key",
+      "label_en": "API Key",
+      "type": "password",
+      "required": true,
+      "placeholder": "以 ei_ 开头，在 everyinfra.com 控制台的 API Key 页面创建",
+      "placeholder_en": "Starts with ei_; create one on the API Keys page at everyinfra.com",
+      "description": "注册 everyinfra.com 后在控制台创建；充值后即可调用付费能力。",
+      "description_en": "Sign up at everyinfra.com and create a key in the console; paid capabilities need a funded balance."
+    }
+  ]
+}

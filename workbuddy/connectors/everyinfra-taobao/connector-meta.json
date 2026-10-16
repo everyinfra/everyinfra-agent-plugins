@@ -1,0 +1,21 @@
+{
+  "name": "EveryInfra Taobao",
+  "name_zh": "EveryInfra 淘宝数据",
+  "name_en": "EveryInfra Taobao Data",
+  "description": "Query public Taobao data with EveryInfra: product search, product details, reviews, buyer questions and shop profiles.",
+  "description_zh": "查询淘宝公开数据：商品搜索、商品详情、评价、问大家、店铺资料。用 EveryInfra API Key 连接，按次计费。",
+  "description_en": "Query public Taobao data: product search, product details, reviews, buyer questions and shop profiles. Connect with your EveryInfra API key; pay per call.",
+  "source": "everyinfra-taobao",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "搜索淘宝上的便携咖啡机，整理价格区间和销量靠前的商品",
+    "看看这件淘宝商品的评价，总结好评和差评集中在哪些点"
+  ],
+  "examples_en": [
+    "Search Taobao for portable coffee makers and summarize price ranges and top sellers",
+    "Summarize the main praise and complaints in the reviews of this Taobao product"
+  ]
+}

@@ -4,7 +4,12 @@ All notable changes to this project are documented here. Versions follow Semanti
 
 ## [Unreleased]
 
-No unreleased changes.
+- Add WorkBuddy connector packages under `workbuddy/`: the main `everyinfra` connector (capability
+  discovery, data calls and web search, with four workflow skills and twelve platform skills) and six
+  optional single-platform connectors. Users connect with their own API key through WorkBuddy's token
+  form; AI chat and CAPTCHA tools are hidden in this package. Prepared and validated, not submitted.
+- Add `scripts/build_workbuddy.py` to render, check and package the WorkBuddy connectors, and run its
+  check in CI.
 
 ## [0.3.0] - 2026-10-10
 

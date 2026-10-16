@@ -24,6 +24,9 @@ jobs:
       - name: Validate plugin contracts
         run: python3 scripts/validate.py
 
+      - name: Check WorkBuddy connector packages
+        run: python3 scripts/build_workbuddy.py check
+
       - name: Check JSON, YAML structure, SVG, and local links
         run: python3 scripts/build_release.py --check-source
 
