@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "everyinfra",
+  "displayName": "万有引擎 EveryInfra：小红书、抖音、淘宝、京东数据",
+  "version": "1.0.0",
+  "description": "一把 API Key 查小红书、抖音、淘宝、京东的公开数据，另有 1688、B站、微博、公众号等共 90 个平台、414 项能力，加上 17 种全网搜索。按次计费，数据每千次 $0.56 起，失败或空结果不扣费。",
+  "author": "EveryInfra",
+  "icon": "icon.png",
+  "category": "Business",
+  "exampleQueries": [
+    "搜索小红书上关于露营装备的笔记，按点赞排序，整理标题和链接",
+    "看看抖音现在的热榜，挑出和美妆相关的视频",
+    "把这个淘宝商品的价格和评价整理成表格"
+  ],
+  "apps": [],
+  "mcpServers": [
+    "everyinfra.mcp.json"
+  ],
+  "skills": [
+    "skills/everyinfra/SKILL.md",
+    "skills/everydata/SKILL.md",
+    "skills/everysearch/SKILL.md",
+    "skills/everyinfra-crosscheck-research/SKILL.md",
+    "skills/everyinfra-bulk-data-export/SKILL.md",
+    "skills/everyai/SKILL.md"
+  ]
+}

@@ -95,6 +95,12 @@ SKILL_REQUIRED = ("description", "description_zh", "description_en", "version", 
 # sequences a YAML parser would read as structure.
 YAML_UNSAFE_RE = re.compile(r": |\s#|^[-?:,\[\]{}#&*!|>'\"%@`]|:$")
 ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
+# Source tag on the "How do I create an API key?" link, so sign-ups from WorkBuddy can be attributed.
+# utm_content names the connector: "main" for the umbrella connector, otherwise the platform.
+DOC_URL = (
+    "https://everyinfra.com/docs?utm_source=workbuddy&utm_medium=directory"
+    "&utm_campaign=listing_2026q4&utm_content={content}#quickstart"
+)
 
 HAND_WRITTEN = {
     f"{MAIN}/connector-meta.json",
@@ -139,13 +145,13 @@ def mcp_config(kind: str) -> dict:
     }
 
 
-def token_schema() -> dict:
+def token_schema(content: str) -> dict:
     return {
         "title": "连接 EveryInfra",
         "title_en": "Connect EveryInfra",
         "description": "填写你的 EveryInfra API Key。Key 只保存在本机，连接时作为请求头发送给 api-cn.everyinfra.com，用于调用和计费。",
         "description_en": "Enter your EveryInfra API key. It is stored on this device only and sent to api-cn.everyinfra.com as a request header for calls and billing.",
-        "docUrl": "https://everyinfra.com/docs",
+        "docUrl": DOC_URL.format(content=content),
         "docLabel": "如何创建 API Key？",
         "docLabel_en": "How do I create an API key?",
         "fields": [
@@ -274,7 +280,7 @@ def generated_files() -> dict[str, bytes]:
     icon = ICON_SOURCE.read_bytes()
     files: dict[str, bytes] = {
         f"{MAIN}/mcp.json": dumps(mcp_config("main")),
-        f"{MAIN}/token-schema.json": dumps(token_schema()),
+        f"{MAIN}/token-schema.json": dumps(token_schema("main")),
         f"{MAIN}/icon.svg": icon,
     }
     by_name = {item["platform"]: item for item in data["platforms"]}
@@ -286,7 +292,7 @@ def generated_files() -> dict[str, bytes]:
         source = f"everyinfra-{platform}"
         files[f"{source}/connector-meta.json"] = dumps(standalone_meta(item))
         files[f"{source}/mcp.json"] = dumps(mcp_config("standalone"))
-        files[f"{source}/token-schema.json"] = dumps(token_schema())
+        files[f"{source}/token-schema.json"] = dumps(token_schema(platform))
         files[f"{source}/icon.svg"] = icon
         files[f"{source}/skills/everyinfra-{platform}/SKILL.md"] = platform_skill(item).encode("utf-8")
     return files

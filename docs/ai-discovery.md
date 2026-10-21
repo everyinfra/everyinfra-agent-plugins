@@ -46,8 +46,9 @@ parameters, limits, and prices. The package must not invent tool names, availabi
 internal identifiers, marketplace approval, or an OpenAI app registration.
 
 At version `0.3.0`, EveryData, EverySearch, EveryAI and EverySolve have MCP workflows. Production
-advertises six tools: capability list, data call, AI chat (`everyinfra_chat`), CAPTCHA types,
-CAPTCHA solve and web search. EveryNumber, EveryMail and EveryProxy remain documented as REST-only
+advertises 25 tools: capability list, data call and job status, AI chat (`everyinfra_chat`),
+CAPTCHA types and solve, web search, plus account, usage, billing, API key, settings, webhook and
+ticket tools. EveryNumber, EveryMail and EveryProxy remain documented as REST-only
 until live MCP discovery and parity tests prove otherwise.
 
 The two data cleanup tools were retired on 2026-10-09. Cleaning, labeling, extraction and summaries

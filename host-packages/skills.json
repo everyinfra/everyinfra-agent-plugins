@@ -1,0 +1,219 @@
+{
+  "_comment": "Editable source for host-packages. Skill bodies always come from plugins/everyinfra/skills; this file only holds per-market frontmatter and listing metadata. Rebuild with scripts/build_host_packages.py.",
+  "region_suffix": {
+    "cn": "支持小红书、抖音、淘宝、京东、1688、B站、微博、公众号等平台的公开数据。",
+    "us": "Covers TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon and Google results, plus RedNote and Douyin."
+  },
+  "region_suffix_skills": [
+    "everyinfra",
+    "everydata",
+    "everyinfra-bulk-data-export"
+  ],
+  "bundle": [
+    "everyinfra",
+    "everydata",
+    "everysearch",
+    "everyinfra-crosscheck-research",
+    "everyinfra-bulk-data-export",
+    "everyai"
+  ],
+  "skills": {
+    "everyinfra": {
+      "runtime": "mcp",
+      "qoder_description": "Routes a task to the right EveryInfra product and uses its MCP or REST contract safely. EveryInfra gives one API key for structured data from 90 platforms (TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, RedNote, Douyin), 17 web search tools, an OpenAI-compatible AI API, CAPTCHA solving, phone numbers, email and proxies. Applicable when the user mentions EveryInfra or asks which product fits a data, search or automation task.",
+      "clawhub": {
+        "name": "EveryInfra - Data, Search and AI API Router",
+        "description": "Route a task to the right EveryInfra product and use its MCP or REST contract safely. One API key covers structured data from 90 platforms (TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, RedNote, Douyin), web search, AI, CAPTCHA, phone numbers, email and proxies. Use when the user mentions EveryInfra or is unsure which product fits.",
+        "categories": [
+          "integrations",
+          "research"
+        ],
+        "topics": [
+          "everyinfra",
+          "mcp",
+          "social-data",
+          "web-search",
+          "api-gateway"
+        ],
+        "wave": 1
+      }
+    },
+    "everydata": {
+      "runtime": "mcp",
+      "qoder_description": "Discovers and calls EveryInfra structured-data capabilities (414 across 90 platforms) such as TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, RedNote (Xiaohongshu) and Douyin. Applicable when the user asks for profiles, posts, comments, search results, listings, reviews, trending lists or other public platform data as structured JSON.",
+      "clawhub": {
+        "name": "EveryData - TikTok, Instagram, Amazon and 90 Platforms",
+        "description": "Discover and call EveryInfra structured-data capabilities (414 across 90 platforms): TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, plus RedNote (Xiaohongshu) and Douyin. Use when the user needs profiles, posts, comments, search results, listings or reviews as structured JSON.",
+        "categories": [
+          "integrations",
+          "research"
+        ],
+        "topics": [
+          "tiktok",
+          "instagram",
+          "amazon",
+          "social-data",
+          "rednote"
+        ],
+        "wave": 1
+      }
+    },
+    "everysearch": {
+      "runtime": "mcp",
+      "qoder_description": "Runs current web, news, forum, academic, semantic, page-reading, crawling and cross-check retrieval through EveryInfra (17 search tools). Applicable when the user needs up-to-date sources, cited factual verification, or the content of a specific public URL or site.",
+      "clawhub": {
+        "name": "EverySearch - Web, News, Forum and Academic Search",
+        "description": "Use EverySearch for current web, news, forum, academic, semantic, page-reading, crawling and cross-check retrieval (17 search tools). Use when a task needs up-to-date sources, cited factual verification, or content from a specific public URL or site.",
+        "categories": [
+          "research"
+        ],
+        "topics": [
+          "web-search",
+          "serp",
+          "news",
+          "academic-search",
+          "crawl"
+        ],
+        "wave": 1
+      }
+    },
+    "everyinfra-crosscheck-research": {
+      "runtime": "mcp",
+      "qoder_description": "Verifies a current factual claim or produces a cited research answer through EveryInfra cross-check search. Applicable when the user asks to fact-check, compare sources, confirm the latest version, price or policy, or give an evidence-backed conclusion.",
+      "clawhub": {
+        "name": "EveryInfra Cross-check Research",
+        "description": null,
+        "categories": [
+          "research",
+          "knowledge"
+        ],
+        "topics": [
+          "fact-checking",
+          "citations",
+          "verification",
+          "sources",
+          "research"
+        ],
+        "wave": 1
+      }
+    },
+    "everyinfra-bulk-data-export": {
+      "runtime": "mcp",
+      "qoder_description": "Exports a bounded structured dataset through EveryInfra with capability discovery, cost controls, pagination, deduplication and CSV or JSON verification. Applicable when the user asks for many records, all pages, a dataset, or a CSV or JSON file of TikTok, Instagram, Amazon, YouTube, RedNote or other platform data.",
+      "clawhub": {
+        "name": "EveryInfra Bulk Data Export to CSV and JSON",
+        "description": "Export a bounded structured dataset (TikTok, Instagram, Amazon, YouTube and other EveryInfra platforms) with capability discovery, cost controls, pagination, deduplication and CSV or JSON verification. Use when the user asks for many records, all available pages, a dataset, or a CSV/JSON export rather than a single response.",
+        "categories": [
+          "integrations",
+          "automation"
+        ],
+        "topics": [
+          "csv-export",
+          "json-export",
+          "pagination",
+          "dataset",
+          "social-data"
+        ],
+        "wave": 1
+      }
+    },
+    "everyai": {
+      "runtime": "mcp",
+      "qoder_description": "Runs text work through the EveryInfra OpenAI-compatible AI API: cleaning or labeling collected data, summarization, translation, classification, extraction and rewriting. Applicable when the user asks to process collected records or text through EveryInfra.",
+      "clawhub": {
+        "name": "EveryAI - OpenAI-Compatible Text API",
+        "description": null,
+        "categories": [
+          "integrations"
+        ],
+        "topics": [
+          "openai-compatible",
+          "summarization",
+          "translation",
+          "classification",
+          "data-cleaning"
+        ],
+        "wave": 1
+      }
+    },
+    "everymail": {
+      "runtime": "rest",
+      "qoder_description": "Uses the EveryInfra transactional-email REST API: checks email capabilities and quota, sends or schedules an email, submits a batch, cancels a scheduled message, and reads delivery events. Applicable when the user asks to send transactional email through EveryInfra and has authorized the recipients and content.",
+      "clawhub": {
+        "name": "EveryMail - Transactional Email API",
+        "description": null,
+        "categories": [
+          "communication",
+          "integrations"
+        ],
+        "topics": [
+          "transactional-email",
+          "email-api",
+          "webhook",
+          "batch-send",
+          "delivery-events"
+        ],
+        "wave": 2
+      }
+    },
+    "everysolve": {
+      "runtime": "mcp",
+      "qoder_description": "Discovers and solves CAPTCHA challenges through EveryInfra for targets the user is authorized to access. Applicable when a legitimate testing, registration or automation flow is blocked by Turnstile, reCAPTCHA, hCaptcha, an image challenge or another listed challenge type (52 types).",
+      "clawhub": {
+        "name": "EverySolve - CAPTCHA Solving for Authorized Testing",
+        "description": null,
+        "categories": [
+          "integrations",
+          "automation"
+        ],
+        "topics": [
+          "captcha",
+          "turnstile",
+          "recaptcha",
+          "hcaptcha",
+          "qa-testing"
+        ],
+        "wave": 2
+      }
+    },
+    "everynumber": {
+      "runtime": "rest",
+      "qoder_description": "Uses the EveryInfra phone-number REST API for activation and rental numbers: reads the catalog, orders an authorized verification number, polls the received code, cancels an unused activation and reads order history. Applicable when the user needs a verification number for an account they are authorized to register.",
+      "clawhub": {
+        "name": "EveryNumber - Verification and Rental Phone Numbers",
+        "description": null,
+        "categories": [
+          "integrations"
+        ],
+        "topics": [
+          "phone-number",
+          "sms-verification",
+          "number-rental",
+          "activation",
+          "api"
+        ],
+        "wave": 2
+      }
+    },
+    "everyproxy": {
+      "runtime": "rest",
+      "qoder_description": "Uses the EveryInfra traffic-package proxy REST API: reads the package catalog, orders an authorized rotating or sticky proxy allocation, checks provisioning status and retrieves one-time proxy credentials. Applicable when the user asks to buy or check an EveryInfra proxy package.",
+      "clawhub": {
+        "name": "EveryProxy - Traffic-Billed Proxies",
+        "description": null,
+        "categories": [
+          "integrations",
+          "operations"
+        ],
+        "topics": [
+          "proxy",
+          "rotating-proxy",
+          "sticky-session",
+          "traffic-billing",
+          "api"
+        ],
+        "wave": 2
+      }
+    }
+  }
+}

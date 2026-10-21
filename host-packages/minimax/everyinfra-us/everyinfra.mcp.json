@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "mcpServers": {
+    "everyinfra": {
+      "type": "streamable-http",
+      "url": "https://api.everyinfra.com/mcp",
+      "description": "EveryInfra remote MCP: list data capabilities (free), call platform data, web search, CAPTCHA types",
+      "timeout": 60000
+    }
+  }
+}

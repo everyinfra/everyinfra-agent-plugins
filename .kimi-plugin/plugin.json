@@ -1,0 +1,32 @@
+{
+  "name": "everyinfra",
+  "version": "0.3.0",
+  "description": "万有引擎 EveryInfra：一把 API Key 查小红书、抖音、淘宝、京东、TikTok、Amazon 等 90 个平台的公开数据，另有 17 种全网搜索、交叉核对、CSV/JSON 导出和 AI 文本接口。按次计费，失败或空结果不扣费。",
+  "keywords": [
+    "小红书",
+    "抖音",
+    "淘宝",
+    "京东",
+    "tiktok",
+    "instagram",
+    "amazon",
+    "mcp",
+    "web-search",
+    "everyinfra"
+  ],
+  "author": "EveryInfra",
+  "homepage": "https://everyinfra.com/mcp-server?utm_source=kimi&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=cli_plugin",
+  "license": "Apache-2.0",
+  "interface": {
+    "displayName": "万有引擎 EveryInfra",
+    "shortDescription": "小红书、抖音、淘宝、京东等 90 个平台的数据和全网搜索，一把 Key",
+    "developerName": "EveryInfra",
+    "websiteURL": "https://everyinfra.com/mcp-server?utm_source=kimi&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=cli_plugin"
+  },
+  "skills": "./plugins/everyinfra/skills/",
+  "mcpServers": {
+    "everyinfra": {
+      "url": "https://api-cn.everyinfra.com/mcp"
+    }
+  }
+}

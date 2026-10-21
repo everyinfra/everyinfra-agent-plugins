@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "everyinfra",
+  "displayName": "EveryInfra: TikTok, Instagram, Amazon & SERP Data",
+  "version": "1.0.0",
+  "description": "One API key for structured data from TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon and Google search results, plus RedNote and Douyin. 90 platforms, 414 data capabilities, 17 search tools. Pay per use from $0.56 per 1,000 data calls; failed or empty calls are not charged.",
+  "author": "EveryInfra",
+  "icon": "icon.png",
+  "category": "Business",
+  "exampleQueries": [
+    "Find the top TikTok videos for #airfryer this week and summarize what they have in common",
+    "Pull the latest reviews for this Amazon product and summarize the main complaints",
+    "Export the 100 most recent posts from this Instagram profile to a CSV"
+  ],
+  "apps": [],
+  "mcpServers": [
+    "everyinfra.mcp.json"
+  ],
+  "skills": [
+    "skills/everyinfra/SKILL.md",
+    "skills/everydata/SKILL.md",
+    "skills/everysearch/SKILL.md",
+    "skills/everyinfra-crosscheck-research/SKILL.md",
+    "skills/everyinfra-bulk-data-export/SKILL.md",
+    "skills/everyai/SKILL.md"
+  ]
+}

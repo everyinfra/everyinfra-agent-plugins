@@ -4,25 +4,33 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Plugin version](https://img.shields.io/badge/plugin-v0.3.0-287A73.svg)](CHANGELOG.md)
 
-> **EveryInfra** is data infrastructure for developers and AI agents: one API key for 409 data capabilities across 90 platforms — [Xiaohongshu (RedNote)](https://everyinfra.com/en/xiaohongshu-api), [Douyin](https://everyinfra.com/en/douyin-api), [TikTok](https://everyinfra.com/en/tiktok-api), [Amazon](https://everyinfra.com/en/amazon-api) and [more](https://everyinfra.com/en/market) — plus [web search](https://everyinfra.com/en/products/search), [CAPTCHA solving](https://everyinfra.com/en/captcha) and an [OpenAI-compatible AI API](https://everyinfra.com/en/products/ai) that is free after a top-up. This repository packages the agent plugin and the remote MCP connection.
+[![EveryInfra MCP connector on Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra)
+
+> **EveryInfra** gives AI agents one API key for structured data from 90 platforms and 414 data capabilities: [TikTok](https://everyinfra.com/en/tiktok-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=tiktok), [Instagram](https://everyinfra.com/en/instagram-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=instagram), [X (Twitter)](https://everyinfra.com/en/twitter-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=twitter), [YouTube](https://everyinfra.com/en/youtube-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=youtube), [LinkedIn](https://everyinfra.com/en/linkedin-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=linkedin), [Reddit](https://everyinfra.com/en/reddit-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=reddit), [Amazon](https://everyinfra.com/en/amazon-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=amazon), [Google search results](https://everyinfra.com/en/products/search?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=search), [RedNote (Xiaohongshu)](https://everyinfra.com/en/xiaohongshu-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=xiaohongshu), [Douyin](https://everyinfra.com/en/douyin-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=douyin) and [more](https://everyinfra.com/en/market?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=market) — plus 17 web search tools, [CAPTCHA solving for 52 types](https://everyinfra.com/en/captcha?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=captcha) and an [OpenAI-compatible AI API](https://everyinfra.com/en/products/ai?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=ai) that is free after a top-up. Pay per use from $0.56 per 1,000 data calls; failed or empty calls are not charged.
+>
+> 中文用户：[万有引擎 EveryInfra](https://everyinfra.com/mcp-server?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=zh) 支持小红书、抖音、淘宝、京东、1688、B站、微博、公众号。
 
 Install one package to give an AI agent reusable EveryInfra workflows **and** the metadata needed
 to connect to EveryInfra's remote MCP server. The repository supports Codex, Claude Code, Cursor,
-GitHub Copilot-compatible clients, and hosts that implement Agent Plugins 1.0.
+GitHub Copilot-compatible clients, Qoder CLI, CodeBuddy Code, Kimi Code, and hosts that implement
+Agent Plugins 1.0.
 
 This is a plugin repository, not a copy of the EveryInfra backend. It contains:
 
 - 10 discoverable skills: one router, seven product skills, and two outcome workflows;
 - remote MCP connection metadata for `https://api.everyinfra.com/mcp`;
-- host-specific plugin manifests for Codex, Claude Code, and Cursor;
-- self-hosted marketplace manifests for Codex, Claude Code, Cursor, and GitHub Copilot;
+- host-specific plugin manifests for Codex, Claude Code, Cursor, Qoder, CodeBuddy, and Kimi;
+- self-hosted marketplace manifests for Codex, Claude Code, Cursor, GitHub Copilot, Qoder, and
+  CodeBuddy;
+- package sources for markets that take uploads (MiniMax, Qoder/QoderWork, ClawHub) under
+  `host-packages/`;
 - presentation assets and safety boundaries for paid calls, credentials, billing, and external side
   effects.
 
 No API key, customer data, credential, or private gateway source code belongs in this repository.
 
 > **Update (2026-10-09):** the two data cleanup tools have been retired. To clean, classify,
-> extract or summarize the data you collect, use the [AI API](https://everyinfra.com/en/products/ai):
+> extract or summarize the data you collect, use the [AI API](https://everyinfra.com/en/products/ai?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=ai_update):
 > OpenAI-compatible `POST /api/v1/chat/completions`, also available as the MCP tool
 > `everyinfra_chat`. It is free for accounts that have topped up, with per-minute limits that follow
 > cumulative top-ups. From version 0.3.0 the skills in this package route that work to the AI API.
@@ -111,10 +119,11 @@ EveryInfra.
 
 | Layer | Repository state | What is not implied |
 | --- | --- | --- |
-| Remote MCP | Production advertises six tools at `https://api.everyinfra.com/mcp`: capability list, data call, AI chat, CAPTCHA types, CAPTCHA solve and web search. | Discovery is not proof that an account is authenticated or has the balance or top-up a call requires. |
+| Remote MCP | Production advertises 25 tools at `https://api.everyinfra.com/mcp`: capability list, data call and job status, AI chat, CAPTCHA types and solve, web search, plus account, usage, billing, API key, settings, webhook and ticket tools. | Discovery is not proof that an account is authenticated or has the balance or top-up a call requires. |
 | Plugin package | Portable and host-specific manifests, skills, MCP metadata, and assets are present. | Presence is not a clean-host installation test. |
 | Repository validator | Cross-host JSON, path, skill, MCP, and credential-safety checks are available. | Repository validation is not marketplace approval. |
-| Self-hosted catalogs | Four marketplace manifests are present in this repository. | A catalog file is not an official listing. |
+| Self-hosted catalogs | Six marketplace manifests (Codex, Claude Code, Cursor, GitHub Copilot, Qoder, CodeBuddy) and a Kimi Code root manifest are present in this repository. | A catalog file is not an official listing. |
+| Market upload packages | MiniMax (CN and US), Qoder/QoderWork skills and expert kit, and ClawHub skills are built from `host-packages/` and pass `scripts/build_host_packages.py check`. | Not submitted to or approved by any of these markets. |
 | OpenAI registered app | No `.app.json` or host-issued app ID is included. | Direct MCP metadata is not a registered ChatGPT connector. |
 | Official marketplaces | No submission or listing is claimed here. | Prepared metadata is not submitted, approved, or published metadata. |
 | WorkBuddy connectors | Connector packages for the WorkBuddy open platform are prepared under `workbuddy/` and pass `scripts/build_workbuddy.py check`. | Not submitted to or approved by WorkBuddy. |
@@ -123,6 +132,11 @@ Release claims should distinguish **prepared**, **validated**, **installed**, **
 **listed**. Do not collapse them into one status.
 
 ## Quick start
+
+### Get an API key
+
+1. Sign up at [everyinfra.com](https://everyinfra.com/en/docs?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=get_key#quickstart) and create a key in the console.
+2. Connect any MCP client to `https://api.everyinfra.com/mcp` with `Authorization: Bearer <API key>`. Listing tools needs no key.
 
 An EveryInfra API key is required for paid operations. Public capability discovery may be available
 without one. Keep the key in the installing host's secret or environment configuration—never in a
@@ -214,6 +228,55 @@ before making a paid call. The portable `mcp.json` deliberately contains no auth
 These files are compatibility metadata in this repository; they do not claim a GitHub marketplace
 submission or a completed install test on every compatible client.
 
+### Qoder CLI
+
+```bash
+qoder plugins marketplace add everyinfra/everyinfra-agent-plugins
+qoder plugins install everyinfra
+```
+
+The catalog is `.qoder-plugin/marketplace.json`; the package manifest is
+`plugins/everyinfra/.qoder-plugin/plugin.json`. Qoder loads the skills and the bundled `.mcp.json`,
+which reads the key from `EVERYINFRA_API_KEY`. A local clone also works:
+`qoder plugins install ./plugins/everyinfra`.
+
+### CodeBuddy Code
+
+```text
+/plugin marketplace add everyinfra/everyinfra-agent-plugins
+/plugin install everyinfra@everyinfra
+```
+
+The catalog is `.codebuddy-plugin/marketplace.json`; the package manifest is
+`plugins/everyinfra/.codebuddy-plugin/plugin.json`. CodeBuddy asks for the sensitive `api_token`
+value when the plugin is enabled and sends it as the `Authorization: Bearer` header.
+
+### Kimi Code
+
+```text
+/plugins install https://github.com/everyinfra/everyinfra-agent-plugins/tree/main
+```
+
+The root manifest `.kimi-plugin/plugin.json` loads the ten skills from `plugins/everyinfra/skills/`
+and declares the remote MCP server at `https://api-cn.everyinfra.com/mcp` (same server and keys as
+`api.everyinfra.com`, reachable from mainland China). The manifest carries no key, so listing tools
+works out of the box; for paid calls, add the same server with an `Authorization: Bearer` header in
+Kimi Code's MCP configuration. Use the `/tree/main` form: a bare repository URL installs the latest
+GitHub Release, which predates this manifest.
+
+### Markets that take uploads
+
+MiniMax, Qoder/QoderWork and ClawHub want their own packages. Their manifests and listing metadata
+live in `host-packages/`; the skill bodies always come from `plugins/everyinfra/skills/`.
+
+```bash
+python3 scripts/build_host_packages.py check   # validate sources and a temporary build
+python3 scripts/build_host_packages.py build   # write packages and ZIPs to dist/host-packages/
+```
+
+The build does not upload or submit anything. See `host-packages/README.md` for what each market
+receives.
+
 ## Repository layout
 
 ```text
@@ -221,14 +284,21 @@ submission or a completed install test on every compatible client.
 .claude-plugin/marketplace.json               Claude Code self-hosted marketplace
 .cursor-plugin/marketplace.json               Cursor self-hosted marketplace
 .github/plugin/marketplace.json               GitHub Copilot-compatible catalog
+.qoder-plugin/marketplace.json                Qoder CLI self-hosted marketplace
+.codebuddy-plugin/marketplace.json            CodeBuddy Code self-hosted marketplace
+.kimi-plugin/plugin.json                      Kimi Code root manifest (install from the repository URL)
 plugins/everyinfra/plugin.json                Agent Plugins 1.0 package manifest
 plugins/everyinfra/.codex-plugin/plugin.json  Codex package manifest
 plugins/everyinfra/.claude-plugin/plugin.json Claude Code package manifest
 plugins/everyinfra/.cursor-plugin/plugin.json Cursor package manifest
+plugins/everyinfra/.qoder-plugin/plugin.json  Qoder CLI package manifest
+plugins/everyinfra/.codebuddy-plugin/plugin.json CodeBuddy Code package manifest
 plugins/everyinfra/mcp*.json                   Portable and host-specific MCP metadata
 plugins/everyinfra/skills/                     Router, product, and outcome skills
 plugins/everyinfra/assets/                     Plugin icon and light/dark logos
 workbuddy/                                     WorkBuddy connector packages (MCP + Skill)
+host-packages/                                 MiniMax, Qoder/QoderWork and ClawHub package sources
+llms-install.md                                Install steps for agents that set up MCP servers
 ```
 
 ## Validate and contribute
@@ -237,6 +307,8 @@ Run the dependency-free repository checks:
 
 ```bash
 python3 scripts/validate.py
+python3 scripts/build_workbuddy.py check
+python3 scripts/build_host_packages.py check
 ```
 
 Run host validators that are available in your environment and report unavailable validators as

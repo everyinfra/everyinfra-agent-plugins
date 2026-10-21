@@ -18,6 +18,9 @@ private gateway repository.
 - `workbuddy/` holds WorkBuddy connectors with Chinese host-adapted skills. When a shared skill's
   rule changes, update the matching WorkBuddy skill too; generated files come from
   `scripts/build_workbuddy.py render`, and `scripts/build_workbuddy.py check` must pass.
+- `host-packages/` holds manifests and listing metadata for markets that take uploads (MiniMax,
+  Qoder/QoderWork, ClawHub); `scripts/build_host_packages.py check` must pass, and `build` writes
+  the packages to `dist/` without submitting them.
 - Keep version-bearing manifests and marketplace entries aligned for releases.
 - Update `README.md`, `llms.txt`, and `docs/ai-discovery.md` when the public capability boundary
   changes.

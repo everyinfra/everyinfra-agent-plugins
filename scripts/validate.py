@@ -32,7 +32,12 @@ JSON_FILES = (
     REPO / ".claude-plugin" / "marketplace.json",
     REPO / ".cursor-plugin" / "marketplace.json",
     REPO / ".github" / "plugin" / "marketplace.json",
+    REPO / ".qoder-plugin" / "marketplace.json",
+    REPO / ".codebuddy-plugin" / "marketplace.json",
+    REPO / ".kimi-plugin" / "plugin.json",
     PLUGIN / "plugin.json",
+    PLUGIN / ".qoder-plugin" / "plugin.json",
+    PLUGIN / ".codebuddy-plugin" / "plugin.json",
     PLUGIN / "mcp.json",
     PLUGIN / ".codex-plugin" / "plugin.json",
     PLUGIN / ".claude-plugin" / "plugin.json",
@@ -51,6 +56,8 @@ REQUIRED_PUBLIC_FILES = (
     REPO / "docs" / "installation.md",
     REPO / "docs" / "troubleshooting.md",
     REPO / "SUPPORT.md",
+    REPO / "llms-install.md",
+    PLUGIN / "LICENSE",
     PLUGIN / "assets" / "icon.svg",
     PLUGIN / "assets" / "logo.svg",
     PLUGIN / "assets" / "logo-dark.svg",
@@ -212,14 +219,38 @@ def main() -> int:
     claude = expect_plugin_manifest(PLUGIN / ".claude-plugin" / "plugin.json", errors)
     cursor = expect_plugin_manifest(PLUGIN / ".cursor-plugin" / "plugin.json", errors)
     portable = expect_plugin_manifest(PLUGIN / "plugin.json", errors)
+    qoder = expect_plugin_manifest(PLUGIN / ".qoder-plugin" / "plugin.json", errors)
+    codebuddy = expect_plugin_manifest(PLUGIN / ".codebuddy-plugin" / "plugin.json", errors)
+    kimi = expect_plugin_manifest(REPO / ".kimi-plugin" / "plugin.json", errors)
     validate_public_discovery(codex, errors)
 
-    versions = {manifest.get("version") for manifest in (codex, claude, cursor, portable)}
+    versions = {
+        manifest.get("version") for manifest in (codex, claude, cursor, portable, qoder, codebuddy, kimi)
+    }
     if len(versions) != 1 or None in versions:
         errors.append(f"plugin versions drifted: {sorted(str(value) for value in versions)}")
-    for label, manifest in (("Codex", codex), ("Claude", claude), ("Cursor", cursor)):
+    for label, manifest in (("Codex", codex), ("Claude", claude), ("Cursor", cursor), ("CodeBuddy", codebuddy)):
         if manifest.get("skills") != "./skills/":
             errors.append(f"{label} manifest must load ./skills/")
+    if codebuddy.get("mcpServers") != "./mcp.claude.json":
+        errors.append("CodeBuddy manifest must reuse mcp.claude.json (user_config.api_token)")
+    if "api_token" not in (codebuddy.get("userConfig") or {}):
+        errors.append("CodeBuddy manifest must declare the sensitive api_token user config")
+    # Qoder loads skills/ and .mcp.json by convention; an explicit path would replace them.
+    if "skills" in qoder or "mcpServers" in qoder:
+        errors.append("Qoder manifest must rely on the skills/ and .mcp.json conventions")
+    # Kimi installs the repository root, so its manifest points into the shared plugin directory.
+    if kimi.get("skills") != "./plugins/everyinfra/skills/":
+        errors.append("Kimi root manifest must load ./plugins/everyinfra/skills/")
+    kimi_servers = kimi.get("mcpServers")
+    kimi_server = kimi_servers.get(EXPECTED_NAME) if isinstance(kimi_servers, dict) else None
+    if not isinstance(kimi_server, dict) or kimi_server.get("url") not in {
+        EXPECTED_MCP_URL,
+        "https://api-cn.everyinfra.com/mcp",
+    }:
+        errors.append("Kimi root manifest must declare the everyinfra MCP server")
+    elif "headers" in kimi_server:
+        errors.append("Kimi root manifest must not embed an authorization header")
 
     codex_server = wrapped_server(PLUGIN / ".mcp.json", errors)
     if codex_server.get("url") != EXPECTED_MCP_URL:
@@ -258,6 +289,8 @@ def main() -> int:
     marketplace_source(REPO / ".claude-plugin" / "marketplace.json", "./plugins/everyinfra", errors)
     marketplace_source(REPO / ".cursor-plugin" / "marketplace.json", "plugins/everyinfra", errors)
     marketplace_source(REPO / ".github" / "plugin" / "marketplace.json", "./plugins/everyinfra", errors)
+    marketplace_source(REPO / ".qoder-plugin" / "marketplace.json", "./plugins/everyinfra", errors)
+    marketplace_source(REPO / ".codebuddy-plugin" / "marketplace.json", "./plugins/everyinfra", errors)
 
     codex_marketplace = load_json(REPO / ".agents" / "plugins" / "marketplace.json", errors)
     codex_entries = codex_marketplace.get("plugins")
@@ -270,6 +303,7 @@ def main() -> int:
     for path in (
         REPO / ".claude-plugin" / "marketplace.json",
         REPO / ".github" / "plugin" / "marketplace.json",
+        REPO / ".codebuddy-plugin" / "marketplace.json",
     ):
         marketplace = load_json(path, errors)
         entries = marketplace.get("plugins")
@@ -297,7 +331,7 @@ def main() -> int:
         return 1
     print(
         "EveryInfra plugin validation passed: "
-        f"4 manifests, 4 marketplace sources, 4 MCP configs, {len(EXPECTED_SKILLS)} skills"
+        f"7 manifests, 6 marketplace sources, 4 MCP configs, {len(EXPECTED_SKILLS)} skills"
     )
     return 0
 

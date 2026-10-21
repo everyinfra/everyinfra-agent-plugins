@@ -1,0 +1,34 @@
+{
+  "name": "everyinfra",
+  "owner": {
+    "name": "EveryInfra",
+    "url": "https://everyinfra.com"
+  },
+  "description": "Self-hosted EveryInfra plugin catalog for CodeBuddy Code",
+  "version": "0.3.0",
+  "plugins": [
+    {
+      "name": "everyinfra",
+      "source": "./plugins/everyinfra",
+      "description": "Search, structured public data, AI, authorized captcha, number, email, and proxy workflows through EveryInfra",
+      "version": "0.3.0",
+      "author": {
+        "name": "EveryInfra",
+        "url": "https://everyinfra.com"
+      },
+      "homepage": "https://everyinfra.com/en/mcp-server?utm_source=codebuddy&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=marketplace",
+      "repository": "https://github.com/everyinfra/everyinfra-agent-plugins",
+      "license": "Apache-2.0",
+      "keywords": [
+        "api",
+        "mcp",
+        "search",
+        "structured-data",
+        "research",
+        "automation",
+        "everyinfra"
+      ],
+      "category": "Developer Tools"
+    }
+  ]
+}

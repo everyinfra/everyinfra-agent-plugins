@@ -10,6 +10,22 @@ All notable changes to this project are documented here. Versions follow Semanti
   form; AI chat and CAPTCHA tools are hidden in this package. Prepared and validated, not submitted.
 - Add `scripts/build_workbuddy.py` to render, check and package the WorkBuddy connectors, and run its
   check in CI.
+- Add host manifests so more agent hosts install from this repository: Qoder CLI
+  (`plugins/everyinfra/.qoder-plugin/plugin.json`, `.qoder-plugin/marketplace.json`), CodeBuddy Code
+  (`plugins/everyinfra/.codebuddy-plugin/plugin.json`, `.codebuddy-plugin/marketplace.json`) and
+  Kimi Code (root `.kimi-plugin/plugin.json`).
+- Add `host-packages/` and `scripts/build_host_packages.py` for markets that take uploads: MiniMax
+  (CN and US ZIPs), Qoder/QoderWork skills and the "EveryInfra Data Researcher" expert kit, and
+  ClawHub skills with a publish script. Skill bodies come from the shared skills; CI runs the check.
+  Prepared and validated, not submitted.
+- Add `llms-install.md` and `plugins/everyinfra/LICENSE`; the plugin README now states what the
+  plugin sends and where.
+- Tag outbound links with their source: README links use `utm_source=github_readme`, the Registry
+  `websiteUrl` uses `utm_source=mcp_registry`, WorkBuddy key links use `utm_source=workbuddy` with
+  one `utm_content` per connector. `server.json` is 1.1.1 for the next Registry publish.
+- Update the README to the current catalog: 90 platforms, 414 data capabilities, 17 web search
+  tools, 52 CAPTCHA types, from $0.56 per 1,000 data calls, and the 25 tools the MCP server
+  advertises.
 
 ## [0.3.0] - 2026-10-10
 

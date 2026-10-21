@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "everyinfra": {
+      "type": "streamable-http",
+      "url": "https://api.everyinfra.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${EVERYINFRA_API_KEY}"
+      },
+      "_setup": {
+        "configUrl": "https://everyinfra.com/en/docs?utm_source=qoder&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=plugin#quickstart",
+        "guide": "Create an EveryInfra API key on the page above and set it as EVERYINFRA_API_KEY. Listing tools needs no key; paid calls do.",
+        "required": false
+      }
+    }
+  }
+}

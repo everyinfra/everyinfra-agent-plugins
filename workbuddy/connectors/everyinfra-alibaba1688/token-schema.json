@@ -3,7 +3,7 @@
   "title_en": "Connect EveryInfra",
   "description": "填写你的 EveryInfra API Key。Key 只保存在本机，连接时作为请求头发送给 api-cn.everyinfra.com，用于调用和计费。",
   "description_en": "Enter your EveryInfra API key. It is stored on this device only and sent to api-cn.everyinfra.com as a request header for calls and billing.",
-  "docUrl": "https://everyinfra.com/docs",
+  "docUrl": "https://everyinfra.com/docs?utm_source=workbuddy&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=alibaba1688#quickstart",
   "docLabel": "如何创建 API Key？",
   "docLabel_en": "How do I create an API key?",
   "fields": [

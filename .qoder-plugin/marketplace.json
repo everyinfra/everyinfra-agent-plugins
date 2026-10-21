@@ -1,0 +1,27 @@
+{
+  "name": "everyinfra",
+  "owner": {
+    "name": "EveryInfra",
+    "url": "https://everyinfra.com"
+  },
+  "metadata": {
+    "description": "Self-hosted EveryInfra plugin catalog for Qoder CLI",
+    "version": "0.3.0"
+  },
+  "plugins": [
+    {
+      "name": "everyinfra",
+      "source": "./plugins/everyinfra",
+      "category": "Developer Tools",
+      "tags": [
+        "api",
+        "mcp",
+        "search",
+        "structured-data",
+        "research",
+        "automation",
+        "everyinfra"
+      ]
+    }
+  ]
+}

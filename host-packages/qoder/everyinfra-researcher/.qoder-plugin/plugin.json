@@ -1,0 +1,25 @@
+{
+  "name": "everyinfra-researcher",
+  "displayName": "EveryInfra Data Researcher",
+  "version": "1.0.0",
+  "description": "Social, e-commerce and web data research with one EveryInfra API key: structured data from 90 platforms (TikTok, Instagram, X, YouTube, Amazon, RedNote, Douyin), 17 web search tools, cited fact-checking, CSV or JSON export and an OpenAI-compatible text API.",
+  "author": {
+    "name": "EveryInfra",
+    "url": "https://everyinfra.com"
+  },
+  "homepage": "https://everyinfra.com/en/mcp-server?utm_source=qoder&utm_medium=directory&utm_campaign=listing_2026q4",
+  "repository": "https://github.com/everyinfra/everyinfra-agent-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "tiktok",
+    "instagram",
+    "amazon",
+    "youtube",
+    "social-data",
+    "web-search",
+    "fact-check",
+    "csv-export",
+    "mcp",
+    "everyinfra"
+  ]
+}

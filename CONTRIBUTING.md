@@ -21,6 +21,9 @@ Keep these version values aligned for a release:
 - `plugins/everyinfra/.codex-plugin/plugin.json`
 - `plugins/everyinfra/.claude-plugin/plugin.json`
 - `plugins/everyinfra/.cursor-plugin/plugin.json`
+- `plugins/everyinfra/.qoder-plugin/plugin.json`
+- `plugins/everyinfra/.codebuddy-plugin/plugin.json`
+- `.kimi-plugin/plugin.json`
 - marketplace entries that carry an explicit `version` field
 
 The portable Agent Plugins manifest has a closed schema. This package is a portable core plus
@@ -34,6 +37,8 @@ machine. At minimum:
 
 ```bash
 python3 scripts/validate.py
+python3 scripts/build_workbuddy.py check
+python3 scripts/build_host_packages.py check
 claude plugin validate plugins/everyinfra --strict
 ```
 

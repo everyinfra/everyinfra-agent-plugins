@@ -9,6 +9,7 @@ Canonical documentation:
 - AI discovery contract: ./docs/ai-discovery.md
 - Architecture boundaries: ./docs/architecture.md
 - Installation: ./docs/installation.md
+- MCP install steps for agents: ./llms-install.md
 - Troubleshooting: ./docs/troubleshooting.md
 - Permissions and billing: ./docs/permissions.md
 - AI API: https://everyinfra.com/en/products/ai

@@ -33,16 +33,23 @@ MANIFESTS = (
     PLUGIN / ".codex-plugin" / "plugin.json",
     PLUGIN / ".claude-plugin" / "plugin.json",
     PLUGIN / ".cursor-plugin" / "plugin.json",
+    PLUGIN / ".qoder-plugin" / "plugin.json",
+    PLUGIN / ".codebuddy-plugin" / "plugin.json",
+    REPO / ".kimi-plugin" / "plugin.json",
 )
 VERSIONED_MARKETPLACES = (
     REPO / ".claude-plugin" / "marketplace.json",
     REPO / ".github" / "plugin" / "marketplace.json",
+    REPO / ".codebuddy-plugin" / "marketplace.json",
 )
 REQUIRED_ARCHIVE_PATHS = {
     ".agents/plugins/marketplace.json",
     ".claude-plugin/marketplace.json",
     ".cursor-plugin/marketplace.json",
     ".github/plugin/marketplace.json",
+    ".qoder-plugin/marketplace.json",
+    ".codebuddy-plugin/marketplace.json",
+    ".kimi-plugin/plugin.json",
     ".github/workflows/validate.yml",
     "AGENTS.md",
     "CHANGELOG.md",
@@ -54,6 +61,8 @@ REQUIRED_ARCHIVE_PATHS = {
     "plugins/everyinfra/.codex-plugin/plugin.json",
     "plugins/everyinfra/.claude-plugin/plugin.json",
     "plugins/everyinfra/.cursor-plugin/plugin.json",
+    "plugins/everyinfra/.qoder-plugin/plugin.json",
+    "plugins/everyinfra/.codebuddy-plugin/plugin.json",
     "plugins/everyinfra/plugin.json",
     "scripts/build_release.py",
     "scripts/validate.py",
