@@ -1,14 +1,48 @@
-# EveryInfra Agent Plugin
+# EveryInfra MCP Server & Agent Plugin — TikTok, Instagram, Amazon, Xiaohongshu & SERP Data API
 
 [![Validate public plugin package](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Plugin version](https://img.shields.io/badge/plugin-v0.3.0-287A73.svg)](CHANGELOG.md)
-
 [![EveryInfra MCP connector on Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra)
 
-> **EveryInfra** gives AI agents one API key for structured data from 90 platforms and 414 data capabilities: [TikTok](https://everyinfra.com/en/tiktok-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=tiktok), [Instagram](https://everyinfra.com/en/instagram-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=instagram), [X (Twitter)](https://everyinfra.com/en/twitter-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=twitter), [YouTube](https://everyinfra.com/en/youtube-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=youtube), [LinkedIn](https://everyinfra.com/en/linkedin-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=linkedin), [Reddit](https://everyinfra.com/en/reddit-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=reddit), [Amazon](https://everyinfra.com/en/amazon-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=amazon), [Google search results](https://everyinfra.com/en/products/search?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=search), [RedNote (Xiaohongshu)](https://everyinfra.com/en/xiaohongshu-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=xiaohongshu), [Douyin](https://everyinfra.com/en/douyin-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=douyin) and [more](https://everyinfra.com/en/market?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=market) — plus 17 web search tools, [CAPTCHA solving for 52 types](https://everyinfra.com/en/captcha?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=captcha) and an [OpenAI-compatible AI API](https://everyinfra.com/en/products/ai?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=ai) that is free after a top-up. Pay per use from $0.56 per 1,000 data calls; failed or empty calls are not charged.
->
-> 中文用户：[万有引擎 EveryInfra](https://everyinfra.com/mcp-server?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=zh) 支持小红书、抖音、淘宝、京东、1688、B站、微博、公众号。
+**One API key and one MCP endpoint for public web data: 414 data capabilities across 90 platforms, 17 web search tools, CAPTCHA solving for 52 types and an OpenAI-compatible AI API that is free after a top-up. Pay per use from $0.56 per 1,000 data calls; failed or empty calls are not charged.** Works with Claude Code, Cursor, Codex and any MCP client.
+
+**一个 Key、一个 MCP 地址，拿到小红书、抖音、淘宝、京东、1688、B站、微博、公众号和 TikTok、Instagram、Amazon 的公开数据；失败和空结果不扣费。** 中文介绍：[万有引擎 EveryInfra](https://everyinfra.com/mcp-server?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=zh)。
+
+| Social & video | E-commerce | Search & more |
+| --- | --- | --- |
+| [TikTok](https://everyinfra.com/en/tiktok-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=tiktok) · [Instagram](https://everyinfra.com/en/instagram-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=instagram) · [YouTube](https://everyinfra.com/en/youtube-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=youtube) · [X / Twitter](https://everyinfra.com/en/twitter-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=twitter) · [Reddit](https://everyinfra.com/en/reddit-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=reddit) · [LinkedIn](https://everyinfra.com/en/linkedin-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=linkedin) | [Amazon](https://everyinfra.com/en/amazon-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=amazon) · [Taobao 淘宝](https://everyinfra.com/en/taobao-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=taobao) · [JD 京东](https://everyinfra.com/en/jd-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=jd) | [Google SERP & web search](https://everyinfra.com/en/products/search?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=search) · [CAPTCHA solving](https://everyinfra.com/en/captcha?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=captcha) · [OpenAI-compatible AI API](https://everyinfra.com/en/products/ai?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=ai) |
+| [Xiaohongshu / RedNote 小红书](https://everyinfra.com/en/xiaohongshu-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=xiaohongshu) · [Douyin 抖音](https://everyinfra.com/en/douyin-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=douyin) · [Bilibili B站](https://everyinfra.com/en/bilibili-api?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=bilibili) | | [All platforms →](https://everyinfra.com/en/market?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=market) |
+
+**Listed on:** [Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [Smithery](https://smithery.ai/servers/everyinfra/api) · [Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [ModelScope 魔搭 MCP 广场](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · official MCP Registry (`io.github.xiaoxihexiaoyu/everyinfra`)
+
+### Connect in one minute
+
+Get an API key at [everyinfra.com](https://everyinfra.com/en/docs?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=connect_get_key#quickstart), then add the remote MCP server:
+
+```bash
+# Claude Code
+claude mcp add --transport http everyinfra https://api.everyinfra.com/mcp \
+  --header "Authorization: Bearer $EVERYINFRA_API_KEY"
+```
+
+```json
+// Cursor: ~/.cursor/mcp.json
+{
+  "mcpServers": {
+    "everyinfra": {
+      "url": "https://api.everyinfra.com/mcp",
+      "headers": { "Authorization": "Bearer ${EVERYINFRA_API_KEY}" }
+    }
+  }
+}
+```
+
+Tools are named `everyinfra_*`. Ask your agent things like *"Get the latest 20 TikTok videos for #skincare as a table"* or *"小红书搜「露营装备」，导出前 50 条笔记的点赞和评论数"*. Full plugin install for Claude Code, Codex, Cursor and other hosts is in [Quick start](#quick-start).
+
+---
+
+> This repository packages the EveryInfra agent plugin (10 skills) and the remote MCP connection metadata. Product pages: [MCP server](https://everyinfra.com/en/mcp-server?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=mcp_server) · [Pricing](https://everyinfra.com/en/pricing?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=pricing) · [Docs](https://everyinfra.com/en/docs?utm_source=github_readme&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=docs).
 
 Install one package to give an AI agent reusable EveryInfra workflows **and** the metadata needed
 to connect to EveryInfra's remote MCP server. The repository supports Codex, Claude Code, Cursor,
@@ -125,7 +159,7 @@ EveryInfra.
 | Self-hosted catalogs | Six marketplace manifests (Codex, Claude Code, Cursor, GitHub Copilot, Qoder, CodeBuddy) and a Kimi Code root manifest are present in this repository. | A catalog file is not an official listing. |
 | Market upload packages | MiniMax (CN and US), Qoder/QoderWork skills and expert kit, and ClawHub skills are built from `host-packages/` and pass `scripts/build_host_packages.py check`. | Not submitted to or approved by any of these markets. |
 | OpenAI registered app | No `.app.json` or host-issued app ID is included. | Direct MCP metadata is not a registered ChatGPT connector. |
-| Official marketplaces | No submission or listing is claimed here. | Prepared metadata is not submitted, approved, or published metadata. |
+| Directories | Listed on Glama, Smithery, Cursor Directory, ModelScope and the official MCP Registry (links at the top). | A directory listing is not an official Codex, Claude or Cursor marketplace approval. |
 | WorkBuddy connectors | Connector packages for the WorkBuddy open platform are prepared under `workbuddy/` and pass `scripts/build_workbuddy.py check`. | Not submitted to or approved by WorkBuddy. |
 
 Release claims should distinguish **prepared**, **validated**, **installed**, **submitted**, and
