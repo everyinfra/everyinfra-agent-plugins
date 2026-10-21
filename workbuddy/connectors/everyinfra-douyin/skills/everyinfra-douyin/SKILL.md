@@ -22,12 +22,13 @@ author: EveryInfra
 | `user_posts` | 用户内容 | `user_id` | `page_token`, `since` | limit 最多 100 |
 | `video` | 视频详情 | `url` | 无 | 单条 |
 | `comments` | 评论 | `url` | `page_token` | limit 最多 150 |
+| `comment_replies` | 评论回复 | `url`, `comment_id` | `page_token` | limit 最多 100 |
 | `trending` | 热榜 | 无 | `boards` | limit 最多 60 |
 | `transcript` | 视频文稿 | `url` | 无 | 单条 |
 | `creator_search` | 达人搜索 | `keyword` | `follower_range`, `user_type` | limit 最多 20 |
 | `creator_audience` | 达人粉丝画像 | `user_id` | `dimension` | 单条 |
 | `creator_trend` | 达人涨粉趋势 | `user_id` | 无 | 单条 |
-| `creator_benchmark` | 达人同类对标 | `user_id` | 无 | 单条 |
+| `creator_benchmark` | 同类达人对比 | `user_id` | 无 | 单条 |
 | `xingtu_creator_search` | 星图达人搜索 | `keyword` | 无 | limit 最多 20 |
 | `xingtu_creator_analytics` | 星图达人分析 | `douyin_id` | 无 | 单条 |
 | `xingtu_rate_card` | 星图达人报价 | `douyin_id` | 无 | 单条 |

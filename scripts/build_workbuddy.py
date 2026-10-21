@@ -13,7 +13,9 @@ Commands (standard library only):
 
   render                      write every generated file
   check                       fail if generated files are stale or a connector breaks WorkBuddy rules
-  package [--flat]            check, then write deterministic ZIPs to dist/workbuddy/
+  package [--flat] [--offline]
+                              check, compare SERVER_TOOLS with the live tools/list, then write
+                              deterministic ZIPs to dist/workbuddy/
   refresh-catalog FILE        refresh the platform action snapshot from a saved public catalog JSON
 """
 
@@ -23,6 +25,7 @@ import argparse
 import json
 import re
 import sys
+import urllib.request
 import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
@@ -48,10 +51,29 @@ MCP_TIMEOUT_MS = 100_000
 SERVER_TOOLS = (
     "everyinfra_list_capabilities",
     "everyinfra_call_api",
+    "everyinfra_get_job",
     "everyinfra_chat",
     "everyinfra_list_captcha_types",
     "everyinfra_solve_captcha",
     "everyinfra_search",
+    "everyinfra_account",
+    "everyinfra_usage",
+    "everyinfra_requests",
+    "everyinfra_billing",
+    "everyinfra_keys",
+    "everyinfra_tickets",
+    "everyinfra_topup_link",
+    "everyinfra_create_ticket",
+    "everyinfra_get_ticket",
+    "everyinfra_key_create",
+    "everyinfra_key_update",
+    "everyinfra_key_disable",
+    "everyinfra_key_delete",
+    "everyinfra_settings_update",
+    "everyinfra_webhook_set",
+    "everyinfra_webhook_test",
+    "everyinfra_ticket_create",
+    "everyinfra_ticket_reply",
 )
 EXPOSED_TOOLS = {
     "main": ("everyinfra_list_capabilities", "everyinfra_call_api", "everyinfra_search"),
@@ -479,9 +501,32 @@ def check() -> int:
     return 0
 
 
-def package(flat: bool) -> int:
+def live_tools() -> set[str]:
+    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/list"}).encode()
+    request = urllib.request.Request(MCP_URL, data=body, headers={
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/event-stream",
+        # Cloudflare rejects urllib's default User-Agent.
+        "User-Agent": "everyinfra-workbuddy-build/1.0",
+    })
+    with urllib.request.urlopen(request, timeout=30) as response:
+        text = response.read().decode("utf-8")
+    payload = json.loads(text.split("data:", 1)[1] if text.lstrip().startswith("event:") else text)
+    return {tool["name"] for tool in payload["result"]["tools"]}
+
+
+def package(flat: bool, offline: bool = False) -> int:
     if check():
         return 1
+    # disabledTools is a deny list, so a tool the server added after SERVER_TOOLS was written
+    # would ship enabled. Refuse to package until SERVER_TOOLS matches the live server.
+    if not offline:
+        live = live_tools()
+        if live != set(SERVER_TOOLS):
+            print("WorkBuddy package refused: SERVER_TOOLS differs from the live tools/list")
+            print(f"- missing from SERVER_TOOLS: {sorted(live - set(SERVER_TOOLS))}")
+            print(f"- no longer served: {sorted(set(SERVER_TOOLS) - live)}")
+            return 1
     DIST.mkdir(parents=True, exist_ok=True)
     for directory in sorted(path for path in CONNECTORS.iterdir() if path.is_dir()):
         meta = json.loads((directory / "connector-meta.json").read_text(encoding="utf-8"))
@@ -509,7 +554,7 @@ def refresh_catalog(catalog_path: Path) -> int:
     for item in data["platforms"]:
         actions = []
         for cap in capabilities:
-            if cap.get("platform") != item["platform"]:
+            if cap.get("platform") != item["platform"] or cap.get("available") is False:
                 continue
             actions.append({
                 "action": cap["action"],
@@ -537,6 +582,7 @@ def main() -> int:
     sub.add_parser("check")
     pack = sub.add_parser("package")
     pack.add_argument("--flat", action="store_true", help="put files at the ZIP root instead of a folder")
+    pack.add_argument("--offline", action="store_true", help="skip the live tools/list comparison")
     refresh = sub.add_parser("refresh-catalog")
     refresh.add_argument("catalog", type=Path)
     args = parser.parse_args()
@@ -546,7 +592,7 @@ def main() -> int:
         if args.command == "check":
             return check()
         if args.command == "package":
-            return package(args.flat)
+            return package(args.flat, args.offline)
         return refresh_catalog(args.catalog)
     except BuildError as exc:
         print(f"error: {exc}")

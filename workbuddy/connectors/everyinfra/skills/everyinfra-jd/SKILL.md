@@ -2,9 +2,9 @@
 name: everyinfra-jd
 display_name: 京东数据（EveryInfra）
 display_name_en: EveryInfra JD.com Data
-description: 用 EveryInfra 查询京东公开数据：商品搜索、商品详情、全部 SKU 与价格、商品价格、评价、店铺资料。用户提到京东、JD、商品、SKU、价格、评价等需求时使用。
-description_zh: 查询京东公开数据：商品搜索、商品详情、全部 SKU 与价格、商品价格、评价、店铺资料。
-description_en: Query public JD.com data, including product search, product details, all SKUs and prices, product price, reviews and shop profiles.
+description: 用 EveryInfra 查询京东公开数据：商品搜索、商品详情、全部 SKU 与价格、商品介绍详情图。用户提到京东、JD、商品、SKU、价格等需求时使用。
+description_zh: 查询京东公开数据：商品搜索、商品详情、全部 SKU 与价格、商品介绍详情图。
+description_en: Query public JD.com data, including product search, product details, all SKUs and prices, and product description images.
 version: 1.0.0
 author: EveryInfra
 ---
@@ -19,10 +19,8 @@ author: EveryInfra
 | --- | --- | --- | --- | --- |
 | `search` | 关键词搜索 | `keyword` | 无 | limit 最多 5 |
 | `product_detail` | 商品详情 | `item_id` | 无 | 单条 |
-| `reviews` | 评价 | `item_id` | 无 | limit 最多 10 |
-| `shop` | 店铺资料 | `shop_id` | 无 | limit 最多 24 |
-| `product_price` | 商品价格 | `item_id` | 无 | 单条 |
 | `skus` | 全部 SKU 与价格 | `item_id` | 无 | limit 最多 100 |
+| `description_images` | 商品介绍详情图 | `item_id` | 无 | 列表 |
 
 ## 调用示例
 

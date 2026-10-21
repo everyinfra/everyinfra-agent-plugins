@@ -2,9 +2,9 @@
 name: everyinfra-taobao
 display_name: 淘宝数据（EveryInfra）
 display_name_en: EveryInfra Taobao Data
-description: 用 EveryInfra 查询淘宝公开数据：商品搜索、商品详情、评价、问大家、店铺资料。用户提到淘宝、天猫、商品、价格、评价、店铺等需求时使用。
-description_zh: 查询淘宝公开数据：商品搜索、商品详情、评价、问大家、店铺资料。
-description_en: Query public Taobao data, including product search, product details, reviews, buyer questions and shop profiles.
+description: 用 EveryInfra 查询淘宝公开数据：商品搜索、商品详情、评价。用户提到淘宝、天猫、商品、价格、评价等需求时使用。
+description_zh: 查询淘宝公开数据：商品搜索、商品详情、评价。
+description_en: Query public Taobao data, including product search, product details and reviews.
 version: 1.0.0
 author: EveryInfra
 ---
@@ -19,9 +19,7 @@ author: EveryInfra
 | --- | --- | --- | --- | --- |
 | `search` | 关键词搜索 | `keyword` | `max_price`, `min_price`, `sort`, `tmall_only` | limit 最多 20 |
 | `product_detail` | 商品详情 | `url` | 无 | 单条 |
-| `shop` | 店铺资料 | `shop` | `seller`, `sort`, `user_id` | limit 最多 100 |
 | `reviews` | 评价 | `url` | 无 | limit 最多 100 |
-| `questions` | 问题列表 | `url` | 无 | limit 最多 100 |
 
 ## 调用示例
 

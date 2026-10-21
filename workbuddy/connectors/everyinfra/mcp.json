@@ -8,9 +8,28 @@
       },
       "timeout": 100000,
       "disabledTools": [
+        "everyinfra_get_job",
         "everyinfra_chat",
         "everyinfra_list_captcha_types",
-        "everyinfra_solve_captcha"
+        "everyinfra_solve_captcha",
+        "everyinfra_account",
+        "everyinfra_usage",
+        "everyinfra_requests",
+        "everyinfra_billing",
+        "everyinfra_keys",
+        "everyinfra_tickets",
+        "everyinfra_topup_link",
+        "everyinfra_create_ticket",
+        "everyinfra_get_ticket",
+        "everyinfra_key_create",
+        "everyinfra_key_update",
+        "everyinfra_key_disable",
+        "everyinfra_key_delete",
+        "everyinfra_settings_update",
+        "everyinfra_webhook_set",
+        "everyinfra_webhook_test",
+        "everyinfra_ticket_create",
+        "everyinfra_ticket_reply"
       ]
     }
   }

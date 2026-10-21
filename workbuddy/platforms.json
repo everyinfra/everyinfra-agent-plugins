@@ -303,6 +303,22 @@
           "max_limit": 150
         },
         {
+          "action": "comment_replies",
+          "label": "评论回复",
+          "required": [
+            "url",
+            "comment_id"
+          ],
+          "optional": [
+            "page_token"
+          ],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": 100
+        },
+        {
           "action": "trending",
           "label": "热榜",
           "required": [],
@@ -374,7 +390,7 @@
         },
         {
           "action": "creator_benchmark",
-          "label": "达人同类对标",
+          "label": "同类达人对比",
           "required": [
             "user_id"
           ],
@@ -484,9 +500,9 @@
       "platform": "taobao",
       "name_zh": "淘宝",
       "name_en": "Taobao",
-      "triggers_zh": "淘宝、天猫、商品、价格、评价、店铺",
-      "scope_zh": "商品搜索、商品详情、评价、问大家、店铺资料",
-      "scope_en": "product search, product details, reviews, buyer questions and shop profiles",
+      "triggers_zh": "淘宝、天猫、商品、价格、评价",
+      "scope_zh": "商品搜索、商品详情、评价",
+      "scope_en": "product search, product details and reviews",
       "examples_zh": [
         "搜索淘宝上的便携咖啡机，整理价格区间和销量靠前的商品",
         "看看这件淘宝商品的评价，总结好评和差评集中在哪些点"
@@ -535,38 +551,8 @@
           "max_limit": null
         },
         {
-          "action": "shop",
-          "label": "店铺资料",
-          "required": [
-            "shop"
-          ],
-          "optional": [
-            "seller",
-            "sort",
-            "user_id"
-          ],
-          "returns_list": true,
-          "page_size": null,
-          "page_size_varies": false,
-          "limit_ignored": false,
-          "max_limit": 100
-        },
-        {
           "action": "reviews",
           "label": "评价",
-          "required": [
-            "url"
-          ],
-          "optional": [],
-          "returns_list": true,
-          "page_size": null,
-          "page_size_varies": false,
-          "limit_ignored": false,
-          "max_limit": 100
-        },
-        {
-          "action": "questions",
-          "label": "问题列表",
           "required": [
             "url"
           ],
@@ -583,9 +569,9 @@
       "platform": "jd",
       "name_zh": "京东",
       "name_en": "JD.com",
-      "triggers_zh": "京东、JD、商品、SKU、价格、评价",
-      "scope_zh": "商品搜索、商品详情、全部 SKU 与价格、商品价格、评价、店铺资料",
-      "scope_en": "product search, product details, all SKUs and prices, product price, reviews and shop profiles",
+      "triggers_zh": "京东、JD、商品、SKU、价格",
+      "scope_zh": "商品搜索、商品详情、全部 SKU 与价格、商品介绍详情图",
+      "scope_en": "product search, product details, all SKUs and prices, and product description images",
       "examples_zh": [
         "搜索京东上的机械键盘，列出价格和店铺",
         "查一下这个京东商品的全部规格和对应价格"
@@ -629,45 +615,6 @@
           "max_limit": null
         },
         {
-          "action": "reviews",
-          "label": "评价",
-          "required": [
-            "item_id"
-          ],
-          "optional": [],
-          "returns_list": true,
-          "page_size": null,
-          "page_size_varies": false,
-          "limit_ignored": false,
-          "max_limit": 10
-        },
-        {
-          "action": "shop",
-          "label": "店铺资料",
-          "required": [
-            "shop_id"
-          ],
-          "optional": [],
-          "returns_list": true,
-          "page_size": null,
-          "page_size_varies": false,
-          "limit_ignored": false,
-          "max_limit": 24
-        },
-        {
-          "action": "product_price",
-          "label": "商品价格",
-          "required": [
-            "item_id"
-          ],
-          "optional": [],
-          "returns_list": false,
-          "page_size": null,
-          "page_size_varies": false,
-          "limit_ignored": false,
-          "max_limit": null
-        },
-        {
           "action": "skus",
           "label": "全部 SKU 与价格",
           "required": [
@@ -679,6 +626,19 @@
           "page_size_varies": false,
           "limit_ignored": false,
           "max_limit": 100
+        },
+        {
+          "action": "description_images",
+          "label": "商品介绍详情图",
+          "required": [
+            "item_id"
+          ],
+          "optional": [],
+          "returns_list": true,
+          "page_size": null,
+          "page_size_varies": false,
+          "limit_ignored": false,
+          "max_limit": null
         }
       ]
     },
