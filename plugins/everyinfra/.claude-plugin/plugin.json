@@ -8,8 +8,12 @@
     "name": "EveryInfra",
     "url": "https://everyinfra.com"
   },
-  "homepage": "https://everyinfra.com/en/docs",
+  "homepage": "https://everyinfra.com/en/mcp-server?utm_source=claude_plugins&utm_medium=directory&utm_campaign=listing_2026q4",
   "repository": "https://github.com/everyinfra/everyinfra-agent-plugins",
+  "documentationUrl": "https://everyinfra.com/en/docs?utm_source=claude_plugins&utm_medium=directory&utm_campaign=listing_2026q4",
+  "privacyPolicyUrl": "https://everyinfra.com/en/privacy",
+  "termsOfServiceUrl": "https://everyinfra.com/en/terms",
+  "supportUrl": "mailto:sales@everyinfra.com",
   "license": "Apache-2.0",
   "keywords": [
     "api",
