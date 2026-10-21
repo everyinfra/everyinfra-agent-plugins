@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "everyinfra": {
+      "type": "http",
+      "url": "https://api.everyinfra.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_token}"
+      }
+    }
+  }
+}

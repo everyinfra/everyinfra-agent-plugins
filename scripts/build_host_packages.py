@@ -6,6 +6,8 @@ Some markets cannot install straight from this repository and want their own pac
 - MiniMax: one ZIP per region (CN, US) with ``.minimax-plugin/plugin.json`` at the ZIP root.
 - Qoder / QoderWork: one ZIP per skill, plus the "EveryInfra Data Researcher" expert kit.
 - ClawHub: one directory per skill with ``metadata.openclaw`` frontmatter, plus ``publish.sh``.
+- Claude directory: ``host-packages/claude/everyinfra/``, a copy of the Claude plugin without the
+  shared ``.mcp.json`` or other hosts' manifests, so the key comes only from ``user_config``.
 
 Editable sources live in ``host-packages/`` (manifests, MCP files, icon, ``skills.json``). Skill
 bodies always come from ``plugins/everyinfra/skills/``; this script only rewrites frontmatter and
@@ -14,7 +16,8 @@ appends a short host setup section, so the packaged copies cannot drift from the
 Commands (standard library only):
 
   check    validate the sources and build every package into a temporary directory
-  build    check, then write the packages and deterministic ZIPs to dist/host-packages/
+  build    check, then write the packages and deterministic ZIPs to dist/host-packages/ and
+           refresh the committed Claude directory package in host-packages/claude/everyinfra/
 
 Building does not upload or submit anything.
 """
@@ -57,6 +60,11 @@ CLAWHUB_RESERVED_TOPICS = {
 SKILL_NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 # Qoder rejects unfinished placeholders such as TODO or <your-token> in a skill.
+PLUGIN = REPO / "plugins" / "everyinfra"
+CLAUDE_PACKAGE = SOURCE / "claude" / "everyinfra"
+# Copied from plugins/everyinfra; nothing else from that directory goes into the Claude package.
+CLAUDE_FILES = (".claude-plugin", "mcp.claude.json", "skills", "README.md", "LICENSE", "assets")
+ENV_REFERENCE_RE = re.compile(r"\$\{[A-Z][A-Z0-9_]*\}")
 PLACEHOLDER_RE = re.compile(r"\bTODO\b|<[A-Za-z][A-Za-z0-9 _-]*>")
 
 QODER_SETUP_MCP = """
@@ -274,6 +282,50 @@ def build_tree(meta: dict, out: Path) -> list[Path]:
     return zipped
 
 
+def build_claude(root: Path) -> None:
+    """Copy the Claude plugin without the shared .mcp.json, which reads a machine environment variable."""
+    root.mkdir(parents=True)
+    for name in CLAUDE_FILES:
+        source = PLUGIN / name
+        if source.is_dir():
+            shutil.copytree(source, root / name, ignore=shutil.ignore_patterns(".DS_Store"))
+        else:
+            shutil.copy2(source, root / name)
+
+
+def check_claude(root: Path, errors: list[str]) -> None:
+    label = "Claude package"
+    top = {path.name for path in root.iterdir()}
+    if top != set(CLAUDE_FILES):
+        errors.append(f"{label}: top level must be exactly {sorted(CLAUDE_FILES)}, found {sorted(top)}")
+    manifest = load_json(root / ".claude-plugin" / "plugin.json")
+    if manifest.get("mcpServers") != "./mcp.claude.json":
+        errors.append(f"{label}: plugin.json must load ./mcp.claude.json")
+    token = (manifest.get("userConfig") or {}).get("api_token") or {}
+    if token.get("sensitive") is not True:
+        errors.append(f"{label}: userConfig.api_token must stay sensitive")
+    servers = load_json(root / "mcp.claude.json").get("mcpServers", {})
+    authorization = servers.get("everyinfra", {}).get("headers", {}).get("Authorization")
+    if authorization != "Bearer ${user_config.api_token}":
+        errors.append(f"{label}: mcp.claude.json must read the key from user_config.api_token")
+    for path in sorted(root.rglob("*")):
+        relative = path.relative_to(root).as_posix()
+        if path.name == ".mcp.json" or path.is_symlink():
+            errors.append(f"{label}: {relative} is not allowed")
+        if path.is_file() and path.suffix in {".json", ".md", ".txt", ".yaml", ".yml", ".sh"}:
+            for match in ENV_REFERENCE_RE.findall(path.read_text(encoding="utf-8")):
+                errors.append(f"{label}: {relative} references the machine environment variable {match}")
+
+
+def same_tree(left: Path, right: Path) -> bool:
+    def files(root: Path) -> dict[str, bytes]:
+        if not root.is_dir():
+            return {}
+        return {p.relative_to(root).as_posix(): p.read_bytes() for p in root.rglob("*") if p.is_file()}
+
+    return files(left) == files(right)
+
+
 def check_tree(out: Path, meta: dict, errors: list[str]) -> None:
     for skill in sorted(out.rglob("SKILL.md")):
         text = skill.read_text(encoding="utf-8")
@@ -320,6 +372,11 @@ def run(build: bool) -> int:
         out = Path(tmp) / "host-packages"
         zipped = build_tree(meta, out)
         check_tree(out, meta, errors)
+        claude = Path(tmp) / "claude" / "everyinfra"
+        build_claude(claude)
+        check_claude(claude, errors)
+        if not build and not same_tree(claude, CLAUDE_PACKAGE):
+            errors.append("host-packages/claude/everyinfra is stale; run: python3 scripts/build_host_packages.py build")
         if errors:
             print("Host package check failed:")
             for error in errors:
@@ -328,7 +385,8 @@ def run(build: bool) -> int:
         if not build:
             print(
                 "Host package check passed: MiniMax CN and US, "
-                f"{len(meta['skills'])} Qoder skills and 1 kit, {len(meta['skills'])} ClawHub skills"
+                f"{len(meta['skills'])} Qoder skills and 1 kit, {len(meta['skills'])} ClawHub skills, "
+                "Claude directory package"
             )
             return 0
         zips = out / "zips"
@@ -341,6 +399,9 @@ def run(build: bool) -> int:
         if DIST.exists():
             shutil.rmtree(DIST)
         shutil.copytree(out, DIST)
+        if CLAUDE_PACKAGE.exists():
+            shutil.rmtree(CLAUDE_PACKAGE)
+        shutil.copytree(claude, CLAUDE_PACKAGE)
     print(f"Built host packages in {DIST.relative_to(REPO)} ({len(zipped)} ZIPs). Nothing was uploaded.")
     return 0
 

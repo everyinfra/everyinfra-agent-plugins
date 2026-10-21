@@ -1,6 +1,6 @@
 # Packages for markets that take uploads
 
-Most hosts install EveryInfra straight from this repository (see the root README). Three markets
+Most hosts install EveryInfra straight from this repository (see the root README). A few markets
 want their own package instead. This directory holds the editable sources for those packages;
 `scripts/build_host_packages.py` adds the skill bodies from `plugins/everyinfra/skills/` and writes
 the finished packages.
@@ -19,6 +19,7 @@ Building does not upload or submit anything. A person submits the packages throu
 | Qoder / QoderWork skills | `skills.json` (`qoder_description`) | `zips/qoder-<skill>.zip` | One folder per skill with `name`, `description`, `version` frontmatter and a Qoder setup section |
 | Qoder / QoderWork expert kit | `qoder/everyinfra-researcher/` | `zips/qoder-everyinfra-researcher.zip` | `.qoder-plugin/plugin.json`, `.mcp.json`, `qoder.md`, `CONNECTORS.md`, `README.md` and six skills |
 | ClawHub | `skills.json` (`clawhub`) | `clawhub/skills/<skill>/`, `clawhub/publish.sh` | Skills with `metadata.openclaw` frontmatter (`EVERYINFRA_API_KEY`), publish commands in two waves |
+| Claude directory | `plugins/everyinfra/` (copied) | `claude/everyinfra/` (committed; the portal's Plugin path) | `.claude-plugin/plugin.json`, `mcp.claude.json` (`${user_config.api_token}`), skills, README, LICENSE, assets. No `.mcp.json` and no other host's manifest |
 
 ## Rules the check enforces
 
@@ -28,6 +29,9 @@ Building does not upload or submit anything. A person submits the packages throu
   which MiniMax only supports through its own App/Connector integration.
 - Qoder: skill names are lowercase with hyphens and match their folder; no `TODO` or angle-bracket
   placeholders in a skill.
+- Claude directory: the package holds exactly the copied files above; no `.mcp.json`, no `${UPPER_CASE}`
+  environment reference anywhere, and the MCP header reads `user_config.api_token`. `check` fails when
+  `claude/everyinfra/` is stale; run `build` and commit it with the change.
 - ClawHub: one to three categories from the fixed list, at most five topics, no reserved topic words.
 
 ## Changing a package

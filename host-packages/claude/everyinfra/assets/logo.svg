@@ -1,0 +1,15 @@
+<svg width="184" height="40" viewBox="0 0 184 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">EveryInfra</title>
+  <desc id="desc">Three structural channels converge around one shared teal core.</desc>
+  <g transform="translate(0 4) scale(0.03125)">
+    <g fill="#101214">
+      <path d="M108 80H430C470 80 490 100 490 140V292C490 396 410 480 306 480H108C64 480 40 456 40 412V164C40 112 64 80 108 80Z"/>
+      <path d="M610 80H842C930 80 984 134 984 222V694C984 740 968 773 936 805L918 823C896 845 864 845 842 823L703 684C666 647 646 602 640 549C632 478 607 436 586 417C562 395 550 359 550 313V140C550 100 570 80 610 80Z"/>
+      <path d="M108 560H312C390 560 430 582 480 625C516 656 558 674 606 672C636 671 658 682 679 703L790 814C815 839 815 880 790 905C765 930 736 944 698 944H184C108 944 70 906 70 830V598C70 573 83 560 108 560Z"/>
+    </g>
+    <path fill="#0ACAB5" d="M492 472C517 442 552 442 577 472C609 510 627 545 625 578C622 619 583 641 536 641C488 641 449 619 447 578C445 545 463 510 492 472Z"/>
+  </g>
+  <text x="40" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="-0.3" fill="#101214">EveryInfra</text>
+  <rect x="146" y="12" width="34" height="16" rx="4" fill="#101214" fill-opacity="0.08"/>
+  <text x="149.5" y="23.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="0.5" fill="#566072">.com</text>
+</svg>
