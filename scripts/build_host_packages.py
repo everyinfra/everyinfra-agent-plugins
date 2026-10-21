@@ -174,7 +174,7 @@ def clawhub_publish_script(meta: dict) -> str:
             lines.append(
                 f'  run clawhub skill publish "$ROOT/skills/{slug}" --slug {slug} --name "{listing["name"]}" '
                 f'--categories {",".join(listing["categories"])} --topics "{",".join(listing["topics"])}" '
-                '--changelog "Initial release from EveryInfra." "${OWNER[@]}" "${EXTRA[@]}"'
+                '--changelog "Initial release from EveryInfra." ${OWNER[@]+"${OWNER[@]}"} ${EXTRA[@]+"${EXTRA[@]}"}'
             )
         lines.append("fi")
     return "\n".join(lines) + "\n"
