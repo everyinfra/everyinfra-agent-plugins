@@ -295,8 +295,8 @@ The root manifest `.kimi-plugin/plugin.json` loads the ten skills from `plugins/
 and declares the remote MCP server at `https://api-cn.everyinfra.com/mcp` (same server and keys as
 `api.everyinfra.com`, reachable from mainland China). The manifest carries no key, so listing tools
 works out of the box; for paid calls, add the same server with an `Authorization: Bearer` header in
-Kimi Code's MCP configuration. Use the `/tree/main` form: a bare repository URL installs the latest
-GitHub Release, which predates this manifest.
+Kimi Code's MCP configuration. A bare repository URL installs the latest GitHub Release (0.4.0 and
+later include this manifest); the `/tree/main` form installs the current main branch.
 
 ### Markets that take uploads
 
