@@ -5,13 +5,13 @@
     "url": "https://everyinfra.com"
   },
   "description": "Self-hosted EveryInfra plugin catalog for CodeBuddy Code",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "plugins": [
     {
       "name": "everyinfra",
       "source": "./plugins/everyinfra",
       "description": "Search, structured public data, AI, authorized captcha, number, email, and proxy workflows through EveryInfra",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "author": {
         "name": "EveryInfra",
         "url": "https://everyinfra.com"

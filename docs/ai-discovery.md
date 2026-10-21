@@ -45,7 +45,7 @@ The live MCP tool schema and public catalogs are the source of truth for product
 parameters, limits, and prices. The package must not invent tool names, availability, billing,
 internal identifiers, marketplace approval, or an OpenAI app registration.
 
-At version `0.3.0`, EveryData, EverySearch, EveryAI and EverySolve have MCP workflows. Production
+At version `0.4.0`, EveryData, EverySearch, EveryAI and EverySolve have MCP workflows. Production
 advertises 25 tools: capability list, data call and job status, AI chat (`everyinfra_chat`),
 CAPTCHA types and solve, web search, plus account, usage, billing, API key, settings, webhook and
 ticket tools. EveryNumber, EveryMail and EveryProxy remain documented as REST-only

@@ -4,6 +4,11 @@ All notable changes to this project are documented here. Versions follow Semanti
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-22
+
+- Rework the README first screen: keyword title, badges, a platform table, "Listed on" directories and a one-minute setup for Claude Code and Cursor; replace the outdated "No submission or listing" status row.
+- Cursor manifest: platform-led description and the repository logo.
+
 - Add WorkBuddy connector packages under `workbuddy/`: the main `everyinfra` connector (capability
   discovery, data calls and web search, with four workflow skills and twelve platform skills) and six
   optional single-platform connectors. Users connect with their own API key through WorkBuddy's token

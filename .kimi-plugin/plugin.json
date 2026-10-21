@@ -1,6 +1,6 @@
 {
   "name": "everyinfra",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "万有引擎 EveryInfra：一把 API Key 查小红书、抖音、淘宝、京东、TikTok、Amazon 等 90 个平台的公开数据，另有 17 种全网搜索、交叉核对、CSV/JSON 导出和 AI 文本接口。按次计费，失败或空结果不扣费。",
   "keywords": [
     "小红书",

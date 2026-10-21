@@ -2,7 +2,7 @@
 
 [![Validate public plugin package](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
-[![Plugin version](https://img.shields.io/badge/plugin-v0.3.0-287A73.svg)](CHANGELOG.md)
+[![Plugin version](https://img.shields.io/badge/plugin-v0.4.0-287A73.svg)](CHANGELOG.md)
 [![EveryInfra MCP connector on Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra/badges/score.svg)](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra)
 
 **One API key and one MCP endpoint for public web data: 414 data capabilities across 90 platforms, 17 web search tools, CAPTCHA solving for 52 types and an OpenAI-compatible AI API that is free after a top-up. Pay per use from $0.56 per 1,000 data calls; failed or empty calls are not charged.** Works with Claude Code, Cursor, Codex and any MCP client.

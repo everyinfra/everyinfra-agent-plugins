@@ -1,8 +1,8 @@
 {
   "name": "everyinfra",
   "displayName": "EveryInfra",
-  "version": "0.3.0",
-  "description": "Discover and safely use EveryInfra search, structured public data, AI, authorized captcha, number, email, and proxy workflows from Cursor.",
+  "version": "0.4.0",
+  "description": "Structured data from TikTok, Instagram, Amazon, YouTube, X, Reddit, LinkedIn, Google SERP, Xiaohongshu (RedNote) and Douyin in Cursor: 414 data APIs across 90 platforms, 17 web search tools and 52 CAPTCHA types over one remote MCP server. Pay per use from $0.56 per 1,000 calls; failed or empty calls are free.",
   "author": {
     "name": "EveryInfra"
   },
@@ -40,5 +40,6 @@
     "required": [
       "EVERYINFRA_API_KEY"
     ]
-  }
+  },
+  "logo": "./assets/logo.svg"
 }
