@@ -6,7 +6,9 @@ description: Use EveryProxy traffic-package REST APIs with the shared EveryInfra
 # EveryProxy
 
 EveryProxy is REST-only in the current plugin. Do not invent an MCP tool for it. Use
-`https://api.everyinfra.com` with `Authorization: Bearer $EVERYINFRA_API_KEY`.
+`https://api.everyinfra.com` with an `Authorization: Bearer` header. In Claude the plugin's API key setting reaches only the MCP
+server, so ask the user how they want to supply the key for REST calls; never read it from a file
+or an environment variable.
 
 1. Read the free `GET /api/v1/proxy/catalog` response. Select a live package by `gb`, `kind`,
    `region` and optional `sticky_minutes`; pricing is by traffic, never by session minutes.

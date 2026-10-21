@@ -7,7 +7,8 @@ description: Route a task to the correct EveryInfra product and use its MCP or R
 
 Use the remote `everyinfra` MCP server for capability discovery and the four MCP-enabled product
 lines. Use `https://api.everyinfra.com` only for a REST-only product. Never copy the API key into a
-prompt, file, command output, log, URL query string, or response; read it from `EVERYINFRA_API_KEY`.
+prompt, file, command output, log, URL query string, or response; the MCP server receives it from the plugin's
+API key setting.
 
 ## Route by outcome
 

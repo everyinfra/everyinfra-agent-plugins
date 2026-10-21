@@ -6,7 +6,9 @@ description: Use EveryNumber activation and rental phone-number REST APIs with t
 # EveryNumber
 
 EveryNumber is REST-only in the current plugin. Do not invent an MCP tool for it. Use
-`https://api.everyinfra.com` with `Authorization: Bearer $EVERYINFRA_API_KEY`.
+`https://api.everyinfra.com` with an `Authorization: Bearer` header. In Claude the plugin's API key setting reaches only the MCP
+server, so ask the user how they want to supply the key for REST calls; never read it from a file
+or an environment variable.
 
 ## Activation flow
 

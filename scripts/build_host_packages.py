@@ -64,7 +64,24 @@ PLUGIN = REPO / "plugins" / "everyinfra"
 CLAUDE_PACKAGE = SOURCE / "claude" / "everyinfra"
 # Copied from plugins/everyinfra; nothing else from that directory goes into the Claude package.
 CLAUDE_FILES = (".claude-plugin", "mcp.claude.json", "skills", "README.md", "LICENSE", "assets")
-ENV_REFERENCE_RE = re.compile(r"\$\{[A-Z][A-Z0-9_]*\}")
+ENV_REFERENCE_RE = re.compile(r"\$\{[A-Z][A-Z0-9_]*\}|\$[A-Z][A-Z0-9_]*\b|EVERYINFRA_API_KEY")
+# The shared skills tell other hosts to read EVERYINFRA_API_KEY. Claude passes the sensitive
+# user_config key only to the MCP server, so the Claude copies say that instead.
+CLAUDE_REST_KEY = (
+    "`Authorization: Bearer $EVERYINFRA_API_KEY`.",
+    "an `Authorization: Bearer` header. In Claude the plugin's API key setting reaches only the MCP\n"
+    "server, so ask the user how they want to supply the key for REST calls; never read it from a file\n"
+    "or an environment variable.",
+)
+CLAUDE_SKILL_TEXT = {
+    "everyinfra": (
+        "read it from `EVERYINFRA_API_KEY`.",
+        "the MCP server receives it from the plugin's\nAPI key setting.",
+    ),
+    "everymail": CLAUDE_REST_KEY,
+    "everynumber": CLAUDE_REST_KEY,
+    "everyproxy": CLAUDE_REST_KEY,
+}
 PLACEHOLDER_RE = re.compile(r"\bTODO\b|<[A-Za-z][A-Za-z0-9 _-]*>")
 
 QODER_SETUP_MCP = """
@@ -291,6 +308,12 @@ def build_claude(root: Path) -> None:
             shutil.copytree(source, root / name, ignore=shutil.ignore_patterns(".DS_Store"))
         else:
             shutil.copy2(source, root / name)
+    for slug, (old, new) in CLAUDE_SKILL_TEXT.items():
+        skill = root / "skills" / slug / "SKILL.md"
+        text = skill.read_text(encoding="utf-8")
+        if text.count(old) != 1:
+            raise BuildError(f"Claude package: {slug} no longer contains the key sentence to rewrite")
+        skill.write_text(text.replace(old, new), encoding="utf-8")
 
 
 def check_claude(root: Path, errors: list[str]) -> None:
@@ -314,7 +337,7 @@ def check_claude(root: Path, errors: list[str]) -> None:
             errors.append(f"{label}: {relative} is not allowed")
         if path.is_file() and path.suffix in {".json", ".md", ".txt", ".yaml", ".yml", ".sh"}:
             for match in ENV_REFERENCE_RE.findall(path.read_text(encoding="utf-8")):
-                errors.append(f"{label}: {relative} references the machine environment variable {match}")
+                errors.append(f"{label}: {relative} reads a machine environment variable ({match})")
 
 
 def same_tree(left: Path, right: Path) -> bool:

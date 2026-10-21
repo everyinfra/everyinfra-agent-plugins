@@ -6,7 +6,9 @@ description: Use EveryMail transactional-email REST APIs with the shared EveryIn
 # EveryMail
 
 EveryMail is REST-only in the current plugin. Do not invent an MCP tool for it. Use
-`https://api.everyinfra.com` with `Authorization: Bearer $EVERYINFRA_API_KEY`.
+`https://api.everyinfra.com` with an `Authorization: Bearer` header. In Claude the plugin's API key setting reaches only the MCP
+server, so ask the user how they want to supply the key for REST calls; never read it from a file
+or an environment variable.
 
 1. Read `GET /api/v1/email/catalog` and, when authenticated, `GET /api/v1/email/usage`.
 2. For a single message, use `POST /api/v1/email/send` with catalog-declared fields. Recipients are
