@@ -28,7 +28,7 @@ Una clave de API y un endpoint MCP para datos públicos de la web: **414 APIs de
 <tr><th width="50%">Sin EveryInfra</th><th width="50%">Con EveryInfra</th></tr>
 <tr><td valign="top">
 
-- ❌ Tu agente no puede leer TikTok, Instagram ni Xiaohongshu: los inicios de sesión y los bloqueos lo detienen.
+- ❌ Tu agente no puede leer <img src="../assets/icons/tiktok.svg" width="16" height="16" alt=""> TikTok, <img src="../assets/icons/instagram.svg" width="16" height="16" alt=""> Instagram ni <img src="../assets/icons/xiaohongshu.svg" width="16" height="16" alt=""> Xiaohongshu: los inicios de sesión y los bloqueos lo detienen.
 - ❌ Un scraper por plataforma, que hay que reescribir cada vez que cambia la página.
 - ❌ Pagas por ejecuciones que no devuelven nada.
 
@@ -59,14 +59,14 @@ Una clave de API y un endpoint MCP para datos públicos de la web: **414 APIs de
 
 **2. Añádelo a tu agente.**
 
-<a id="claude-code"></a>*Claude Code*
+<a id="claude-code"></a>*<img src="../assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code*
 
 ```bash
 claude mcp add --transport http everyinfra https://api.everyinfra.com/mcp \
   --header "Authorization: Bearer <API Key>"
 ```
 
-<a id="codex"></a>*Codex*
+<a id="codex"></a>*<img src="../assets/icons/codex.svg" width="16" height="16" alt=""> Codex*
 
 ```bash
 export EVERYINFRA_API_KEY="<API Key>"
@@ -74,7 +74,7 @@ codex mcp add everyinfra --url https://api.everyinfra.com/mcp \
   --bearer-token-env-var EVERYINFRA_API_KEY
 ```
 
-**Cursor / VS Code**: pulsa el botón de instalación de arriba y sustituye `<API Key>`.
+**<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor / <img src="../assets/icons/vscode.svg" width="16" height="16" alt=""> VS Code**: pulsa el botón de instalación de arriba y sustituye `<API Key>`.
 
 **3. Pregunta con tus palabras.** Tu agente llama a `everyinfra_call_api`:
 
@@ -90,7 +90,7 @@ Busca los 30 primeros resultados de «standing desk» en Amazon y compara precio
 | Flujos de trabajo reutilizables | Este plugin | 10 skills (1 router, 7 productos, 2 flujos) y metadatos MCP |
 | Una aplicación o un job de CI | REST / SDK | [Documentación de la API](https://everyinfra.com/es/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=path_rest_es), clientes de Python y Node |
 
-La instalación del plugin en cada host (Codex, Claude Code, Cursor, GitHub Copilot, Qoder, CodeBuddy y Kimi Code), la estructura del repositorio y los comandos de validación están en la versión en inglés: [Plugin install by host](../README.md#plugin-install-by-host).
+La instalación del plugin en cada host (<img src="../assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="../assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="../assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot, <img src="../assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, <img src="../assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy y <img src="../assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code), la estructura del repositorio y los comandos de validación están en la versión en inglés: [Plugin install by host](../README.md#plugin-install-by-host).
 
 ## Cifras en vivo y actividad
 
@@ -124,8 +124,8 @@ flowchart LR
 
 ## Comunidad
 
-[Discord](https://discord.gg/9f6KmfekZC) · [Telegram: Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [Precios](https://everyinfra.com/es/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_es)
+[<img src="../assets/icons/discord.svg" width="16" height="16" alt=""> Discord](https://discord.gg/9f6KmfekZC) · [<img src="../assets/icons/telegram.svg" width="16" height="16" alt=""> Telegram: Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [Precios](https://everyinfra.com/es/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_es)
 
-Disponible en [Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [Smithery](https://smithery.ai/servers/everyinfra/api) · [Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [ModelScope MCP](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · el registro oficial de MCP (`io.github.xiaoxihexiaoyu/everyinfra`).
+Disponible en [<img src="../assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="../assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [<img src="../assets/icons/modelscope.svg" width="16" height="16" alt=""> ModelScope MCP](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · el registro oficial de MCP (`io.github.xiaoxihexiaoyu/everyinfra`).
 
 <sub>Cifras del catálogo en vivo del 2026-10-24. El catálogo en vivo y los esquemas de las herramientas MCP son la referencia. Iconos de plataformas: [Simple Icons](https://simpleicons.org) (CC0); los nombres y logotipos pertenecen a sus titulares.</sub>

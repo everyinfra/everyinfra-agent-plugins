@@ -28,7 +28,7 @@
 <tr><th width="50%">没有 EveryInfra</th><th width="50%">用了 EveryInfra</th></tr>
 <tr><td valign="top">
 
-- ❌ Agent 读不了 TikTok、Instagram、小红书：登录和拦截把它挡在外面。
+- ❌ Agent 读不了 <img src="../assets/icons/tiktok.svg" width="16" height="16" alt=""> TikTok、<img src="../assets/icons/instagram.svg" width="16" height="16" alt=""> Instagram、<img src="../assets/icons/xiaohongshu.svg" width="16" height="16" alt=""> 小红书：登录和拦截把它挡在外面。
 - ❌ 每个平台写一套爬虫，页面一改就得重写。
 - ❌ 什么都没拿到，也照样付钱。
 
@@ -59,14 +59,14 @@
 
 **2. 接到你的 Agent。**
 
-<a id="claude-code"></a>*Claude Code*
+<a id="claude-code"></a>*<img src="../assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code*
 
 ```bash
 claude mcp add --transport http everyinfra https://api.everyinfra.com/mcp \
   --header "Authorization: Bearer <API Key>"
 ```
 
-<a id="codex"></a>*Codex*
+<a id="codex"></a>*<img src="../assets/icons/codex.svg" width="16" height="16" alt=""> Codex*
 
 ```bash
 export EVERYINFRA_API_KEY="<API Key>"
@@ -74,7 +74,7 @@ codex mcp add everyinfra --url https://api.everyinfra.com/mcp \
   --bearer-token-env-var EVERYINFRA_API_KEY
 ```
 
-**Cursor / VS Code**：点顶部的安装按钮，再把 `<API Key>` 换成你的 Key。
+**<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor / <img src="../assets/icons/vscode.svg" width="16" height="16" alt=""> VS Code**：点顶部的安装按钮，再把 `<API Key>` 换成你的 Key。
 
 **3. 直接用中文提问。** Agent 会调用 `everyinfra_call_api`：
 
@@ -90,7 +90,7 @@ codex mcp add everyinfra --url https://api.everyinfra.com/mcp \
 | 可复用的工作流 | 本插件 | 10 个 Skill（1 个路由、7 个产品、2 个工作流）和 MCP 元数据 |
 | 写进应用或 CI | REST / SDK | [API 文档](https://everyinfra.com/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=path_rest_zh)、Python 和 Node 客户端 |
 
-各宿主（Codex、Claude Code、Cursor、GitHub Copilot、Qoder、CodeBuddy、Kimi Code）的插件安装、仓库结构和校验命令见英文版 [Plugin install by host](../README.md#plugin-install-by-host)。
+各宿主（<img src="../assets/icons/codex.svg" width="16" height="16" alt=""> Codex、<img src="../assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code、<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor、<img src="../assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot、<img src="../assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder、<img src="../assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy、<img src="../assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code）的插件安装、仓库结构和校验命令见英文版 [Plugin install by host](../README.md#plugin-install-by-host)。
 
 ## 实时数字与活跃度
 
@@ -124,8 +124,8 @@ flowchart LR
 
 ## 社区
 
-[Discord](https://discord.gg/9f6KmfekZC) · [Telegram：Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [价格](https://everyinfra.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_zh)
+[<img src="../assets/icons/discord.svg" width="16" height="16" alt=""> Discord](https://discord.gg/9f6KmfekZC) · [<img src="../assets/icons/telegram.svg" width="16" height="16" alt=""> Telegram：Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [价格](https://everyinfra.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_zh)
 
-已上架 [Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [Smithery](https://smithery.ai/servers/everyinfra/api) · [Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [魔搭 MCP 广场](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · 官方 MCP Registry（`io.github.xiaoxihexiaoyu/everyinfra`）。
+已上架 [<img src="../assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="../assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [魔搭 MCP 广场](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · 官方 <img src="../assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry（`io.github.xiaoxihexiaoyu/everyinfra`）。
 
 <sub>数字取自 2026-10-24 的线上目录，以线上目录和 MCP 工具定义为准。平台图标来自 [Simple Icons](https://simpleicons.org)（CC0），品牌名称和标志归各自所有者。</sub>

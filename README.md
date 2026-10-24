@@ -28,7 +28,7 @@ One API key and one MCP endpoint for public web data: **414 data APIs across 90 
 <tr><th width="50%">Without EveryInfra</th><th width="50%">With EveryInfra</th></tr>
 <tr><td valign="top">
 
-- ❌ Your agent can't read TikTok, Instagram or Xiaohongshu: logins and blocked requests stop it.
+- ❌ Your agent can't read <img src="assets/icons/tiktok.svg" width="16" height="16" alt=""> TikTok, <img src="assets/icons/instagram.svg" width="16" height="16" alt=""> Instagram or <img src="assets/icons/xiaohongshu.svg" width="16" height="16" alt=""> Xiaohongshu: logins and blocked requests stop it.
 - ❌ One scraper per platform, rewritten every time the page changes.
 - ❌ You pay for runs that return nothing.
 
@@ -59,14 +59,14 @@ One API key and one MCP endpoint for public web data: **414 data APIs across 90 
 
 **2. Add it to your agent.**
 
-<a id="claude-code"></a>*Claude Code*
+<a id="claude-code"></a>*<img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code*
 
 ```bash
 claude mcp add --transport http everyinfra https://api.everyinfra.com/mcp \
   --header "Authorization: Bearer <API Key>"
 ```
 
-<a id="codex"></a>*Codex*
+<a id="codex"></a>*<img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex*
 
 ```bash
 export EVERYINFRA_API_KEY="<API Key>"
@@ -74,7 +74,7 @@ codex mcp add everyinfra --url https://api.everyinfra.com/mcp \
   --bearer-token-env-var EVERYINFRA_API_KEY
 ```
 
-**Cursor / VS Code**: click the install button at the top, then replace `<API Key>`.
+**<img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor / <img src="assets/icons/vscode.svg" width="16" height="16" alt=""> VS Code**: click the install button at the top, then replace `<API Key>`.
 
 **3. Ask in plain words.** Your agent calls `everyinfra_call_api`:
 
@@ -90,13 +90,13 @@ Find the top 30 Amazon results for "standing desk" and compare price, rating and
 | Reusable workflows | This plugin | 10 skills (router, 7 products, 2 workflows) plus MCP metadata |
 | An app or a CI job | REST / SDK | [API docs](https://everyinfra.com/en/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=path_rest), Python and Node clients |
 
-Plugin install for Codex, Claude Code, Cursor, GitHub Copilot, Qoder, CodeBuddy and Kimi Code: see [Plugin install by host](#plugin-install-by-host).
+Plugin install for <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, <img src="assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy and <img src="assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code: see [Plugin install by host](#plugin-install-by-host).
 
 ## Community
 
-[Discord](https://discord.gg/9f6KmfekZC) · [Telegram: Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [Pricing](https://everyinfra.com/en/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing)
+[<img src="assets/icons/discord.svg" width="16" height="16" alt=""> Discord](https://discord.gg/9f6KmfekZC) · [<img src="assets/icons/telegram.svg" width="16" height="16" alt=""> Telegram: Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [Pricing](https://everyinfra.com/en/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing)
 
-Listed on [Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [Smithery](https://smithery.ai/servers/everyinfra/api) · [Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [ModelScope MCP](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · the official MCP Registry (`io.github.xiaoxihexiaoyu/everyinfra`).
+Listed on [<img src="assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [<img src="assets/icons/modelscope.svg" width="16" height="16" alt=""> ModelScope MCP](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · the official <img src="assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry (`io.github.xiaoxihexiaoyu/everyinfra`).
 
 <sub>Numbers come from the live catalog on 2026-10-24. The live catalog and MCP tool schemas are authoritative.</sub>
 
@@ -109,10 +109,10 @@ not a copy of the EveryInfra backend. It contains:
 
 - 10 discoverable skills: one router, seven product skills, and two outcome workflows;
 - remote MCP connection metadata for `https://api.everyinfra.com/mcp`;
-- host-specific plugin manifests for Codex, Claude Code, Cursor, Qoder, CodeBuddy, and Kimi;
-- self-hosted marketplace manifests for Codex, Claude Code, Cursor, GitHub Copilot, Qoder, and
-  CodeBuddy;
-- package sources for markets that take uploads (MiniMax, Qoder/QoderWork, ClawHub) under
+- host-specific plugin manifests for <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, <img src="assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy, and <img src="assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi;
+- self-hosted marketplace manifests for <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, and
+  <img src="assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy;
+- package sources for markets that take uploads (<img src="assets/icons/minimax.svg" width="16" height="16" alt=""> MiniMax, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder/<img src="assets/icons/qoder.svg" width="16" height="16" alt=""> QoderWork, <img src="assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub) under
   `host-packages/`;
 - presentation assets and safety boundaries for paid calls, credentials, billing, and external side
   effects.
@@ -172,7 +172,7 @@ The live capability catalog and tool schemas are authoritative. The package must
 tool name, current price, availability state, or billing result.
 
 **AI API route.** Use the MCP tool `everyinfra_chat`, or REST
-`POST https://api.everyinfra.com/api/v1/chat/completions` with any OpenAI SDK (`base_url` =
+`POST https://api.everyinfra.com/api/v1/chat/completions` with any <img src="assets/icons/codex.svg" width="16" height="16" alt=""> OpenAI SDK (`base_url` =
 `https://api.everyinfra.com/api/v1`, same API key). It is free for accounts that have topped up;
 per-minute limits follow cumulative top-ups (50 under $100, 500 from $100, 5,000 from $500, all keys
 combined). It is meant for organizing the data you collect with EveryInfra.
@@ -214,11 +214,11 @@ flowchart LR
 | Remote MCP | Production advertises 25 tools at `https://api.everyinfra.com/mcp`: capability list, data call and job status, AI chat, CAPTCHA types and solve, web search, plus account, usage, billing, API key, settings, webhook and ticket tools. | Discovery is not proof that an account is authenticated or has the balance or top-up a call requires. |
 | Plugin package | Portable and host-specific manifests, skills, MCP metadata, and assets are present. | Presence is not a clean-host installation test. |
 | Repository validator | Cross-host JSON, path, skill, MCP, and credential-safety checks are available. | Repository validation is not marketplace approval. |
-| Self-hosted catalogs | Six marketplace manifests (Codex, Claude Code, Cursor, GitHub Copilot, Qoder, CodeBuddy) and a Kimi Code root manifest are present in this repository. | A catalog file is not an official listing. |
-| Market upload packages | MiniMax (CN and US), Qoder/QoderWork skills and expert kit, and ClawHub skills are built from `host-packages/` and pass `scripts/build_host_packages.py check`. | Not submitted to or approved by any of these markets. |
-| OpenAI registered app | No `.app.json` or host-issued app ID is included. | Direct MCP metadata is not a registered ChatGPT connector. |
-| Directories | Listed on Glama, Smithery, Cursor Directory, ModelScope and the official MCP Registry (links under Community). | A directory listing is not an official Codex, Claude or Cursor marketplace approval. |
-| WorkBuddy connectors | Connector packages for the WorkBuddy open platform are prepared under `workbuddy/` and pass `scripts/build_workbuddy.py check`. | Not submitted to or approved by WorkBuddy. |
+| Self-hosted catalogs | Six marketplace manifests (<img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, <img src="assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy) and a <img src="assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code root manifest are present in this repository. | A catalog file is not an official listing. |
+| Market upload packages | <img src="assets/icons/minimax.svg" width="16" height="16" alt=""> MiniMax (CN and US), <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder/<img src="assets/icons/qoder.svg" width="16" height="16" alt=""> QoderWork skills and expert kit, and <img src="assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub skills are built from `host-packages/` and pass `scripts/build_host_packages.py check`. | Not submitted to or approved by any of these markets. |
+| <img src="assets/icons/codex.svg" width="16" height="16" alt=""> OpenAI registered app | No `.app.json` or host-issued app ID is included. | Direct MCP metadata is not a registered <img src="assets/icons/codex.svg" width="16" height="16" alt=""> ChatGPT connector. |
+| Directories | Listed on <img src="assets/icons/glama.svg" width="16" height="16" alt=""> Glama, <img src="assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery, <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory, <img src="assets/icons/modelscope.svg" width="16" height="16" alt=""> ModelScope and the official <img src="assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry (links under Community). | A directory listing is not an official <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude or <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor marketplace approval. |
+| <img src="assets/icons/workbuddy.svg" width="16" height="16" alt=""> WorkBuddy connectors | Connector packages for the <img src="assets/icons/workbuddy.svg" width="16" height="16" alt=""> WorkBuddy open platform are prepared under `workbuddy/` and pass `scripts/build_workbuddy.py check`. | Not submitted to or approved by <img src="assets/icons/workbuddy.svg" width="16" height="16" alt=""> WorkBuddy. |
 
 Release claims should distinguish **prepared**, **validated**, **installed**, **submitted**, and
 **listed**. Do not collapse them into one status.
@@ -233,7 +233,7 @@ committed file, or URL query string.
 export EVERYINFRA_API_KEY="<API Key>"
 ```
 
-### Codex
+### <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex
 
 ```bash
 codex plugin marketplace add everyinfra/everyinfra-agent-plugins
@@ -244,36 +244,36 @@ codex mcp add everyinfra \
 ```
 
 The explicit MCP entry is separate because a distributable plugin must not contain a real bearer
-token. Start a new task after installing so Codex discovers the new skills and tools. A local clone
+token. Start a new task after installing so <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex discovers the new skills and tools. A local clone
 also works: `codex plugin marketplace add <path-to-this-repository>`. These commands are an
-installation path, not evidence of an official Codex marketplace listing.
+installation path, not evidence of an official <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex marketplace listing.
 
-### Claude Code
+### <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code
 
 ```bash
 claude plugin marketplace add everyinfra/everyinfra-agent-plugins
 claude plugin install everyinfra@everyinfra
 ```
 
-Configure the sensitive `api_token` value through Claude Code's plugin configuration flow. Avoid
+Configure the sensitive `api_token` value through <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code's plugin configuration flow. Avoid
 putting a real token on a shell command line because shell history can retain it.
 
-### Cursor
+### <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor
 
 For local development, copy or symlink `plugins/everyinfra` to
-`~/.cursor/plugins/local/everyinfra`, reload Cursor, and set `EVERYINFRA_API_KEY` through Cursor's
+`~/.cursor/plugins/local/everyinfra`, reload <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, and set `EVERYINFRA_API_KEY` through <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor's
 plugin configuration. A team can import the repository through its own marketplace process. The
-presence of `.cursor-plugin/marketplace.json` does not claim an official Cursor listing. Users who
-only need tools can use the **Install in Cursor** button above.
+presence of `.cursor-plugin/marketplace.json` does not claim an official <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor listing. Users who
+only need tools can use the **Install in <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor** button above.
 
-### GitHub Copilot and Agent Plugins 1.0 clients
+### <img src="assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot and Agent Plugins 1.0 clients
 
 The GitHub catalog is at `.github/plugin/marketplace.json`; the portable package starts at
 `plugins/everyinfra/plugin.json`. Use the marketplace or local-plugin flow supported by your client.
 Host support and secret injection differ, so confirm that the client reads `EVERYINFRA_API_KEY`
 before making a paid call. The portable `mcp.json` deliberately contains no authorization header.
 
-### Qoder CLI
+### <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder CLI
 
 ```bash
 qoder plugins marketplace add everyinfra/everyinfra-agent-plugins
@@ -281,11 +281,11 @@ qoder plugins install everyinfra
 ```
 
 The catalog is `.qoder-plugin/marketplace.json`; the package manifest is
-`plugins/everyinfra/.qoder-plugin/plugin.json`. Qoder loads the skills and the bundled `.mcp.json`,
+`plugins/everyinfra/.qoder-plugin/plugin.json`. <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder loads the skills and the bundled `.mcp.json`,
 which reads the key from `EVERYINFRA_API_KEY`. A local clone also works:
 `qoder plugins install ./plugins/everyinfra`.
 
-### CodeBuddy Code
+### <img src="assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy Code
 
 ```text
 /plugin marketplace add everyinfra/everyinfra-agent-plugins
@@ -293,10 +293,10 @@ which reads the key from `EVERYINFRA_API_KEY`. A local clone also works:
 ```
 
 The catalog is `.codebuddy-plugin/marketplace.json`; the package manifest is
-`plugins/everyinfra/.codebuddy-plugin/plugin.json`. CodeBuddy asks for the sensitive `api_token`
+`plugins/everyinfra/.codebuddy-plugin/plugin.json`. <img src="assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy asks for the sensitive `api_token`
 value when the plugin is enabled and sends it as the `Authorization: Bearer` header.
 
-### Kimi Code
+### <img src="assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code
 
 ```text
 /plugins install https://github.com/everyinfra/everyinfra-agent-plugins/tree/main
@@ -306,12 +306,12 @@ The root manifest `.kimi-plugin/plugin.json` loads the ten skills from `plugins/
 and declares the remote MCP server at `https://api-cn.everyinfra.com/mcp` (same server and keys as
 `api.everyinfra.com`, reachable from mainland China). The manifest carries no key, so listing tools
 works out of the box; for paid calls, add the same server with an `Authorization: Bearer` header in
-Kimi Code's MCP configuration. A bare repository URL installs the latest GitHub Release (0.4.0 and
+<img src="assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code's MCP configuration. A bare repository URL installs the latest GitHub Release (0.4.0 and
 later include this manifest); the `/tree/main` form installs the current main branch.
 
 ### Markets that take uploads
 
-MiniMax, Qoder/QoderWork and ClawHub want their own packages. Their manifests and listing metadata
+<img src="assets/icons/minimax.svg" width="16" height="16" alt=""> MiniMax, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder/QoderWork and <img src="assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub want their own packages. Their manifests and listing metadata
 live in `host-packages/`; the skill bodies always come from `plugins/everyinfra/skills/`.
 `python3 scripts/build_host_packages.py build` writes the packages to `dist/host-packages/` and does
 not upload or submit anything. See `host-packages/README.md` for what each market receives.
