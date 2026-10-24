@@ -15,6 +15,8 @@ Docs: [Use with IPFoxy proxies](https://everyinfra.com/en/docs#with-proxy) · [�
 | `mock_proxy.py` | A local HTTP proxy that checks Basic auth and tunnels `CONNECT`. Use it to test the example without a proxy account. |
 | `measure_page_weight.mjs` | Measures the bytes on the wire for a page in headless Chrome, so you can estimate proxy traffic per page. |
 | `requirements.txt` | `requests==2.34.2` |
+| `data/amazon-page-weight-2026-10-24.csv` | Raw measurements: 40 Amazon product page requests, 3 search page requests and 8 headless Chrome loads (2026-10-24, 18:30–18:41 SGT, Singapore broadband, no proxy). |
+| `data/make_figs.py` | Rebuilds the three blog charts from the CSV and the IPFoxy list prices (light and dark, en / zh / es). |
 
 ## Run
 
