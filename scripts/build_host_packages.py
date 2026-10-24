@@ -63,6 +63,7 @@ SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 PLUGIN = REPO / "plugins" / "everyinfra"
 CLAUDE_PACKAGE = SOURCE / "claude" / "everyinfra"
 # Copied from plugins/everyinfra; nothing else from that directory goes into the Claude package.
+CLAUDE_REPO_BLOB = "https://github.com/everyinfra/everyinfra-agent-plugins/blob/main"
 CLAUDE_FILES = (".claude-plugin", "mcp.claude.json", "skills", "README.md", "LICENSE", "assets")
 ENV_REFERENCE_RE = re.compile(r"\$\{[A-Z][A-Z0-9_]*\}|\$[A-Z][A-Z0-9_]*\b|EVERYINFRA_API_KEY")
 # The shared skills tell other hosts to read EVERYINFRA_API_KEY. Claude passes the sensitive
@@ -314,6 +315,10 @@ def build_claude(root: Path) -> None:
         if text.count(old) != 1:
             raise BuildError(f"Claude package: {slug} no longer contains the key sentence to rewrite")
         skill.write_text(text.replace(old, new), encoding="utf-8")
+    # The package sits one level deeper than plugins/everyinfra, so the README's
+    # repo-relative links (../../docs/...) would break; point them at GitHub instead.
+    readme = root / "README.md"
+    readme.write_text(readme.read_text(encoding="utf-8").replace("](../../", f"]({CLAUDE_REPO_BLOB}/"), encoding="utf-8")
 
 
 def check_claude(root: Path, errors: list[str]) -> None:

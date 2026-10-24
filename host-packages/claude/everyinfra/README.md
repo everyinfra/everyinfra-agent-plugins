@@ -73,6 +73,6 @@ summaries of collected data go through the AI API: the MCP tool `everyinfra_chat
 OpenAI-compatible `POST /api/v1/chat/completions`, free for accounts that have topped up.
 
 For host installation, status, and validation, start with the repository
-[README](../../README.md). For the integration model, see
-[architecture boundaries](../../docs/architecture.md), [permissions](../../docs/permissions.md),
-and the [REST-only boundary](../../docs/rest-only.md).
+[README](https://github.com/everyinfra/everyinfra-agent-plugins/blob/main/README.md). For the integration model, see
+[architecture boundaries](https://github.com/everyinfra/everyinfra-agent-plugins/blob/main/docs/architecture.md), [permissions](https://github.com/everyinfra/everyinfra-agent-plugins/blob/main/docs/permissions.md),
+and the [REST-only boundary](https://github.com/everyinfra/everyinfra-agent-plugins/blob/main/docs/rest-only.md).
