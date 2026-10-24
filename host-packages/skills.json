@@ -79,7 +79,7 @@
     },
     "everyinfra-crosscheck-research": {
       "runtime": "mcp",
-      "qoder_description": "Verifies a current factual claim or produces a cited research answer through EveryInfra cross-check search. Applicable when the user asks to fact-check, compare sources, confirm the latest version, price or policy, or give an evidence-backed conclusion.",
+      "qoder_description": "Verifies a current factual claim or produces a cited research answer through EveryInfra cross-check search. Applicable when the user asks to fact-check, compare sources, confirm the latest version, release or policy, or give an evidence-backed conclusion.",
       "clawhub": {
         "name": "EveryInfra Cross-check Research",
         "description": null,
@@ -99,7 +99,7 @@
     },
     "everyinfra-bulk-data-export": {
       "runtime": "mcp",
-      "qoder_description": "Exports a bounded structured dataset through EveryInfra with capability discovery, cost controls, pagination, deduplication and CSV or JSON verification. Applicable when the user asks for many records, all pages, a dataset, or a CSV or JSON file of TikTok, Instagram, Amazon, YouTube, RedNote or other platform data.",
+      "qoder_description": "Exports a bounded structured dataset through EveryInfra with capability discovery, call limits, pagination, deduplication and CSV or JSON verification. Applicable when the user asks for many records, all pages, a dataset, or a CSV or JSON file of TikTok, Instagram, Amazon, YouTube, RedNote or other platform data.",
       "clawhub": {
         "name": "EveryInfra Bulk Data Export to CSV and JSON",
         "description": "Export a bounded structured dataset (TikTok, Instagram, Amazon, YouTube and other EveryInfra platforms) with capability discovery, cost controls, pagination, deduplication and CSV or JSON verification. Use when the user asks for many records, all available pages, a dataset, or a CSV/JSON export rather than a single response.",
@@ -197,7 +197,7 @@
     },
     "everyproxy": {
       "runtime": "rest",
-      "qoder_description": "Uses the EveryInfra traffic-package proxy REST API: reads the package catalog, orders an authorized rotating or sticky proxy allocation, checks provisioning status and retrieves one-time proxy credentials. Applicable when the user asks to buy or check an EveryInfra proxy package.",
+      "qoder_description": "Uses the EveryInfra traffic-package proxy REST API: reads the package catalog, orders an authorized rotating or sticky proxy allocation, checks provisioning status and retrieves one-time proxy credentials. Applicable when the user asks to order or check an EveryInfra proxy package.",
       "clawhub": {
         "name": "EveryProxy - Traffic-Billed Proxies",
         "description": null,

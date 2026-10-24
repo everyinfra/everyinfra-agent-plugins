@@ -1,8 +1,8 @@
 {
   "name": "everyinfra-researcher",
   "displayName": "EveryInfra Data Researcher",
-  "version": "1.0.0",
-  "description": "Social, e-commerce and web data research with one EveryInfra API key: structured data from 90 platforms (TikTok, Instagram, X, YouTube, Amazon, RedNote, Douyin), 17 web search tools, cited fact-checking, CSV or JSON export and an OpenAI-compatible text API.",
+  "version": "1.0.1",
+  "description": "Social, e-commerce and web data research through EveryInfra: structured data from 90 platforms (TikTok, Instagram, X, YouTube, Amazon, RedNote, Douyin), 17 web search tools, cited fact-checking, CSV or JSON export and an OpenAI-compatible text API.",
   "author": {
     "name": "EveryInfra",
     "url": "https://everyinfra.com"

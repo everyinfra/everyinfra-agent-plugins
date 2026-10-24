@@ -88,15 +88,153 @@ PLACEHOLDER_RE = re.compile(r"\bTODO\b|<[A-Za-z][A-Za-z0-9 _-]*>")
 QODER_SETUP_MCP = """
 ## Setup in Qoder
 
-1. Create an EveryInfra API key at https://everyinfra.com/en/docs?{utm}&utm_content={slug}#quickstart and put it in the environment variable `EVERYINFRA_API_KEY`. Listing tools needs no key; paid calls do.
+1. This skill reads your EveryInfra key from the `EVERYINFRA_API_KEY` environment variable or from the MCP connection configured in Qoder. If the key is missing, ask the user to configure it. Listing tools works without a key.
 2. Add the remote MCP server `everyinfra` at `https://api.everyinfra.com/mcp` (Streamable HTTP) in the MCP settings, with the request header `Authorization` set to `Bearer` followed by the key.
 3. Open the MCP tool list once to confirm the `everyinfra_*` tools are present. Treat that live list as the runtime truth.
 """
 QODER_SETUP_REST = """
 ## Setup in Qoder
 
-Create an EveryInfra API key at https://everyinfra.com/en/docs?{utm}&utm_content={slug}#quickstart and put it in the environment variable `EVERYINFRA_API_KEY`. This skill calls the REST API at `https://api.everyinfra.com` directly; the catalog endpoint named above is free.
+This skill reads your EveryInfra key from the `EVERYINFRA_API_KEY` environment variable. If it is missing, ask the user to configure it. This skill calls the REST API at `https://api.everyinfra.com` directly; the catalog endpoint named above works without a key.
 """
+# Qoder's market review rejects key sign-up instructions and any paid-call, billing, top-up or
+# pricing wording (2026-10-24 rejection of all ten skills and the kit). The Qoder copies rewrite
+# those sentences; each original must appear exactly once, so a changed shared skill fails the build
+# instead of slipping the old wording through. QODER_BLOCKED_RE in check_tree is the backstop.
+QODER_SKILL_TEXT: dict[str, tuple[tuple[str, str], ...]] = {
+    "everyinfra": (
+        ("- Traffic-billed proxy credentials: EveryProxy.", "- Proxy traffic packages: EveryProxy."),
+        ("MCP tool discovery and the free REST catalogs", "MCP tool discovery and the REST catalogs"),
+        (
+            "1. Identify the requested outcome and whether it has external side effects or a charge.\n"
+            "2. Use a free discovery tool or catalog before the first paid call.\n"
+            "3. Validate required parameters, limits, solution shape, availability and current price.\n"
+            "4. Invoke the paid operation only when the user's request authorizes that operation.\n"
+            "5. Read returned `billing`, `quota`, status and error fields when present; never infer success,\n"
+            "   availability, or a charge from HTTP 200 or catalog membership alone. If a tool omits billing,\n"
+            "   report that the charge is not observable from that response.\n"
+            "6. Report the useful result, the actual charge state and any remaining external action separately.",
+            "1. Identify the requested outcome and whether it has external side effects.\n"
+            "2. Use a discovery tool or catalog before the first operation call.\n"
+            "3. Validate required parameters, limits, solution shape and availability.\n"
+            "4. Invoke a state-changing operation only when the user's request authorizes that operation.\n"
+            "5. Read returned `quota`, status and error fields when present; never infer success or\n"
+            "   availability from HTTP 200 or catalog membership alone.\n"
+            "6. Report the useful result and any remaining external action separately.",
+        ),
+        ("one account, API key and wallet across product lines", "one account and API key across product lines"),
+        (
+            "(`everyinfra_chat`) is free for accounts that have topped up, with per-minute limits that follow\n"
+            "cumulative top-ups; an account that has not topped up receives `ai_topup_required`.",
+            "(`everyinfra_chat`) handles that text work, within per-minute rate limits set for the account.",
+        ),
+    ),
+    "everydata": (
+        ("optional parameters, `max_limit` and current price. Use", "optional parameters and `max_limit`. Use"),
+        ("needless repeated charges.", "needless repeated calls."),
+        (
+            "Report the returned\n   `billing` block rather than estimating cost from a stale document.",
+            "Report what the\n   response actually returned rather than relying on a stale document.",
+        ),
+        ("(`everyinfra_chat`), which is free for\naccounts that have topped up.", "(`everyinfra_chat`)."),
+    ),
+    "everysearch": (
+        ("a current version, price, policy,", "a current version, release, policy,"),
+        (
+            "- Read the returned `billing` state. Failed or empty calls may be uncharged, but do not infer that\n"
+            "  without the response.",
+            "- Read the returned status fields; do not infer the outcome of a call without the response.",
+        ),
+    ),
+    "everyinfra-crosscheck-research": (
+        (
+            "6. Report billing only when the tool result exposes billing evidence. Do not infer a charge from a\n"
+            "   catalog price or HTTP success.",
+            "6. Report the call outcome only from the returned status fields. Do not infer success from HTTP\n"
+            "   status alone.",
+        ),
+    ),
+    "everyinfra-bulk-data-export": (
+        ("This is a paid repeated-call workflow,", "This is a repeated-call workflow,"),
+        ("any time or cost ceiling.", "any time or call ceiling."),
+        ("   `max_limit`, and current catalog price. Do not guess", "   and `max_limit`. Do not guess"),
+        ("that exact bounded spend was already", "that exact bounded pull was already"),
+        (" the budget is exhausted,", ""),
+        ("or insufficient-balance errors", "or account-limit errors"),
+        (
+            ", output\n  path, and the sum of actual returned billing blocks. If billing is absent, say the actual charge\n"
+            "  was not observable instead of substituting the catalog estimate.",
+            ", and output\n  path.",
+        ),
+    ),
+    "everyai": (
+        ("About 20,000 tokens of input\nper call is reliable", "About 20,000 tokens of input\nper request is reliable"),
+        (
+            "5. AI API calls are free for accounts that have topped up and do not use the balance. If the\n"
+            "   response reports `ai_topup_required`, tell the user that the account needs a top-up instead of\n"
+            "   retrying.",
+            "5. If the response reports that the account is not enabled for the AI API, tell the user to check\n"
+            "   their EveryInfra account instead of retrying.",
+        ),
+        (
+            "Per-minute limits follow cumulative top-ups\n"
+            "(50 under $100, 500 from $100, 5,000 from $500, all keys on the account combined); after a",
+            "Per-minute rate limits apply per account\n(all keys on the account combined); after a",
+        ),
+    ),
+    "everysolve": (
+        (
+            "6. Read `billing` and the explicit error status. EverySolve charges on successful delivery and\n"
+            "   refunds unsuccessful solves, but the response is the evidence for a particular call.",
+            "6. Read the explicit status and error fields; the response is the evidence for a particular call.",
+        ),
+        ("instead of spending repeated calls on guesses.", "instead of making repeated calls on guesses."),
+    ),
+    "everymail": (
+        ("so cancellation and refunds remain unambiguous.", "so cancellation remains unambiguous."),
+        ("status, billing and quota without", "status and quota without"),
+    ),
+    "everynumber": (
+        ("1. `GET /api/v1/sms/catalog` is free. Select", "1. Read `GET /api/v1/sms/catalog`. Select"),
+        ("`order_id` and frozen quote. Poll", "`order_id`. Poll"),
+        (
+            "4. Billing occurs when a code is successfully retrieved, not when the number is allocated. Read the\n"
+            "   returned `billing` block.",
+            "4. An activation completes when a code is successfully retrieved, not when the number is\n"
+            "   allocated. Read the returned status fields.",
+        ),
+        ("Rentals are charged at order\ntime", "Rentals take effect at order\ntime"),
+        ("Because this is non-refundable,", "Because this cannot be undone,"),
+    ),
+    "everyproxy": (
+        ("Read the free `GET /api/v1/proxy/catalog`", "Read the `GET /api/v1/proxy/catalog`"),
+        ("pricing is by traffic, never by session minutes.", "packages are sized by traffic, not by session minutes."),
+        ("`POST /api/v1/proxy/order` is a paid order and", "`POST /api/v1/proxy/order` creates an order and"),
+        ("must not be turned into a purchase.", "must not be turned into a new order."),
+        ("accept delivery and the charge.", "accept delivery."),
+        (
+            "Report order status and billing separately. If delivery failed and was refunded, create a new",
+            "Report the order status. If delivery failed, create a new",
+        ),
+    ),
+}
+# Words the Qoder review treats as sign-up or paid-call wording. Any hit in a Qoder package fails
+# the check. QODER_ALLOWED lists exact phrases that contain a blocked word but say nothing about
+# money (none are needed yet; add one with a comment saying why it is safe).
+QODER_BLOCKED_WORDS = (
+    r"paid", r"pay[ -]?per", r"per[ -]call", r"pricing", r"price", r"billing", r"billed", r"charge",
+    r"top[ -]?up", r"topped up", r"refund", r"balance", r"credit", r"\$[0-9]", r"\bfree\b", r"wallet",
+    r"\bcost", r"\bspend", r"budget", r"\bquote\b", r"\bbuy\b", r"purchase", r"quickstart", r"sign[ -]?up",
+    r"付费", r"计费", r"扣费", r"充值", r"价格", r"退款", r"余额", r"免费", r"赠送", r"购买",
+)
+QODER_BLOCKED_RE = re.compile("|".join(QODER_BLOCKED_WORDS), re.I)
+QODER_KEY_SIGNUP_RE = re.compile(
+    r"(?:create|sign[ -]?up|register|get|obtain|claim|领取|领|创建|注册|申请)[^\n]{0,60}api[ -]?key"
+    r"|api[ -]?key[^\n]{0,60}(?:create|sign[ -]?up|register|\bget\b|obtain|claim|领取|领|创建|注册|申请)",
+    re.I,
+)
+QODER_ALLOWED: tuple[str, ...] = ()
+
 CLAWHUB_SETUP_MCP = """
 
 ## Setup in OpenClaw
@@ -155,9 +293,13 @@ def regional_skill(slug: str, region: str, meta: dict) -> str:
 
 def qoder_skill(slug: str, meta: dict) -> str:
     _, body = split_skill(slug)
+    for old, new in QODER_SKILL_TEXT.get(slug, ()):
+        if body.count(old) != 1:
+            raise BuildError(f"Qoder package: {slug} no longer contains the sentence to rewrite: {old[:60]!r}")
+        body = body.replace(old, new)
     entry = meta["skills"][slug]
     setup = QODER_SETUP_MCP if entry["runtime"] == "mcp" else QODER_SETUP_REST
-    front = f"---\nname: {slug}\ndescription: {quoted(entry['qoder_description'])}\nversion: 1.0.0\n---\n"
+    front = f"---\nname: {slug}\ndescription: {quoted(entry['qoder_description'])}\nversion: 1.0.1\n---\n"
     return front + body + setup.format(utm=f"utm_source=qoder&{UTM}", slug=slug)
 
 
@@ -364,6 +506,18 @@ def check_tree(out: Path, meta: dict, errors: list[str]) -> None:
             errors.append(f"{relative}: name must match its directory")
         if "/qoder/" in f"/{relative}" and PLACEHOLDER_RE.search(text):
             errors.append(f"{relative}: Qoder rejects TODO or angle-bracket placeholders")
+    for path in sorted((out / "qoder").rglob("*")):
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for phrase in QODER_ALLOWED:
+            text = text.replace(phrase, "")
+        relative = path.relative_to(out)
+        for line_no, line in enumerate(text.splitlines(), 1):
+            for regex, reason in ((QODER_BLOCKED_RE, "paid-call or pricing wording"), (QODER_KEY_SIGNUP_RE, "API key sign-up")):
+                hit = regex.search(line)
+                if hit:
+                    errors.append(f"{relative}:{line_no}: Qoder review rejects {reason} ({hit.group(0)!r})")
     for region in ("cn", "us"):
         root = out / "minimax" / f"everyinfra-{region}"
         manifest = json.loads((root / ".minimax-plugin" / "plugin.json").read_text(encoding="utf-8"))
@@ -421,8 +575,9 @@ def run(build: bool) -> int:
         zips.mkdir()
         for folder in zipped:
             parts = folder.relative_to(out).parts
-            # MiniMax wants the manifest at the ZIP root; Qoder wants the skill or kit folder.
-            wrap = parts[0] != "minimax"
+            # MiniMax wants the manifest at the ZIP root and Qoder's bulk upload wants SKILL.md at
+            # the ZIP root; the Qoder kit and ClawHub keep their folder.
+            wrap = parts[0] != "minimax" and not (parts[0] == "qoder" and parts[1] == "skills")
             write_zip(folder, zips / f"{parts[0]}-{folder.name}.zip", wrap)
         if DIST.exists():
             shutil.rmtree(DIST)
