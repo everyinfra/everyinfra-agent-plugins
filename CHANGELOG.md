@@ -4,6 +4,8 @@ All notable changes to this project are documented here. Versions follow Semanti
 
 ## [Unreleased]
 
+- README: new first screen with light and dark hero images (text as outlines), one-click install buttons for Cursor and VS Code, a star line, a platform logo wall with icons stored in `assets/platforms/`, and Simplified Chinese and Spanish versions under `i18n/`. Per-host install, status, layout and validation sections stay below the first screen.
+
 ## [0.4.0] - 2026-10-22
 
 - Rework the README first screen: keyword title, badges, a platform table, "Listed on" directories and a one-minute setup for Claude Code and Cursor; replace the outdated "No submission or listing" status row.
