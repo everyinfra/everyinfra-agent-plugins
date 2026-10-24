@@ -10,6 +10,8 @@ current source tree before it replaces any previous archive with the same name.
 from __future__ import annotations
 
 import argparse
+import base64
+import binascii
 import json
 import os
 import re
@@ -268,29 +270,46 @@ def validate_yaml_files(files: Iterable[SourceFile]) -> int:
     return count
 
 
+EMBEDDED_IMAGE_PREFIXES = ("data:image/svg+xml;base64,", "data:image/png;base64,")
+
+
+def validate_svg_data(name: str, data: bytes) -> None:
+    try:
+        root = ET.fromstring(data)
+    except ET.ParseError as exc:
+        raise ReleaseError(f"invalid SVG XML in {name}: {exc}") from exc
+    if root.tag.rsplit("}", 1)[-1] != "svg":
+        raise ReleaseError(f"{name} does not have an SVG root element")
+    if "viewBox" not in root.attrib:
+        raise ReleaseError(f"{name} must declare a viewBox")
+    for element in root.iter():
+        local_name = element.tag.rsplit("}", 1)[-1]
+        if local_name in {"script", "foreignObject"}:
+            raise ReleaseError(f"{name} contains unsafe <{local_name}>")
+        for attribute, value in element.attrib.items():
+            if attribute.rsplit("}", 1)[-1] != "href":
+                continue
+            # Base64 PNG and SVG images are self-contained; embedded SVG is checked with the same rules.
+            if value.startswith(EMBEDDED_IMAGE_PREFIXES):
+                if value.startswith(EMBEDDED_IMAGE_PREFIXES[0]):
+                    try:
+                        embedded = base64.b64decode(value.split(",", 1)[1], validate=True)
+                    except binascii.Error as exc:
+                        raise ReleaseError(f"{name} contains an invalid embedded SVG") from exc
+                    validate_svg_data(f"{name} (embedded SVG)", embedded)
+                continue
+            resource = urllib.parse.urlsplit(value)
+            if resource.scheme or resource.netloc:
+                raise ReleaseError(f"{name} contains an external resource")
+
+
 def validate_svg_files(files: Iterable[SourceFile]) -> int:
     count = 0
     for source in files:
         if source.relative_path.suffix != ".svg":
             continue
         count += 1
-        try:
-            root = ET.fromstring(source.data)
-        except ET.ParseError as exc:
-            raise ReleaseError(f"invalid SVG XML in {source.relative_path}: {exc}") from exc
-        if root.tag.rsplit("}", 1)[-1] != "svg":
-            raise ReleaseError(f"{source.relative_path} does not have an SVG root element")
-        if "viewBox" not in root.attrib:
-            raise ReleaseError(f"{source.relative_path} must declare a viewBox")
-        for element in root.iter():
-            local_name = element.tag.rsplit("}", 1)[-1]
-            if local_name in {"script", "foreignObject"}:
-                raise ReleaseError(f"{source.relative_path} contains unsafe <{local_name}>")
-            for attribute, value in element.attrib.items():
-                if attribute.rsplit("}", 1)[-1] == "href":
-                    resource = urllib.parse.urlsplit(value)
-                    if resource.scheme or resource.netloc:
-                        raise ReleaseError(f"{source.relative_path} contains an external resource")
+        validate_svg_data(str(source.relative_path), source.data)
     return count
 
 

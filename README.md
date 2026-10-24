@@ -2,110 +2,71 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img alt="EveryInfra: public web data for AI agents. 413 data capabilities across 90 platforms, 17 web search tools and 52 CAPTCHA types through one MCP endpoint." src="assets/hero-light.svg" width="100%">
+    <img alt="A line spider walks across a Xiaohongshu note, a TikTok video and an Amazon product; each field it lands on is typed out as JSON. 414 data APIs across 90 platforms." src="assets/hero-light.svg" width="100%">
   </picture>
 </p>
 
 <p align="center">
   <a href="https://cursor.com/en/install-mcp?name=everyinfra&config=eyJ1cmwiOiJodHRwczovL2FwaS5ldmVyeWluZnJhLmNvbS9tY3AiLCJoZWFkZXJzIjp7IkF1dGhvcml6YXRpb24iOiJCZWFyZXIgPEFQSSBLZXk%2BIn19"><img src="https://img.shields.io/badge/Install_in_Cursor-2F363D?style=for-the-badge&logo=cursor&logoColor=white" alt="Install in Cursor"></a>
   <a href="https://vscode.dev/redirect/mcp/install?name=everyinfra&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapi.everyinfra.com%2Fmcp%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%3CAPI%20Key%3E%22%7D%7D"><img src="https://img.shields.io/badge/Install_in_VS_Code-0065A9?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="Install in VS Code"></a>
-  <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-one_command-B4532A?style=for-the-badge&logo=claude&logoColor=white" alt="Add to Claude Code"></a>
-  <a href="#codex"><img src="https://img.shields.io/badge/Codex-one_command-2F363D?style=for-the-badge" alt="Add to Codex"></a>
+  <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-one_command-B4532A?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code: one command"></a>
+  <a href="#codex"><img src="https://img.shields.io/badge/Codex-one_command-2F363D?style=for-the-badge" alt="Codex: one command"></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/everyinfra/everyinfra-agent-plugins/stargazers"><img src="https://img.shields.io/github/stars/everyinfra/everyinfra-agent-plugins?style=social" alt="GitHub stars"></a>
-  &nbsp;<b>Star us on GitHub, get $1 in credit.</b> Star this repo, then claim it in the console: it goes to your bonus balance and is valid for 24 hours.
-  <a href="https://everyinfra.com/en/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=star_line#quickstart">How to claim →</a>
+  &nbsp;<b>Star this repo and get $1 in credit.</b> <a href="https://everyinfra.com/en/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=star_line#quickstart">How to claim →</a>
 </p>
+
+<p align="center"><b>English</b> · <a href="i18n/README.zh-CN.md">简体中文</a> · <a href="i18n/README.es.md">Español</a></p>
 
 # EveryInfra MCP Server & Agent Plugin
 
-**One API key and one MCP endpoint for public web data: 413 data capabilities across 90 platforms, 17 web search tools and CAPTCHA solving for 52 types. Pay per call from $0.56 per 1,000 calls; failed or empty calls are not charged.** Works with Claude Code, Cursor, Codex, VS Code and any MCP client.
+One API key and one MCP endpoint for public web data: **414 data APIs across 90 platforms**, 17 web search tools and CAPTCHA solving for 52 types. From $0.56 per 1,000 calls; failed or empty calls are not charged.
 
-[![Validate](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml)
-[![Plugin version](https://img.shields.io/badge/plugin-v0.4.0-0A7F73)](CHANGELOG.md)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-0A7F73)](LICENSE)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-listed-0A7F73)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.xiaoxihexiaoyu/everyinfra)
-[![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/9f6KmfekZC)
+<table>
+<tr><th width="50%">Without EveryInfra</th><th width="50%">With EveryInfra</th></tr>
+<tr><td valign="top">
 
-**English** · [简体中文](i18n/README.zh-CN.md) · [Español](i18n/README.es.md)
-
-## Without EveryInfra
-
-- ❌ Your agent cannot read TikTok, Instagram or Xiaohongshu: logins, rate limits and blocked requests stop it.
-- ❌ You write and maintain a separate scraper for every platform, and fix it when the page changes.
+- ❌ Your agent can't read TikTok, Instagram or Xiaohongshu: logins and blocked requests stop it.
+- ❌ One scraper per platform, rewritten every time the page changes.
 - ❌ You pay for runs that return nothing.
 
-## With EveryInfra
+</td><td valign="top">
 
-Your agent finds the right capability, checks the required inputs and returns structured data. Copy a prompt:
+- ✅ Your agent picks the API and checks the inputs itself.
+- ✅ Every platform comes back in the same JSON shape.
+- ✅ Failed or empty calls are not charged.
 
-```txt
-Get the latest 20 TikTok videos for #skincare as a table with views, likes and comments.
-```
+</td></tr>
+</table>
 
-```txt
-Find the top 30 Amazon results for "standing desk" and compare price, rating and review count.
-```
-
-```txt
-小红书搜「露营装备」，导出前 50 条笔记的标题、点赞和评论数。
-```
-
-## Platforms
+## 90 platforms, one JSON shape
 
 <p align="center">
-  <a href="https://everyinfra.com/en/tiktok-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_tiktok"><img src="assets/platforms/tiktok.svg" height="28" alt="TikTok"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/instagram-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_instagram"><img src="assets/platforms/instagram.svg" height="28" alt="Instagram"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/youtube-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_youtube"><img src="assets/platforms/youtube.svg" height="28" alt="YouTube"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/twitter-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_twitter"><img src="assets/platforms/x.svg" height="28" alt="X / Twitter"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/reddit-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_reddit"><img src="assets/platforms/reddit.svg" height="28" alt="Reddit"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/facebook-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_facebook"><img src="assets/platforms/facebook.svg" height="28" alt="Facebook"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/threads-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_threads"><img src="assets/platforms/threads.svg" height="28" alt="Threads"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/pinterest-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_pinterest"><img src="assets/platforms/pinterest.svg" height="28" alt="Pinterest"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/xiaohongshu-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_xiaohongshu"><img src="assets/platforms/xiaohongshu.svg" height="28" alt="Xiaohongshu / RedNote"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/bilibili-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_bilibili"><img src="assets/platforms/bilibili.svg" height="28" alt="Bilibili"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/weibo-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_weibo"><img src="assets/platforms/sinaweibo.svg" height="28" alt="Weibo"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/zhihu-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_zhihu"><img src="assets/platforms/zhihu.svg" height="28" alt="Zhihu"></a>
-  <br><br>
-  <a href="https://everyinfra.com/en/taobao-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_taobao"><img src="assets/platforms/taobao.svg" height="28" alt="Taobao"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/aliexpress-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_aliexpress"><img src="assets/platforms/aliexpress.svg" height="28" alt="AliExpress"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/shopee-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_shopee"><img src="assets/platforms/shopee.svg" height="28" alt="Shopee"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/etsy-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_etsy"><img src="assets/platforms/etsy.svg" height="28" alt="Etsy"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/ebay-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_ebay"><img src="assets/platforms/ebay.svg" height="28" alt="eBay"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/google-maps-reviews-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_google_maps_reviews"><img src="assets/platforms/googlemaps.svg" height="28" alt="Google Maps reviews"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/spotify-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_spotify"><img src="assets/platforms/spotify.svg" height="28" alt="Spotify"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/twitch-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_twitch"><img src="assets/platforms/twitch.svg" height="28" alt="Twitch"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/en/bluesky-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_bluesky"><img src="assets/platforms/bluesky.svg" height="28" alt="Bluesky"></a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/platform-wall-en-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/platform-wall-en-light.svg">
+    <img alt="Logos of 23 of the 90 platforms with their number of data APIs" src="assets/platform-wall-en-light.svg" width="100%">
+  </picture>
 </p>
 
-<p align="center">
-  <a href="https://everyinfra.com/en/amazon-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_amazon">Amazon</a> ·
-  <a href="https://everyinfra.com/en/linkedin-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_linkedin">LinkedIn</a> ·
-  <a href="https://everyinfra.com/en/douyin-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_douyin">Douyin</a> ·
-  <a href="https://everyinfra.com/en/jd-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_jd">JD.com</a> ·
-  <a href="https://everyinfra.com/en/walmart-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_walmart">Walmart</a> ·
-  <a href="https://everyinfra.com/en/temu-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_temu">Temu</a> ·
-  <a href="https://everyinfra.com/en/market?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=all_platforms"><b>All 90 platforms →</b></a>
-</p>
+<p align="center"><a href="https://everyinfra.com/en/market?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=all_platforms"><b>All 90 platforms and their APIs →</b></a></p>
 
 ## Quick start
 
-**1. Get an API key** at [everyinfra.com](https://everyinfra.com/en/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=quickstart_key#quickstart). Listing tools works without a key; paid calls need one.
+**1. Get an API key** at [everyinfra.com](https://everyinfra.com/en/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=quickstart#quickstart). Listing the tools works without a key.
 
-**2. Connect your host.**
+**2. Add it to your agent.**
 
-<a id="claude-code"></a>**Claude Code**
+<a id="claude-code"></a>*Claude Code*
 
 ```bash
 claude mcp add --transport http everyinfra https://api.everyinfra.com/mcp \
   --header "Authorization: Bearer <API Key>"
 ```
 
-<a id="cursor"></a>**Cursor**: click **Install in Cursor** above, then replace `<API Key>` in Cursor Settings → MCP.
-
-<a id="codex"></a>**Codex**
+<a id="codex"></a>*Codex*
 
 ```bash
 export EVERYINFRA_API_KEY="<API Key>"
@@ -113,9 +74,13 @@ codex mcp add everyinfra --url https://api.everyinfra.com/mcp \
   --bearer-token-env-var EVERYINFRA_API_KEY
 ```
 
-**VS Code**: click **Install in VS Code** above (it opens a `vscode:mcp/install` link), then replace `<API Key>`.
+**Cursor / VS Code**: click the install button at the top, then replace `<API Key>`.
 
-**3. Ask your agent.** Tools are named `everyinfra_*`. Try one of the prompts above.
+**3. Ask in plain words.** Your agent calls `everyinfra_call_api`:
+
+```txt
+Find the top 30 Amazon results for "standing desk" and compare price, rating and review count.
+```
 
 ## MCP, plugin or REST?
 

@@ -1,111 +1,72 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="../assets/hero-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="../assets/hero-light.svg">
-    <img alt="EveryInfra：给 AI Agent 的公开网页数据。90 个平台 413 项数据能力、17 个网页搜索工具、52 种验证码，一个 MCP 地址。" src="../assets/hero-light.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="../assets/hero-zh-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="../assets/hero-zh-light.svg">
+    <img alt="一只线条蜘蛛走过小红书笔记、TikTok 视频和亚马逊商品页，脚落到的字段逐字打成 JSON。90 个平台的 414 个数据接口。" src="../assets/hero-zh-light.svg" width="100%">
   </picture>
 </p>
 
 <p align="center">
-  <a href="https://cursor.com/en/install-mcp?name=everyinfra&config=eyJ1cmwiOiJodHRwczovL2FwaS5ldmVyeWluZnJhLmNvbS9tY3AiLCJoZWFkZXJzIjp7IkF1dGhvcml6YXRpb24iOiJCZWFyZXIgPEFQSSBLZXk%2BIn19"><img src="https://img.shields.io/badge/Install_in_Cursor-2F363D?style=for-the-badge&logo=cursor&logoColor=white" alt="在 Cursor 中安装"></a>
-  <a href="https://vscode.dev/redirect/mcp/install?name=everyinfra&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapi.everyinfra.com%2Fmcp%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%3CAPI%20Key%3E%22%7D%7D"><img src="https://img.shields.io/badge/Install_in_VS_Code-0065A9?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="在 VS Code 中安装"></a>
-  <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-一条命令-B4532A?style=for-the-badge&logo=claude&logoColor=white" alt="添加到 Claude Code"></a>
-  <a href="#codex"><img src="https://img.shields.io/badge/Codex-一条命令-2F363D?style=for-the-badge" alt="添加到 Codex"></a>
+  <a href="https://cursor.com/en/install-mcp?name=everyinfra&config=eyJ1cmwiOiJodHRwczovL2FwaS5ldmVyeWluZnJhLmNvbS9tY3AiLCJoZWFkZXJzIjp7IkF1dGhvcml6YXRpb24iOiJCZWFyZXIgPEFQSSBLZXk%2BIn19"><img src="https://img.shields.io/badge/在_Cursor_安装-2F363D?style=for-the-badge&logo=cursor&logoColor=white" alt="在 Cursor 安装"></a>
+  <a href="https://vscode.dev/redirect/mcp/install?name=everyinfra&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapi.everyinfra.com%2Fmcp%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%3CAPI%20Key%3E%22%7D%7D"><img src="https://img.shields.io/badge/在_VS_Code_安装-0065A9?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="在 VS Code 安装"></a>
+  <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-一条命令-B4532A?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code: 一条命令"></a>
+  <a href="#codex"><img src="https://img.shields.io/badge/Codex-一条命令-2F363D?style=for-the-badge" alt="Codex: 一条命令"></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/everyinfra/everyinfra-agent-plugins/stargazers"><img src="https://img.shields.io/github/stars/everyinfra/everyinfra-agent-plugins?style=social" alt="GitHub stars"></a>
-  &nbsp;<b>在 GitHub 点星领 $1 额度。</b> 给本仓库点星，再到控制台「余额与充值」领取：直接进赠送余额，24 小时内有效。
-  <a href="https://everyinfra.com/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=star_line_zh#quickstart">怎么领 →</a>
+  &nbsp;<b>给本仓库点个 Star，送 $1 额度。</b> <a href="https://everyinfra.com/zh/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=star_line#quickstart">领取方式 →</a>
 </p>
 
-# EveryInfra MCP 服务器与 Agent 插件
+<p align="center"><a href="../README.md">English</a> · <b>简体中文</b> · <a href="README.es.md">Español</a></p>
 
-**一个 Key、一个 MCP 地址，拿到 90 个平台的公开数据：413 项数据能力、17 个网页搜索工具、52 种验证码识别。按次计费，每千次 $0.56 起；失败和空结果不扣费。** 支持 Claude Code、Cursor、Codex、VS Code 和任意 MCP 客户端。
+# EveryInfra MCP Server 与 Agent 插件
 
-[![Validate](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/everyinfra/everyinfra-agent-plugins/actions/workflows/validate.yml)
-[![Plugin version](https://img.shields.io/badge/plugin-v0.4.0-0A7F73)](../CHANGELOG.md)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-0A7F73)](../LICENSE)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-listed-0A7F73)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.xiaoxihexiaoyu/everyinfra)
-[![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/9f6KmfekZC)
+一个 API Key、一个 MCP 地址，拿到公开网页数据：**90 个平台的 414 个数据接口**，17 个搜索工具，52 种验证码识别。每千次调用 $0.56 起，失败或空结果不收费。
 
-[English](../README.md) · **简体中文** · [Español](README.es.md)
+<table>
+<tr><th width="50%">没有 EveryInfra</th><th width="50%">用了 EveryInfra</th></tr>
+<tr><td valign="top">
 
-## 没有 EveryInfra 时
+- ❌ Agent 读不了 TikTok、Instagram、小红书：登录和拦截把它挡在外面。
+- ❌ 每个平台写一套爬虫，页面一改就得重写。
+- ❌ 什么都没拿到，也照样付钱。
 
-- ❌ Agent 读不到小红书、抖音、TikTok：要登录、被限流、请求被拦，它就卡住了。
-- ❌ 每个平台各写一套爬虫，页面一改就得修。
-- ❌ 跑空了也照样付钱。
+</td><td valign="top">
 
-## 有了 EveryInfra
+- ✅ Agent 自己选接口、自己检查参数。
+- ✅ 每个平台都返回同一种 JSON 结构。
+- ✅ 失败或空结果不收费。
 
-Agent 自己找到对口的能力、核对必填参数，返回结构化数据。复制一条试试：
+</td></tr>
+</table>
 
-```txt
-小红书搜「露营装备」，导出前 50 条笔记的标题、点赞和评论数。
-```
-
-```txt
-抖音搜「咖啡探店」，列出点赞最高的 20 条视频和作者。
-```
-
-```txt
-淘宝搜「人体工学椅」，按热度列出前 10 个商品的价格、店铺和销量。
-```
-
-## 覆盖的平台
+## 90 个平台，一种 JSON 结构
 
 <p align="center">
-  <a href="https://everyinfra.com/tiktok-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_tiktok_zh"><img src="../assets/platforms/tiktok.svg" height="28" alt="TikTok"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/instagram-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_instagram_zh"><img src="../assets/platforms/instagram.svg" height="28" alt="Instagram"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/youtube-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_youtube_zh"><img src="../assets/platforms/youtube.svg" height="28" alt="YouTube"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/twitter-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_twitter_zh"><img src="../assets/platforms/x.svg" height="28" alt="X / Twitter"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/reddit-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_reddit_zh"><img src="../assets/platforms/reddit.svg" height="28" alt="Reddit"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/facebook-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_facebook_zh"><img src="../assets/platforms/facebook.svg" height="28" alt="Facebook"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/threads-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_threads_zh"><img src="../assets/platforms/threads.svg" height="28" alt="Threads"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/pinterest-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_pinterest_zh"><img src="../assets/platforms/pinterest.svg" height="28" alt="Pinterest"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/xiaohongshu-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_xiaohongshu_zh"><img src="../assets/platforms/xiaohongshu.svg" height="28" alt="Xiaohongshu / RedNote"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/bilibili-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_bilibili_zh"><img src="../assets/platforms/bilibili.svg" height="28" alt="Bilibili"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/weibo-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_weibo_zh"><img src="../assets/platforms/sinaweibo.svg" height="28" alt="Weibo"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/zhihu-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_zhihu_zh"><img src="../assets/platforms/zhihu.svg" height="28" alt="Zhihu"></a>
-  <br><br>
-  <a href="https://everyinfra.com/taobao-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_taobao_zh"><img src="../assets/platforms/taobao.svg" height="28" alt="Taobao"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/aliexpress-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_aliexpress_zh"><img src="../assets/platforms/aliexpress.svg" height="28" alt="AliExpress"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/shopee-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_shopee_zh"><img src="../assets/platforms/shopee.svg" height="28" alt="Shopee"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/etsy-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_etsy_zh"><img src="../assets/platforms/etsy.svg" height="28" alt="Etsy"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/ebay-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_ebay_zh"><img src="../assets/platforms/ebay.svg" height="28" alt="eBay"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/google-maps-reviews-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_google_maps_reviews_zh"><img src="../assets/platforms/googlemaps.svg" height="28" alt="Google Maps reviews"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/spotify-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_spotify_zh"><img src="../assets/platforms/spotify.svg" height="28" alt="Spotify"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/twitch-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_twitch_zh"><img src="../assets/platforms/twitch.svg" height="28" alt="Twitch"></a>&nbsp;&nbsp;
-  <a href="https://everyinfra.com/bluesky-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=logo_bluesky_zh"><img src="../assets/platforms/bluesky.svg" height="28" alt="Bluesky"></a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="../assets/platform-wall-zh-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="../assets/platform-wall-zh-light.svg">
+    <img alt="90 个平台中 23 个的标志和各自的接口数" src="../assets/platform-wall-zh-light.svg" width="100%">
+  </picture>
 </p>
 
-<p align="center">
-  <a href="https://everyinfra.com/amazon-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_amazon_zh">Amazon</a> ·
-  <a href="https://everyinfra.com/linkedin-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_linkedin_zh">LinkedIn</a> ·
-  <a href="https://everyinfra.com/douyin-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_douyin_zh">抖音</a> ·
-  <a href="https://everyinfra.com/jd-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_jd_zh">京东</a> ·
-  <a href="https://everyinfra.com/walmart-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_walmart_zh">Walmart</a> ·
-  <a href="https://everyinfra.com/temu-api?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=text_temu_zh">Temu</a> ·
-  <a href="https://everyinfra.com/market?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=all_platforms_zh"><b>全部 90 个平台 →</b></a>
-</p>
+<p align="center"><a href="https://everyinfra.com/zh/market?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=all_platforms"><b>查看全部 90 个平台和接口 →</b></a></p>
 
 ## 三步上手
 
-**1. 拿 API Key**：在 [everyinfra.com](https://everyinfra.com/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=quickstart_key_zh#quickstart) 注册并创建。列工具不需要 Key，付费调用需要。
+**1. 拿一个 API Key**：在 [everyinfra.com](https://everyinfra.com/zh/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=quickstart#quickstart) 注册即可。只列出工具不需要 Key。
 
-**2. 接入你的工具。**
+**2. 接到你的 Agent。**
 
-<a id="claude-code"></a>**Claude Code**
+<a id="claude-code"></a>*Claude Code*
 
 ```bash
 claude mcp add --transport http everyinfra https://api.everyinfra.com/mcp \
   --header "Authorization: Bearer <API Key>"
 ```
 
-<a id="cursor"></a>**Cursor**：点上面的 **Install in Cursor**，再到 Cursor Settings → MCP 把 `<API Key>` 换成你的 Key。
-
-<a id="codex"></a>**Codex**
+<a id="codex"></a>*Codex*
 
 ```bash
 export EVERYINFRA_API_KEY="<API Key>"
@@ -113,11 +74,13 @@ codex mcp add everyinfra --url https://api.everyinfra.com/mcp \
   --bearer-token-env-var EVERYINFRA_API_KEY
 ```
 
-**VS Code**：点上面的 **Install in VS Code**（会打开 `vscode:mcp/install` 链接），再把 `<API Key>` 换成你的 Key。
+**Cursor / VS Code**：点顶部的安装按钮，再把 `<API Key>` 换成你的 Key。
 
-在中国大陆，可以把地址换成 `https://api-cn.everyinfra.com/mcp`：同一个服务，同一个 Key。
+**3. 直接用中文提问。** Agent 会调用 `everyinfra_call_api`：
 
-**3. 直接问 Agent。** 工具名都以 `everyinfra_` 开头，试试上面的提示词。
+```txt
+小红书搜「露营装备」，导出最近 7 天点赞最高的 50 条笔记的标题、点赞和评论数。
+```
 
 ## 选 MCP、插件还是 REST？
 
