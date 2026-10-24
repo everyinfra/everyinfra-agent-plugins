@@ -177,6 +177,36 @@ tool name, current price, availability state, or billing result.
 per-minute limits follow cumulative top-ups (50 under $100, 500 from $100, 5,000 from $500, all keys
 combined). It is meant for organizing the data you collect with EveryInfra.
 
+## Live numbers and activity
+
+<!-- readme-stats: charts are regenerated daily, do not edit by hand -->
+
+The badges read the live catalogs on every page view. The two charts are regenerated every day, from the same catalogs and from the git history of all EveryInfra repositories, including the private gateway (counts only); each chart prints its update time.
+
+<p><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsocial%2Fcatalog%3Fcompact%3D1&query=%24.platforms.length&label=platforms&color=0b6e64" alt="platforms"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsocial%2Fcatalog%3Fcompact%3D1&query=%24.capabilities.length&label=data+APIs&color=0b6e64" alt="data APIs"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsearch%2Ftools&query=%24.tools.length&label=search+tools&color=0b6e64" alt="search tools"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fcaptcha%2Ftypes&query=%24.types.length&label=CAPTCHA+types&color=0b6e64" alt="CAPTCHA types"></p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme-stats/coverage-en-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme-stats/coverage-en-light.svg">
+  <img alt="Platforms and data APIs by category, read from the live catalog" src="assets/readme-stats/coverage-en-light.svg" width="100%">
+</picture>
+
+### How a call flows
+
+```mermaid
+flowchart LR
+  A["Your agent"] --> B["MCP or REST"] --> C{"Key and balance"}
+  C -- "ok" --> D["Platform adapter"] --> E["Fixed JSON fields"]
+  C -- "no key" --> F["401, nothing charged"]
+  D -. "failed or empty" .-> G["Refund by charge_id"]
+```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme-stats/activity-en-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme-stats/activity-en-light.svg">
+  <img alt="Commits per day across all EveryInfra repositories and releases per week" src="assets/readme-stats/activity-en-light.svg" width="100%">
+</picture>
+
 ## Status: what exists today
 
 | Layer | Repository state | What is not implied |

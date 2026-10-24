@@ -92,6 +92,36 @@ codex mcp add everyinfra --url https://api.everyinfra.com/mcp \
 
 各宿主（Codex、Claude Code、Cursor、GitHub Copilot、Qoder、CodeBuddy、Kimi Code）的插件安装、仓库结构和校验命令见英文版 [Plugin install by host](../README.md#plugin-install-by-host)。
 
+## 实时数字与活跃度
+
+<!-- readme-stats: charts are regenerated daily, do not edit by hand -->
+
+徽章每次打开页面都现读线上目录。两张图每天重新生成，分别读同一份目录和 EveryInfra 全部仓库（含未公开的网关仓，只统计数量）的 git 记录，图上写着更新时间。
+
+<p><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsocial%2Fcatalog%3Fcompact%3D1&query=%24.platforms.length&label=%E4%B8%AA%E5%B9%B3%E5%8F%B0&color=0b6e64" alt="个平台"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsocial%2Fcatalog%3Fcompact%3D1&query=%24.capabilities.length&label=%E4%B8%AA%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%8F%A3&color=0b6e64" alt="个数据接口"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsearch%2Ftools&query=%24.tools.length&label=%E4%B8%AA%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7&color=0b6e64" alt="个搜索工具"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fcaptcha%2Ftypes&query=%24.types.length&label=%E7%A7%8D%E9%AA%8C%E8%AF%81%E7%A0%81&color=0b6e64" alt="种验证码"></p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../assets/readme-stats/coverage-zh-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="../assets/readme-stats/coverage-zh-light.svg">
+  <img alt="按类别统计的平台数和数据接口数，读自线上目录" src="../assets/readme-stats/coverage-zh-light.svg" width="100%">
+</picture>
+
+### 一次调用怎么走
+
+```mermaid
+flowchart LR
+  A["你的智能体"] --> B["MCP 或 REST"] --> C{"核对 Key 和余额"}
+  C -- "通过" --> D["平台适配"] --> E["固定字段的 JSON"]
+  C -- "没带 Key" --> F["401，不扣费"]
+  D -. "失败或空结果" .-> G["按 charge_id 退款"]
+```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../assets/readme-stats/activity-zh-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="../assets/readme-stats/activity-zh-light.svg">
+  <img alt="EveryInfra 全部仓库每天的提交和每周的发版" src="../assets/readme-stats/activity-zh-light.svg" width="100%">
+</picture>
+
 ## 社区
 
 [Discord](https://discord.gg/9f6KmfekZC) · [Telegram：Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [价格](https://everyinfra.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_zh)

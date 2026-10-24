@@ -92,6 +92,36 @@ Busca los 30 primeros resultados de «standing desk» en Amazon y compara precio
 
 La instalación del plugin en cada host (Codex, Claude Code, Cursor, GitHub Copilot, Qoder, CodeBuddy y Kimi Code), la estructura del repositorio y los comandos de validación están en la versión en inglés: [Plugin install by host](../README.md#plugin-install-by-host).
 
+## Cifras en vivo y actividad
+
+<!-- readme-stats: charts are regenerated daily, do not edit by hand -->
+
+Las insignias leen los catálogos en vivo cada vez que se abre la página. Los dos gráficos se regeneran cada día con esos catálogos y con el historial git de todos los repositorios de EveryInfra, incluido el gateway privado (solo recuentos); cada uno muestra su hora de actualización.
+
+<p><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsocial%2Fcatalog%3Fcompact%3D1&query=%24.platforms.length&label=plataformas&color=0b6e64" alt="plataformas"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsocial%2Fcatalog%3Fcompact%3D1&query=%24.capabilities.length&label=APIs+de+datos&color=0b6e64" alt="APIs de datos"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fsearch%2Ftools&query=%24.tools.length&label=herramientas+de+b%C3%BAsqueda&color=0b6e64" alt="herramientas de búsqueda"> <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.everyinfra.com%2Fapi%2Fv1%2Fcaptcha%2Ftypes&query=%24.types.length&label=tipos+de+CAPTCHA&color=0b6e64" alt="tipos de CAPTCHA"></p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../assets/readme-stats/coverage-es-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="../assets/readme-stats/coverage-es-light.svg">
+  <img alt="Plataformas y APIs de datos por categoría, leídas del catálogo en vivo" src="../assets/readme-stats/coverage-es-light.svg" width="100%">
+</picture>
+
+### Cómo fluye una llamada
+
+```mermaid
+flowchart LR
+  A["Tu agente"] --> B["MCP o REST"] --> C{"Key y saldo"}
+  C -- "ok" --> D["Adaptador de plataforma"] --> E["JSON con campos fijos"]
+  C -- "sin key" --> F["401, sin cargo"]
+  D -. "fallido o vacío" .-> G["Reembolso por charge_id"]
+```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../assets/readme-stats/activity-es-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="../assets/readme-stats/activity-es-light.svg">
+  <img alt="Commits por día en todos los repositorios de EveryInfra y versiones por semana" src="../assets/readme-stats/activity-es-light.svg" width="100%">
+</picture>
+
 ## Comunidad
 
 [Discord](https://discord.gg/9f6KmfekZC) · [Telegram: Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [Precios](https://everyinfra.com/es/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_es)
