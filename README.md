@@ -1,3 +1,6 @@
+<!-- rq223-banner -->
+<p align="center"><img alt="EveryInfra MCP Server & Agent Plugin — Public web data, web search and CAPTCHA solving for AI agents, with one API key" src="assets/banner-en.jpg" width="100%"></p>
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
@@ -7,10 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://cursor.com/en/install-mcp?name=everyinfra&config=eyJ1cmwiOiJodHRwczovL2FwaS5ldmVyeWluZnJhLmNvbS9tY3AiLCJoZWFkZXJzIjp7IkF1dGhvcml6YXRpb24iOiJCZWFyZXIgPEFQSSBLZXk%2BIn19"><img src="https://img.shields.io/badge/Install_in_Cursor-2F363D?style=for-the-badge&logo=cursor&logoColor=white" alt="Install in Cursor"></a>
+  <a href="https://cursor.com/en/install-mcp?name=everyinfra&config=eyJ1cmwiOiJodHRwczovL2FwaS5ldmVyeWluZnJhLmNvbS9tY3AiLCJoZWFkZXJzIjp7IkF1dGhvcml6YXRpb24iOiJCZWFyZXIgPEFQSSBLZXk%2BIn19"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cursor.com/deeplink/mcp-install-light.svg"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add EveryInfra MCP server to Cursor" height="28"></picture></a>
   <a href="https://vscode.dev/redirect/mcp/install?name=everyinfra&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapi.everyinfra.com%2Fmcp%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%3CAPI%20Key%3E%22%7D%7D"><img src="https://img.shields.io/badge/Install_in_VS_Code-0065A9?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="Install in VS Code"></a>
   <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-one_command-B4532A?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code: one command"></a>
   <a href="#codex"><img src="https://img.shields.io/badge/Codex-one_command-2F363D?style=for-the-badge" alt="Codex: one command"></a>
+  <a href="https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra"><img src="https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra/badges/score.svg" alt="EveryInfra MCP connector rated on Glama" height="28"></a>
 </p>
 
 <p align="center">
@@ -40,6 +44,21 @@ One API key and one MCP endpoint for public web data: **414 data APIs across 90 
 
 </td></tr>
 </table>
+
+<!-- rq223-listed -->
+## Listed on 7 directories
+
+Each card opens our listing on that directory.
+
+<p align="center">
+  <a href="https://modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra"><img src="assets/launch-cards/modelscope-en.jpg" width="32%" alt="EveryInfra on ModelScope"></a>
+  <a href="https://smithery.ai/servers/everyinfra/api"><img src="assets/launch-cards/smithery-en.jpg" width="32%" alt="EveryInfra on Smithery"></a>
+  <a href="https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data"><img src="assets/launch-cards/cursor-en.jpg" width="32%" alt="EveryInfra on Cursor Directory"></a>
+  <a href="https://clawhub.ai/skills/everyinfra"><img src="assets/launch-cards/clawhub-en.jpg" width="32%" alt="EveryInfra on ClawHub"></a>
+  <a href="https://registry.modelcontextprotocol.io/v0/servers?search=everyinfra"><img src="assets/launch-cards/mcp-registry-en.jpg" width="32%" alt="EveryInfra on MCP Registry"></a>
+  <a href="https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra"><img src="assets/launch-cards/glama-en.jpg" width="32%" alt="EveryInfra on Glama"></a>
+  <a href="https://integrations.sh/everyinfra.com"><img src="assets/launch-cards/integrations-sh-en.jpg" width="32%" alt="EveryInfra on integrations.sh"></a>
+</p>
 
 ## 90 platforms, one JSON shape
 
@@ -96,7 +115,7 @@ Plugin install for <img src="assets/icons/codex.svg" width="16" height="16" alt=
 
 [<img src="assets/icons/discord.svg" width="16" height="16" alt=""> Discord](https://discord.gg/9f6KmfekZC) · [<img src="assets/icons/telegram.svg" width="16" height="16" alt=""> Telegram: Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [Pricing](https://everyinfra.com/en/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing)
 
-Listed on [<img src="assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [<img src="assets/icons/modelscope.svg" width="16" height="16" alt=""> ModelScope MCP](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · the official <img src="assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry (`io.github.xiaoxihexiaoyu/everyinfra`).
+Listed on [<img src="assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [<img src="assets/icons/modelscope.svg" width="16" height="16" alt=""> ModelScope MCP](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · [<img src="assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub](https://clawhub.ai/skills/everyinfra) · [integrations.sh](https://integrations.sh/everyinfra.com) · the official <img src="assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry (`io.github.xiaoxihexiaoyu/everyinfra`).
 
 <sub>Numbers come from the live catalog on 2026-10-24. The live catalog and MCP tool schemas are authoritative.</sub>
 

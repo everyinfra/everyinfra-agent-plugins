@@ -1,3 +1,6 @@
+<!-- rq223-banner -->
+<p align="center"><img alt="EveryInfra MCP Server & Agent Plugin：一个 API Key，让 AI 智能体拿到公开网页数据、搜索和验证码识别" src="../assets/banner-zh.jpg" width="100%"></p>
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/hero-zh-dark.svg">
@@ -7,10 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://cursor.com/en/install-mcp?name=everyinfra&config=eyJ1cmwiOiJodHRwczovL2FwaS5ldmVyeWluZnJhLmNvbS9tY3AiLCJoZWFkZXJzIjp7IkF1dGhvcml6YXRpb24iOiJCZWFyZXIgPEFQSSBLZXk%2BIn19"><img src="https://img.shields.io/badge/在_Cursor_安装-2F363D?style=for-the-badge&logo=cursor&logoColor=white" alt="在 Cursor 安装"></a>
+  <a href="https://cursor.com/en/install-mcp?name=everyinfra&config=eyJ1cmwiOiJodHRwczovL2FwaS5ldmVyeWluZnJhLmNvbS9tY3AiLCJoZWFkZXJzIjp7IkF1dGhvcml6YXRpb24iOiJCZWFyZXIgPEFQSSBLZXk%2BIn19"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cursor.com/deeplink/mcp-install-light.svg"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Add EveryInfra MCP server to Cursor" height="28"></picture></a>
   <a href="https://vscode.dev/redirect/mcp/install?name=everyinfra&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapi.everyinfra.com%2Fmcp%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%3CAPI%20Key%3E%22%7D%7D"><img src="https://img.shields.io/badge/在_VS_Code_安装-0065A9?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="在 VS Code 安装"></a>
   <a href="#claude-code"><img src="https://img.shields.io/badge/Claude_Code-一条命令-B4532A?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code: 一条命令"></a>
   <a href="#codex"><img src="https://img.shields.io/badge/Codex-一条命令-2F363D?style=for-the-badge" alt="Codex: 一条命令"></a>
+  <a href="https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra"><img src="https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra/badges/score.svg" alt="EveryInfra MCP connector rated on Glama" height="28"></a>
 </p>
 
 <p align="center">
@@ -40,6 +44,21 @@
 
 </td></tr>
 </table>
+
+<!-- rq223-listed -->
+## 已上架 7 家平台
+
+点卡片去我们在这家平台的上架页。
+
+<p align="center">
+  <a href="https://modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra"><img src="../assets/launch-cards/modelscope-zh.jpg" width="32%" alt="EveryInfra 已上架 ModelScope"></a>
+  <a href="https://smithery.ai/servers/everyinfra/api"><img src="../assets/launch-cards/smithery-zh.jpg" width="32%" alt="EveryInfra 已上架 Smithery"></a>
+  <a href="https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data"><img src="../assets/launch-cards/cursor-zh.jpg" width="32%" alt="EveryInfra 已上架 Cursor Directory"></a>
+  <a href="https://clawhub.ai/skills/everyinfra"><img src="../assets/launch-cards/clawhub-zh.jpg" width="32%" alt="EveryInfra 已上架 ClawHub"></a>
+  <a href="https://registry.modelcontextprotocol.io/v0/servers?search=everyinfra"><img src="../assets/launch-cards/mcp-registry-zh.jpg" width="32%" alt="EveryInfra 已上架 MCP Registry"></a>
+  <a href="https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra"><img src="../assets/launch-cards/glama-zh.jpg" width="32%" alt="EveryInfra 已上架 Glama"></a>
+  <a href="https://integrations.sh/everyinfra.com"><img src="../assets/launch-cards/integrations-sh-zh.jpg" width="32%" alt="EveryInfra 已上架 integrations.sh"></a>
+</p>
 
 ## 90 个平台，一种 JSON 结构
 
@@ -126,6 +145,6 @@ flowchart LR
 
 [<img src="../assets/icons/discord.svg" width="16" height="16" alt=""> Discord](https://discord.gg/9f6KmfekZC) · [<img src="../assets/icons/telegram.svg" width="16" height="16" alt=""> Telegram：Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [价格](https://everyinfra.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_zh)
 
-已上架 [<img src="../assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="../assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [魔搭 MCP 广场](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · 官方 <img src="../assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry（`io.github.xiaoxihexiaoyu/everyinfra`）。
+已上架 [<img src="../assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="../assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [魔搭 MCP 广场](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · [<img src="../assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub](https://clawhub.ai/skills/everyinfra) · [integrations.sh](https://integrations.sh/everyinfra.com) · 官方 <img src="../assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry（`io.github.xiaoxihexiaoyu/everyinfra`）。
 
 <sub>数字取自 2026-10-24 的线上目录，以线上目录和 MCP 工具定义为准。平台图标来自 [Simple Icons](https://simpleicons.org)（CC0），品牌名称和标志归各自所有者。</sub>
