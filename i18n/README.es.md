@@ -46,17 +46,19 @@ Una clave de API y un endpoint MCP para datos públicos de la web: **414 APIs de
 </table>
 
 <!-- rq223-listed -->
-## Disponible en 7 directorios
+## Disponible en 9 directorios
 
 Cada tarjeta abre nuestra ficha en ese directorio.
 
 <p align="center">
   <a href="https://modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra"><img src="../assets/launch-cards/modelscope-es.jpg" width="32%" alt="EveryInfra en ModelScope"></a>
-  <a href="https://smithery.ai/servers/everyinfra/api"><img src="../assets/launch-cards/smithery-es.jpg" width="32%" alt="EveryInfra en Smithery"></a>
   <a href="https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data"><img src="../assets/launch-cards/cursor-es.jpg" width="32%" alt="EveryInfra en Cursor Directory"></a>
   <a href="https://clawhub.ai/skills/everyinfra"><img src="../assets/launch-cards/clawhub-es.jpg" width="32%" alt="EveryInfra en ClawHub"></a>
   <a href="https://registry.modelcontextprotocol.io/v0/servers?search=everyinfra"><img src="../assets/launch-cards/mcp-registry-es.jpg" width="32%" alt="EveryInfra en MCP Registry"></a>
   <a href="https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra"><img src="../assets/launch-cards/glama-es.jpg" width="32%" alt="EveryInfra en Glama"></a>
+  <a href="https://lobehub.com/mcp/everyinfra"><img src="../assets/launch-cards/lobehub-es.jpg" width="32%" alt="EveryInfra en LobeHub"></a>
+  <a href="https://qoder.com/en/marketplace/skill?id=ed671cc1-a1c5-400e-9179-9fa7c097a3da"><img src="../assets/launch-cards/qoder-es.jpg" width="32%" alt="EveryInfra en Qoder"></a>
+  <a href="https://rapidapi.com/xiaoxihexiaoyu/api/xiaohongshu-rednote-scraper-api"><img src="../assets/launch-cards/rapidapi-es.jpg" width="32%" alt="EveryInfra en RapidAPI"></a>
   <a href="https://integrations.sh/everyinfra.com"><img src="../assets/launch-cards/integrations-sh-es.jpg" width="32%" alt="EveryInfra en integrations.sh"></a>
 </p>
 
@@ -145,6 +147,6 @@ flowchart LR
 
 [<img src="../assets/icons/discord.svg" width="16" height="16" alt=""> Discord](https://discord.gg/9f6KmfekZC) · [<img src="../assets/icons/telegram.svg" width="16" height="16" alt=""> Telegram: Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [Precios](https://everyinfra.com/es/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_es)
 
-Disponible en [<img src="../assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="../assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [<img src="../assets/icons/modelscope.svg" width="16" height="16" alt=""> ModelScope MCP](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · [<img src="../assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub](https://clawhub.ai/skills/everyinfra) · [integrations.sh](https://integrations.sh/everyinfra.com) · el registro oficial de MCP (`io.github.xiaoxihexiaoyu/everyinfra`).
+Disponible en [<img src="../assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [<img src="../assets/icons/modelscope.svg" width="16" height="16" alt=""> ModelScope MCP](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · [<img src="../assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub](https://clawhub.ai/skills/everyinfra) · [<img src="../assets/icons/lobehub.svg" width="16" height="16" alt=""> LobeHub](https://lobehub.com/mcp/everyinfra) · [<img src="../assets/icons/qoder.svg" width="16" height="16" alt=""> marketplace de Qoder](https://qoder.com/en/marketplace/skill?id=ed671cc1-a1c5-400e-9179-9fa7c097a3da) · [<img src="../assets/icons/rapidapi.svg" width="16" height="16" alt=""> RapidAPI](https://rapidapi.com/xiaoxihexiaoyu/api/xiaohongshu-rednote-scraper-api) · [integrations.sh](https://integrations.sh/everyinfra.com) · el registro oficial de MCP (`io.github.xiaoxihexiaoyu/everyinfra`).
 
 <sub>Cifras del catálogo en vivo del 2026-10-24. El catálogo en vivo y los esquemas de las herramientas MCP son la referencia. Iconos de plataformas: [Simple Icons](https://simpleicons.org) (CC0); los nombres y logotipos pertenecen a sus titulares.</sub>

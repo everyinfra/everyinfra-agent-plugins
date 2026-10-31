@@ -18,9 +18,10 @@ Each icon is the brand's own artwork (site icon or logo), embedded unchanged in 
 | `minimax.svg` | https://www.minimaxi.com/ | https://www.minimax.cn/favicon.ico（ICO 最大一层无损转 PNG） |
 | `modelscope.svg` | https://www.modelscope.cn/ | https://g.alicdn.com/sail-web/maas/2.13.170/favicon/128.ico（ICO 最大一层无损转 PNG） |
 | `qoder.svg` | https://qoder.com/ | https://qoder.com/favIcon.svg |
-| `smithery.svg` | https://smithery.ai/ | https://smithery.ai/apple-touch-icon.png |
 | `telegram.svg` | everyinfra.com | EveryInfra 官网已在用的官方图形，来源见网关仓 web/public/logos/SOURCES.md |
 | `tiktok.svg` | everyinfra.com | EveryInfra 官网已在用的官方图形，来源见网关仓 web/public/logos/SOURCES.md |
 | `vscode.svg` | https://code.visualstudio.com/ | https://code.visualstudio.com/assets/apple-touch-icon.png |
 | `workbuddy.svg` | https://www.workbuddy.ai/ | https://download.codebuddy.ai/web/workbuddy/2365138d79c29bb1cbce4644f5cbbffd2b561a5c/assets/logo.svg |
 | `xiaohongshu.svg` | everyinfra.com | EveryInfra 官网已在用的官方图形，来源见网关仓 web/public/logos/SOURCES.md |
+| `lobehub.svg` | https://lobehub.com/icons/lobehub | https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/lobehub-color.png |
+| `rapidapi.svg` | https://rapidapi.com/ | https://rapidapi-prod-fe-static.s3.amazonaws.com/theming/Rapid_Logo_Primary.png（只取左边的图形标，按透明边界裁成方形） |

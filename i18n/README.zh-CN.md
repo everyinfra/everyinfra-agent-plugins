@@ -46,17 +46,19 @@
 </table>
 
 <!-- rq223-listed -->
-## 已上架 7 家平台
+## 已上架 9 家平台
 
 点卡片去我们在这家平台的上架页。
 
 <p align="center">
   <a href="https://modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra"><img src="../assets/launch-cards/modelscope-zh.jpg" width="32%" alt="EveryInfra 已上架 ModelScope"></a>
-  <a href="https://smithery.ai/servers/everyinfra/api"><img src="../assets/launch-cards/smithery-zh.jpg" width="32%" alt="EveryInfra 已上架 Smithery"></a>
   <a href="https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data"><img src="../assets/launch-cards/cursor-zh.jpg" width="32%" alt="EveryInfra 已上架 Cursor Directory"></a>
   <a href="https://clawhub.ai/skills/everyinfra"><img src="../assets/launch-cards/clawhub-zh.jpg" width="32%" alt="EveryInfra 已上架 ClawHub"></a>
   <a href="https://registry.modelcontextprotocol.io/v0/servers?search=everyinfra"><img src="../assets/launch-cards/mcp-registry-zh.jpg" width="32%" alt="EveryInfra 已上架 MCP Registry"></a>
   <a href="https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra"><img src="../assets/launch-cards/glama-zh.jpg" width="32%" alt="EveryInfra 已上架 Glama"></a>
+  <a href="https://lobehub.com/zh/mcp/everyinfra"><img src="../assets/launch-cards/lobehub-zh.jpg" width="32%" alt="EveryInfra 已上架 LobeHub"></a>
+  <a href="https://qoder.com/en/marketplace/skill?id=ed671cc1-a1c5-400e-9179-9fa7c097a3da"><img src="../assets/launch-cards/qoder-zh.jpg" width="32%" alt="EveryInfra 已上架 Qoder"></a>
+  <a href="https://rapidapi.com/xiaoxihexiaoyu/api/xiaohongshu-rednote-scraper-api"><img src="../assets/launch-cards/rapidapi-zh.jpg" width="32%" alt="EveryInfra 已上架 RapidAPI"></a>
   <a href="https://integrations.sh/everyinfra.com"><img src="../assets/launch-cards/integrations-sh-zh.jpg" width="32%" alt="EveryInfra 已上架 integrations.sh"></a>
 </p>
 
@@ -145,6 +147,6 @@ flowchart LR
 
 [<img src="../assets/icons/discord.svg" width="16" height="16" alt=""> Discord](https://discord.gg/9f6KmfekZC) · [<img src="../assets/icons/telegram.svg" width="16" height="16" alt=""> Telegram：Everyinfra bot](https://t.me/everyinfra_bot) · [Issues](https://github.com/everyinfra/everyinfra-agent-plugins/issues) · [价格](https://everyinfra.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=community_pricing_zh)
 
-已上架 [<img src="../assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="../assets/icons/smithery.svg" width="16" height="16" alt=""> Smithery](https://smithery.ai/servers/everyinfra/api) · [<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [魔搭 MCP 广场](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · [<img src="../assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub](https://clawhub.ai/skills/everyinfra) · [integrations.sh](https://integrations.sh/everyinfra.com) · 官方 <img src="../assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry（`io.github.xiaoxihexiaoyu/everyinfra`）。
+已上架 [<img src="../assets/icons/glama.svg" width="16" height="16" alt=""> Glama](https://glama.ai/mcp/connectors/io.github.xiaoxihexiaoyu/everyinfra) · [<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor Directory](https://cursor.directory/plugins/everyinfra-tiktok-instagram-amazon-data) · [魔搭 MCP 广场](https://www.modelscope.cn/mcp/servers/xiaoyuaimaomao/EveryInfra) · [<img src="../assets/icons/clawhub.svg" width="16" height="16" alt=""> ClawHub](https://clawhub.ai/skills/everyinfra) · [<img src="../assets/icons/lobehub.svg" width="16" height="16" alt=""> LobeHub](https://lobehub.com/zh/mcp/everyinfra) · [<img src="../assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder 技能市场](https://qoder.com/en/marketplace/skill?id=ed671cc1-a1c5-400e-9179-9fa7c097a3da) · [<img src="../assets/icons/rapidapi.svg" width="16" height="16" alt=""> RapidAPI](https://rapidapi.com/xiaoxihexiaoyu/api/xiaohongshu-rednote-scraper-api) · [integrations.sh](https://integrations.sh/everyinfra.com) · 官方 <img src="../assets/icons/mcp.svg" width="16" height="16" alt=""> MCP Registry（`io.github.xiaoxihexiaoyu/everyinfra`）。
 
 <sub>数字取自 2026-10-24 的线上目录，以线上目录和 MCP 工具定义为准。平台图标来自 [Simple Icons](https://simpleicons.org)（CC0），品牌名称和标志归各自所有者。</sub>
