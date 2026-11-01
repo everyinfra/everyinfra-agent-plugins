@@ -5,7 +5,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img alt="A line spider walks across a Xiaohongshu note, a TikTok video and an Amazon product; each field it lands on is typed out as JSON. 414 data APIs across 90 platforms." src="assets/hero-light.svg" width="100%">
+    <img alt="A line spider walks across a Xiaohongshu note, a TikTok video and an Amazon product; each field it lands on is typed out as JSON. 573 data APIs across 106 platforms." src="assets/hero-light.svg" width="100%">
   </picture>
 </p>
 
@@ -26,7 +26,7 @@
 
 # EveryInfra MCP Server & Agent Plugin
 
-One API key and one MCP endpoint for public web data: **414 data APIs across 90 platforms**, 17 web search tools and CAPTCHA solving for 52 types. From $0.56 per 1,000 calls; failed or empty calls are not charged.
+One API key and one MCP endpoint for public web data: **573 data APIs across 106 platforms**, 17 web search tools and CAPTCHA solving for 52 types. From $0.56 per 1,000 calls; failed or empty calls are not charged.
 
 <table>
 <tr><th width="50%">Without EveryInfra</th><th width="50%">With EveryInfra</th></tr>
@@ -62,13 +62,13 @@ Each card opens our listing on that directory.
   <a href="https://integrations.sh/everyinfra.com"><img src="assets/launch-cards/integrations-sh-en.jpg" width="32%" alt="EveryInfra on integrations.sh"></a>
 </p>
 
-## 90 platforms, one JSON shape
+## 106 platforms, one JSON shape
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/platform-wall-en-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/platform-wall-en-light.svg">
-    <img alt="Logos of 23 of the 90 platforms with their number of data APIs" src="assets/platform-wall-en-light.svg" width="100%">
+    <img alt="Logos of 23 of the 106 platforms with their number of data APIs" src="assets/platform-wall-en-light.svg" width="100%">
   </picture>
 </p>
 

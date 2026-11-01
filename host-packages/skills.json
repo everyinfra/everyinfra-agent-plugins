@@ -20,10 +20,10 @@
   "skills": {
     "everyinfra": {
       "runtime": "mcp",
-      "qoder_description": "Routes a task to the right EveryInfra product and uses its MCP or REST contract safely. EveryInfra gives one API key for structured data from 90 platforms (TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, RedNote, Douyin), 17 web search tools, an OpenAI-compatible AI API, CAPTCHA solving, phone numbers, email and proxies. Applicable when the user mentions EveryInfra or asks which product fits a data, search or automation task.",
+      "qoder_description": "Routes a task to the right EveryInfra product and uses its MCP or REST contract safely. EveryInfra gives one API key for structured data from 106 platforms (TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, RedNote, Douyin), 17 web search tools, an OpenAI-compatible AI API, CAPTCHA solving, phone numbers, email and proxies. Applicable when the user mentions EveryInfra or asks which product fits a data, search or automation task.",
       "clawhub": {
         "name": "EveryInfra - Data, Search and AI API Router",
-        "description": "Route a task to the right EveryInfra product and use its MCP or REST contract safely. One API key covers structured data from 90 platforms (TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, RedNote, Douyin), web search, AI, CAPTCHA, phone numbers, email and proxies. Use when the user mentions EveryInfra or is unsure which product fits.",
+        "description": "Route a task to the right EveryInfra product and use its MCP or REST contract safely. One API key covers structured data from 106 platforms (TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, RedNote, Douyin), web search, AI, CAPTCHA, phone numbers, email and proxies. Use when the user mentions EveryInfra or is unsure which product fits.",
         "categories": [
           "integrations",
           "research"
@@ -40,10 +40,10 @@
     },
     "everydata": {
       "runtime": "mcp",
-      "qoder_description": "Discovers and calls EveryInfra structured-data capabilities (414 across 90 platforms) such as TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, RedNote (Xiaohongshu) and Douyin. Applicable when the user asks for profiles, posts, comments, search results, listings, reviews, trending lists or other public platform data as structured JSON.",
+      "qoder_description": "Discovers and calls EveryInfra structured-data capabilities (573 across 106 platforms) such as TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, RedNote (Xiaohongshu) and Douyin. Applicable when the user asks for profiles, posts, comments, search results, listings, reviews, trending lists or other public platform data as structured JSON.",
       "clawhub": {
         "name": "EveryData - TikTok, Instagram, Amazon and 90 Platforms",
-        "description": "Discover and call EveryInfra structured-data capabilities (414 across 90 platforms): TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, plus RedNote (Xiaohongshu) and Douyin. Use when the user needs profiles, posts, comments, search results, listings or reviews as structured JSON.",
+        "description": "Discover and call EveryInfra structured-data capabilities (573 across 106 platforms): TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, plus RedNote (Xiaohongshu) and Douyin. Use when the user needs profiles, posts, comments, search results, listings or reviews as structured JSON.",
         "categories": [
           "integrations",
           "research"

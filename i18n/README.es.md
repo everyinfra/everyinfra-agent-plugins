@@ -5,7 +5,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/hero-es-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="../assets/hero-es-light.svg">
-    <img alt="Una araña de líneas recorre una nota de Xiaohongshu, un vídeo de TikTok y un producto de Amazon; cada campo que pisa se escribe como JSON. 414 APIs de datos en 90 plataformas." src="../assets/hero-es-light.svg" width="100%">
+    <img alt="Una araña de líneas recorre una nota de Xiaohongshu, un vídeo de TikTok y un producto de Amazon; cada campo que pisa se escribe como JSON. 573 APIs de datos en 106 plataformas." src="../assets/hero-es-light.svg" width="100%">
   </picture>
 </p>
 
@@ -26,7 +26,7 @@
 
 # Servidor MCP y plugin para agentes de EveryInfra
 
-Una clave de API y un endpoint MCP para datos públicos de la web: **414 APIs de datos en 90 plataformas**, 17 herramientas de búsqueda web y resolución de CAPTCHA para 52 tipos. Desde $0.56 por 1.000 llamadas; las llamadas fallidas o vacías no se cobran.
+Una clave de API y un endpoint MCP para datos públicos de la web: **573 APIs de datos en 106 plataformas**, 17 herramientas de búsqueda web y resolución de CAPTCHA para 52 tipos. Desde $0.56 por 1.000 llamadas; las llamadas fallidas o vacías no se cobran.
 
 <table>
 <tr><th width="50%">Sin EveryInfra</th><th width="50%">Con EveryInfra</th></tr>
@@ -62,13 +62,13 @@ Cada tarjeta abre nuestra ficha en ese directorio.
   <a href="https://integrations.sh/everyinfra.com"><img src="../assets/launch-cards/integrations-sh-es.jpg" width="32%" alt="EveryInfra en integrations.sh"></a>
 </p>
 
-## 90 plataformas, una sola estructura JSON
+## 106 plataformas, una sola estructura JSON
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/platform-wall-es-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="../assets/platform-wall-es-light.svg">
-    <img alt="Logotipos de 23 de las 90 plataformas con su número de APIs" src="../assets/platform-wall-es-light.svg" width="100%">
+    <img alt="Logotipos de 23 de las 106 plataformas con su número de APIs" src="../assets/platform-wall-es-light.svg" width="100%">
   </picture>
 </p>
 
