@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 630" width="1280" height="630" role="img" aria-label="最近 23 周 96 个活跃日里提交 5169 次，发版 103 次。">
-<title>最近 23 周 96 个活跃日里提交 5169 次，发版 103 次。</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 630" width="1280" height="630" role="img" aria-label="最近 23 周 97 个活跃日里提交 5565 次，发版 104 次。">
+<title>最近 23 周 97 个活跃日里提交 5565 次，发版 104 次。</title>
 <rect x="0.5" y="0.5" width="1279" height="629" rx="16" fill="#ffffff" stroke="#d5dce2"/>
 <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',Helvetica,Arial,sans-serif">
 <text x="55" y="66" font-size="30" font-weight="700" fill="#101214" text-anchor="start">最近 23 周每天的提交</text>
-<text x="1225" y="66" font-size="24" font-weight="400" fill="#4a535c" text-anchor="end">96 个活跃日里提交 5,169 次</text>
+<text x="1225" y="66" font-size="24" font-weight="400" fill="#4a535c" text-anchor="end">97 个活跃日里提交 5,565 次</text>
 <rect x="117" y="126" width="40" height="40" rx="7" fill="#eef1f3"><title>2026-05-25: 0</title></rect>
 <rect x="117" y="174" width="40" height="40" rx="7" fill="#eef1f3"><title>2026-05-26: 0</title></rect>
 <rect x="117" y="222" width="40" height="40" rx="7" fill="#eef1f3"><title>2026-05-27: 0</title></rect>
@@ -164,11 +164,12 @@
 <rect x="1125" y="366" width="40" height="40" rx="7" fill="#0b6e64"><title>2026-10-24: 336</title></rect>
 <rect x="1125" y="414" width="40" height="40" rx="7" fill="#0b6e64"><title>2026-10-25: 374</title></rect>
 <rect x="1173" y="126" width="40" height="40" rx="7" fill="#0b6e64"><title>2026-10-26: 276</title></rect>
-<rect x="1173" y="174" width="40" height="40" rx="7" fill="#0b6e64"><title>2026-10-27: 195</title></rect>
+<rect x="1173" y="174" width="40" height="40" rx="7" fill="#0b6e64"><title>2026-10-27: 197</title></rect>
 <rect x="1173" y="222" width="40" height="40" rx="7" fill="#17a898"><title>2026-10-28: 47</title></rect>
 <rect x="1173" y="270" width="40" height="40" rx="7" fill="#17a898"><title>2026-10-29: 30</title></rect>
 <rect x="1173" y="318" width="40" height="40" rx="7" fill="#17a898"><title>2026-10-30: 27</title></rect>
-<rect x="1173" y="366" width="40" height="40" rx="7" fill="#0b6e64"><title>2026-10-31: 94</title></rect>
+<rect x="1173" y="366" width="40" height="40" rx="7" fill="#0b6e64"><title>2026-10-31: 161</title></rect>
+<rect x="1173" y="414" width="40" height="40" rx="7" fill="#0b6e64"><title>2026-11-01: 327</title></rect>
 <text x="55" y="153" font-size="19" font-weight="400" fill="#4a535c" text-anchor="start">一</text>
 <text x="55" y="249" font-size="19" font-weight="400" fill="#4a535c" text-anchor="start">三</text>
 <text x="55" y="345" font-size="19" font-weight="400" fill="#4a535c" text-anchor="start">五</text>
@@ -180,8 +181,9 @@
 <rect x="1035" y="472.0" width="28" height="34.0" rx="3" fill="#6a4fd6"><title>2026-10-05 deploy/20261004-web11, 2026-10-06 deploy/20261005-web12, 2026-10-06 deploy/20261006-apihost, 2026-10-09 deploy/20261006-web13, 2026-10-09 deploy/20261009-1688fix, 2026-10-09 v0.10.0, 2026-10-09 v0.11.0, 2026-10-09 v0.12.0, 2026-10-09 v0.13.0, 2026-10-09 v0.14.0, 2026-10-09 v0.15.0, 2026-10-09 v0.16.0, 2026-10-09 v0.17.0, 2026-10-09 v0.18.0, 2026-10-09 v0.19.0, 2026-10-09 v0.2.0, 2026-10-09 v0.20.0, 2026-10-09 v0.21.0, 2026-10-09 v0.22.0, 2026-10-09 v0.23.0, 2026-10-09 v0.24.0, 2026-10-09 v0.25.0, 2026-10-09 v0.26.0, 2026-10-09 v0.27.0, 2026-10-09 v0.3.0, 2026-10-09 v0.3.0, 2026-10-09 v0.3.1, 2026-10-09 v0.4.0, 2026-10-09 v0.4.0, 2026-10-09 v0.4.1, 2026-10-09 v0.5.0, 2026-10-09 v0.5.1, 2026-10-09 v0.5.2, 2026-10-09 v0.5.3, 2026-10-09 v0.6.0, 2026-10-09 v0.6.1, 2026-10-09 v0.6.2, 2026-10-09 v0.7.0, 2026-10-09 v0.8.0, 2026-10-09 v0.9.0, 2026-10-09 v0.9.1, 2026-10-10 v0.28.0, 2026-10-10 v0.29.0, 2026-10-10 v0.30.0, 2026-10-10 v0.30.1, 2026-10-10 v0.31.0</title></rect>
 <rect x="1083" y="495.2" width="28" height="10.8" rx="3" fill="#6a4fd6"><title>2026-10-15 v0.3.0, 2026-10-15 v0.3.0, 2026-10-15 v0.3.0, 2026-10-15 v0.3.0, 2026-10-15 v0.4.1</title></rect>
 <rect x="1131" y="495.2" width="28" height="10.8" rx="3" fill="#6a4fd6"><title>2026-10-20 cli-v0.1.1, 2026-10-20 mcp-v0.1.13, 2026-10-20 v0.2.1, 2026-10-22 v0.4.0, 2026-10-24 v0.36.0</title></rect>
+<rect x="1179" y="497.4" width="28" height="8.6" rx="3" fill="#6a4fd6"><title>2026-11-01 sdk-v0.3.0</title></rect>
 <line x1="117" y1="507" x2="1213" y2="507" stroke="#d5dce2" stroke-width="1.5"/>
-<text x="55" y="556" font-size="22" font-weight="600" fill="#101214" text-anchor="start">103 次发版 · 最新 v0.36.0</text>
+<text x="55" y="556" font-size="22" font-weight="600" fill="#101214" text-anchor="start">104 次发版 · 最新 sdk-v0.3.0</text>
 <text x="1009" y="556" font-size="19" font-weight="400" fill="#4a535c" text-anchor="end">少</text>
 <rect x="1019" y="537" width="22" height="22" rx="5" fill="#eef1f3"/>
 <rect x="1047" y="537" width="22" height="22" rx="5" fill="#b9ebe4"/>
@@ -189,6 +191,6 @@
 <rect x="1103" y="537" width="22" height="22" rx="5" fill="#17a898"/>
 <rect x="1131" y="537" width="22" height="22" rx="5" fill="#0b6e64"/>
 <text x="1165" y="556" font-size="19" font-weight="400" fill="#4a535c" text-anchor="start">多</text>
-<text x="55" y="600" font-size="19" font-weight="400" fill="#4a535c" text-anchor="start">EveryInfra 全部仓库（含未公开的网关仓） 的 git 记录 · 更新于 2026-10-31 19:05（新加坡时间）</text>
+<text x="55" y="600" font-size="19" font-weight="400" fill="#4a535c" text-anchor="start">EveryInfra 全部仓库（含未公开的网关仓） 的 git 记录 · 更新于 2026-11-01 19:04（新加坡时间）</text>
 </g>
 </svg>
