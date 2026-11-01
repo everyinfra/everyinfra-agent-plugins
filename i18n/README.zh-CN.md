@@ -108,7 +108,8 @@ codex mcp add everyinfra --url https://api.everyinfra.com/mcp \
 | 你要 | 用 | 得到 |
 | --- | --- | --- |
 | 在 Agent 里直接调工具 | 远程 MCP | `https://api.everyinfra.com/mcp`，实时的工具定义 |
-| 可复用的工作流 | 本插件 | 10 个 Skill（1 个路由、7 个产品、2 个工作流）和 MCP 元数据 |
+| 可复用的工作流 | 本插件 | 11 个 Skill（1 个路由、7 个产品、2 个工作流、1 个命令行）和 MCP 元数据 |
+| 在终端或带 shell 的编程 Agent 里用 | 命令行 | `pipx install everyinfra`：调用前先估价（`--dry-run`）、设花费上限、结果直接写进文件 |
 | 写进应用或 CI | REST / SDK | [API 文档](https://everyinfra.com/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=path_rest_zh)、Python 和 Node 客户端 |
 
 各宿主（<img src="../assets/icons/codex.svg" width="16" height="16" alt=""> Codex、<img src="../assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code、<img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor、<img src="../assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot、<img src="../assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder、<img src="../assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy、<img src="../assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code）的插件安装、仓库结构和校验命令见英文版 [Plugin install by host](../README.md#plugin-install-by-host)。

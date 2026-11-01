@@ -108,7 +108,8 @@ Find the top 30 Amazon results for "standing desk" and compare price, rating and
 | You want | Use | You get |
 | --- | --- | --- |
 | Live tools in an agent | Remote MCP | `https://api.everyinfra.com/mcp`, current tool schemas |
-| Reusable workflows | This plugin | 10 skills (router, 7 products, 2 workflows) plus MCP metadata |
+| Reusable workflows | This plugin | 11 skills (router, 7 products, 2 workflows, CLI) plus MCP metadata |
+| A shell or a coding agent | Command line | `pipx install everyinfra`: dry-run cost previews, a budget cap, results written to files |
 | An app or a CI job | REST / SDK | [API docs](https://everyinfra.com/en/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=path_rest), Python and Node clients |
 
 Plugin install for <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, <img src="assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy and <img src="assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code: see [Plugin install by host](#plugin-install-by-host).
@@ -128,7 +129,8 @@ Listed on [<img src="assets/icons/glama.svg" width="16" height="16" alt=""> Glam
 This repository packages the EveryInfra agent plugin and the remote MCP connection metadata. It is
 not a copy of the EveryInfra backend. It contains:
 
-- 10 discoverable skills: one router, seven product skills, and two outcome workflows;
+- 11 discoverable skills: one router, seven product skills, two outcome workflows, and the
+  `everyinfra-cli` skill for the command-line tool;
 - remote MCP connection metadata for `https://api.everyinfra.com/mcp`;
 - host-specific plugin manifests for <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, <img src="assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy, and <img src="assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi;
 - self-hosted marketplace manifests for <img src="assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot, <img src="assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, and
@@ -188,6 +190,7 @@ For an AI agent:
 | EveryProxy | `everyproxy` | REST guidance | Inspect packages, order, and retrieve credentials with authorization. |
 | Cross-check research | `everyinfra-crosscheck-research` | MCP workflow | Produce an evidence-backed answer from distinct retrieval paths. |
 | Bulk data export | `everyinfra-bulk-data-export` | MCP workflow | Export bounded, deduplicated CSV or JSON with cost controls. |
+| Command line | `everyinfra-cli` | CLI | Run data, search, CAPTCHA and AI calls from a shell with a dry-run cost preview and a budget cap. |
 
 The live capability catalog and tool schemas are authoritative. The package must not invent an MCP
 tool name, current price, availability state, or billing result.
@@ -323,7 +326,7 @@ value when the plugin is enabled and sends it as the `Authorization: Bearer` hea
 /plugins install https://github.com/everyinfra/everyinfra-agent-plugins/tree/main
 ```
 
-The root manifest `.kimi-plugin/plugin.json` loads the ten skills from `plugins/everyinfra/skills/`
+The root manifest `.kimi-plugin/plugin.json` loads the skills in `plugins/everyinfra/skills/`
 and declares the remote MCP server at `https://api-cn.everyinfra.com/mcp` (same server and keys as
 `api.everyinfra.com`, reachable from mainland China). The manifest carries no key, so listing tools
 works out of the box; for paid calls, add the same server with an `Authorization: Bearer` header in
@@ -337,18 +340,21 @@ live in `host-packages/`; the skill bodies always come from `plugins/everyinfra/
 `python3 scripts/build_host_packages.py build` writes the packages to `dist/host-packages/` and does
 not upload or submit anything. See `host-packages/README.md` for what each market receives.
 
-### SDK release attachments
+### Command line and SDKs
 
-The `v0.2.0` GitHub Release distributes the official Python and Node clients as release attachments.
-These URLs are the supported direct-install path for this version; they do not claim that an npm or
-PyPI package with the same name has been published.
+The Python package `everyinfra` on PyPI includes the `everyinfra` command-line tool and the
+`everyinfra-cli` skill. The JavaScript / TypeScript client is the npm package `everyinfra`.
 
 ```bash
-python -m pip install \
-  https://github.com/everyinfra/everyinfra-agent-plugins/releases/download/v0.2.0/everyinfra-0.2.0-py3-none-any.whl
-npm install \
-  https://github.com/everyinfra/everyinfra-agent-plugins/releases/download/v0.2.0/everyinfra-0.2.0.tgz
+pipx install everyinfra     # command-line tool (or: uv tool install everyinfra)
+everyinfra doctor           # checks version, network, key and config
+python -m pip install everyinfra
+npm install everyinfra
 ```
+
+`everyinfra skills install` copies the `everyinfra-cli` skill into Claude Code or Codex when this
+plugin is not installed. The `sdk-v0.3.0` GitHub Release carries the same files as PyPI and npm,
+with `SHA256SUMS`.
 
 ## Repository layout
 

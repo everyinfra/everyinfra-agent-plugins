@@ -17,6 +17,9 @@
     "everyinfra-bulk-data-export",
     "everyai"
   ],
+  "no_market_copies": {
+    "everyinfra-cli": "Drives the local everyinfra command and leads with cost estimates, budgets and balance, which the Qoder review rejects; a ClawHub or MiniMax copy would be a new listing. Ships in the shared plugin and the Claude directory package."
+  },
   "skills": {
     "everyinfra": {
       "runtime": "mcp",

@@ -82,6 +82,12 @@ CLAUDE_SKILL_TEXT = {
     "everymail": CLAUDE_REST_KEY,
     "everynumber": CLAUDE_REST_KEY,
     "everyproxy": CLAUDE_REST_KEY,
+    "everyinfra-cli": (
+        "The CLI reads `--key`, then `EVERYINFRA_API_KEY`, then the key saved by `everyinfra login`.",
+        "In Claude the plugin's API key setting reaches only the MCP server, so ask the user how they\n"
+        "want to supply the key for CLI calls, for example by running `everyinfra login` themselves;\n"
+        "never read it from a file or an environment variable.",
+    ),
 }
 PLACEHOLDER_RE = re.compile(r"\bTODO\b|<[A-Za-z][A-Za-z0-9 _-]*>")
 
@@ -350,9 +356,14 @@ def clawhub_publish_script(meta: dict) -> str:
 
 def check_sources(meta: dict, errors: list[str]) -> None:
     shared = {path.name for path in SKILLS.iterdir() if path.is_dir()}
-    if set(meta["skills"]) != shared:
-        errors.append(f"host-packages/skills.json must list exactly the shared skills {sorted(shared)}")
-    if not set(meta["bundle"]) <= shared or not set(meta["region_suffix_skills"]) <= set(meta["bundle"]):
+    # Shared skills without Qoder, ClawHub or MiniMax copies; the Claude package still carries them.
+    skipped = set(meta.get("no_market_copies", {}))
+    if set(meta["skills"]) | skipped != shared or set(meta["skills"]) & skipped:
+        errors.append(
+            "host-packages/skills.json must list each shared skill once, under skills or no_market_copies: "
+            f"{sorted(shared)}"
+        )
+    if not set(meta["bundle"]) <= set(meta["skills"]) or not set(meta["region_suffix_skills"]) <= set(meta["bundle"]):
         errors.append("host-packages/skills.json bundle lists an unknown skill")
     for slug, entry in meta["skills"].items():
         if entry.get("runtime") not in {"mcp", "rest"}:

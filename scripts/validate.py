@@ -19,6 +19,7 @@ EXPECTED_SKILLS = {
     "everyinfra",
     "everyinfra-bulk-data-export",
     "everyinfra-crosscheck-research",
+    "everyinfra-cli",
     "everydata",
     "everysearch",
     "everyai",

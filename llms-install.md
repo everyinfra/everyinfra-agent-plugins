@@ -51,5 +51,5 @@ same server and accepts the same keys.
 
 ## Optional: skills
 
-The repository also ships ten skills that teach an agent when and how to use these tools. They are
+The repository also ships eleven skills that teach an agent when and how to use these tools. They are
 in `plugins/everyinfra/skills/`; see the README for host-specific install commands.

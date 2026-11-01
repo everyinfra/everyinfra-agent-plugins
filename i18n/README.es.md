@@ -108,7 +108,8 @@ Busca los 30 primeros resultados de «standing desk» en Amazon y compara precio
 | Quieres | Usa | Obtienes |
 | --- | --- | --- |
 | Herramientas en vivo dentro de un agente | MCP remoto | `https://api.everyinfra.com/mcp`, esquemas de herramientas actuales |
-| Flujos de trabajo reutilizables | Este plugin | 10 skills (1 router, 7 productos, 2 flujos) y metadatos MCP |
+| Flujos de trabajo reutilizables | Este plugin | 11 skills (1 router, 7 productos, 2 flujos, 1 de línea de comandos) y metadatos MCP |
+| Una terminal o un agente de código con shell | Línea de comandos | `pipx install everyinfra`: coste estimado antes de llamar (`--dry-run`), tope de gasto y resultados a archivo |
 | Una aplicación o un job de CI | REST / SDK | [Documentación de la API](https://everyinfra.com/es/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=path_rest_es), clientes de Python y Node |
 
 La instalación del plugin en cada host (<img src="../assets/icons/codex.svg" width="16" height="16" alt=""> Codex, <img src="../assets/icons/claude.svg" width="16" height="16" alt=""> Claude Code, <img src="../assets/icons/cursor.svg" width="16" height="16" alt=""> Cursor, <img src="../assets/icons/copilot.svg" width="16" height="16" alt=""> GitHub Copilot, <img src="../assets/icons/qoder.svg" width="16" height="16" alt=""> Qoder, <img src="../assets/icons/codebuddy.svg" width="16" height="16" alt=""> CodeBuddy y <img src="../assets/icons/kimi.svg" width="16" height="16" alt=""> Kimi Code), la estructura del repositorio y los comandos de validación están en la versión en inglés: [Plugin install by host](../README.md#plugin-install-by-host).

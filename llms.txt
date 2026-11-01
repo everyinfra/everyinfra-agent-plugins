@@ -24,7 +24,8 @@ Current package boundary:
 - MCP workflows: EveryData, EverySearch, EveryAI (AI API, free for accounts that have topped up),
   EverySolve
 - REST-only guidance: EveryNumber, EveryMail, EveryProxy
-- Ten skills total: one router, seven product skills, two outcome workflows
+- Command line: the `everyinfra-cli` skill drives the `everyinfra` tool (`pipx install everyinfra`)
+- Eleven skills total: one router, seven product skills, two outcome workflows, one command-line skill
 
 Do not infer live availability, price, billing, official marketplace approval, or app registration
 from this file. Use live MCP discovery, public catalogs, and host status for those facts.

@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Versions follow Semanti
 
 ## [Unreleased]
 
+- Add the `everyinfra-cli` skill for the `everyinfra` command-line tool (PyPI `everyinfra` 0.3.0). The
+  README's SDK section now points to the PyPI and npm packages instead of the v0.2.0 release
+  attachments. The Claude directory package carries the skill; the Qoder, ClawHub and MiniMax copies
+  do not.
 - README: new first screen with light and dark hero images (text as outlines), one-click install buttons for Cursor and VS Code, a star line, a platform logo wall with icons stored in `assets/platforms/`, and Simplified Chinese and Spanish versions under `i18n/`. Per-host install, status, layout and validation sections stay below the first screen.
 
 ## [0.4.0] - 2026-10-22

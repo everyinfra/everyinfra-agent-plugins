@@ -7,11 +7,13 @@ calls; failed or empty calls are not charged.
 
 Get an API key: https://everyinfra.com/en/docs?utm_source=claude_plugins&utm_medium=directory&utm_campaign=listing_2026q4&utm_content=get_key#quickstart
 
-What this plugin runs and sends: it adds ten skills and one remote MCP connection to
+What this plugin runs and sends: it adds eleven skills and one remote MCP connection to
 `https://api.everyinfra.com/mcp`. Tool discovery needs no key. Calls that return data send your
 request parameters to that address with your API key in the `Authorization` header. The three
 REST-guidance skills (EveryNumber, EveryMail, EveryProxy) call `https://api.everyinfra.com` with the
-same key, and only when you ask for them. Nothing else is sent anywhere.
+same key, and only when you ask for them. The `everyinfra-cli` skill runs the `everyinfra`
+command-line tool only when it is installed (`pipx install everyinfra`); the tool calls the same
+address with the same key. Nothing else is sent anywhere.
 
 This directory is the installable EveryInfra package. It is not a skills-only folder: the package
 combines reusable skills with portable and host-specific plugin manifests, remote MCP connection
@@ -27,7 +29,7 @@ metadata, and presentation assets.
 - `.codebuddy-plugin/plugin.json` — CodeBuddy Code metadata, skills, MCP config, and sensitive user config.
 - `mcp.json` and `mcp.*.json` — portable and host-specific connections to
   `https://api.everyinfra.com/mcp`.
-- `skills/` — one router, seven product skills, and two outcome workflows.
+- `skills/` — one router, seven product skills, two outcome workflows, and the command-line skill.
 - `assets/` — icon and light/dark logos used by supported host presentation metadata.
 - `LICENSE` — Apache-2.0, the same license as the repository.
 
@@ -57,6 +59,7 @@ Use the narrow product or outcome skill when the requested route is already know
 | --- | --- | --- |
 | EveryData, EverySearch, EveryAI, EverySolve | Remote MCP | Discover live capabilities and schemas before paid calls. |
 | EveryNumber, EveryMail, EveryProxy | REST guidance | These skills do not create or imply MCP tools. |
+| Command line (`everyinfra-cli`) | Local `everyinfra` tool | Runs only where the user installed it; it calls the REST API. |
 | Purchases, sends, rentals, solves, credential delivery | External action | Require user authorization for the concrete scope. |
 
 The package and the remote MCP server are independent layers: installing the package can expose

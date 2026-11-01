@@ -3,7 +3,7 @@
 Installing the plugin and connecting the MCP server are separate operations. The plugin supplies
 an installable identity, host manifests, reusable skills, brand assets, and connection metadata;
 the MCP connection supplies live tools. A host may combine both steps in one UI, but validation
-still treats them independently. Seeing the ten skills in a host UI is the expected visible result
+still treats them independently. Seeing the eleven skills in a host UI is the expected visible result
 of installing this plugin, not evidence that the plugin wrapper is missing. See
 [architecture and distribution boundaries](architecture.md).
 
@@ -40,7 +40,7 @@ plugin's `plugin_asdk_app...` identifier.
 
 ## Verify the connection
 
-1. Confirm the installed plugin version is `0.4.0` and that all ten skills are visible.
+1. Confirm the installed plugin version is `0.4.0` and that all eleven skills are visible.
 2. Independently confirm the MCP origin is exactly `https://api.everyinfra.com/mcp`.
 3. Run a free capability-discovery operation before a paid call.
 4. Check that the result includes an explicit capability, availability, or billing state rather

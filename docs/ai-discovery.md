@@ -59,7 +59,7 @@ free for accounts that have topped up; per-minute limits follow cumulative top-u
 
 1. Install the plugin from a local or published marketplace source.
 2. Configure the API key through the host's secret mechanism, never in a prompt or repository.
-3. Verify all ten skills are present.
+3. Verify all eleven skills are present.
 4. Verify the MCP origin is exactly `https://api.everyinfra.com/mcp`.
 5. Run free discovery before any paid or state-changing call.
 6. Treat plugin installation, MCP authentication, official app registration, and marketplace
