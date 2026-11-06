@@ -19,7 +19,6 @@
 
 <p align="center">
   <a href="https://github.com/everyinfra/everyinfra-agent-plugins/stargazers"><img src="https://img.shields.io/github/stars/everyinfra/everyinfra-agent-plugins?style=social" alt="GitHub stars"></a>
-  &nbsp;<b>给本仓库点个 Star，送 $1 额度。</b> <a href="https://everyinfra.com/zh/docs?utm_source=github&utm_medium=readme&utm_campaign=everyinfra-agent-plugins&utm_content=star_line#quickstart">领取方式 →</a>
 </p>
 
 <p align="center"><a href="../README.md">English</a> · <b>简体中文</b> · <a href="README.es.md">Español</a></p>
