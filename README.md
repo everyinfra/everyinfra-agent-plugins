@@ -5,7 +5,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img alt="A line spider walks across a Xiaohongshu note, a TikTok video and an Amazon product; each field it lands on is typed out as JSON. 573 data APIs across 106 platforms." src="assets/hero-light.svg" width="100%">
+    <img alt="A line spider walks across a Xiaohongshu note, a TikTok video and an Amazon product; each field it lands on is typed out as JSON. 612 data APIs across 106 platforms." src="assets/hero-light.svg" width="100%">
   </picture>
 </p>
 
@@ -25,7 +25,7 @@
 
 # EveryInfra MCP Server & Agent Plugin
 
-One API key and one MCP endpoint for public web data: **573 data APIs across 106 platforms**, 17 web search tools and CAPTCHA solving for 52 types. From $0.56 per 1,000 calls; failed or empty calls are not charged.
+One API key and one MCP endpoint for public web data: **612 data APIs across 106 platforms**, 17 web search tools and CAPTCHA solving for 52 types. From $0.56 per 1,000 calls; failed or empty calls are not charged.
 
 <table>
 <tr><th width="50%">Without EveryInfra</th><th width="50%">With EveryInfra</th></tr>

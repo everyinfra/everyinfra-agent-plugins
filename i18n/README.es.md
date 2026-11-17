@@ -5,7 +5,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/hero-es-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="../assets/hero-es-light.svg">
-    <img alt="Una araña de líneas recorre una nota de Xiaohongshu, un vídeo de TikTok y un producto de Amazon; cada campo que pisa se escribe como JSON. 573 APIs de datos en 106 plataformas." src="../assets/hero-es-light.svg" width="100%">
+    <img alt="Una araña de líneas recorre una nota de Xiaohongshu, un vídeo de TikTok y un producto de Amazon; cada campo que pisa se escribe como JSON. 612 APIs de datos en 106 plataformas." src="../assets/hero-es-light.svg" width="100%">
   </picture>
 </p>
 
@@ -25,7 +25,7 @@
 
 # Servidor MCP y plugin para agentes de EveryInfra
 
-Una clave de API y un endpoint MCP para datos públicos de la web: **573 APIs de datos en 106 plataformas**, 17 herramientas de búsqueda web y resolución de CAPTCHA para 52 tipos. Desde $0.56 por 1.000 llamadas; las llamadas fallidas o vacías no se cobran.
+Una clave de API y un endpoint MCP para datos públicos de la web: **612 APIs de datos en 106 plataformas**, 17 herramientas de búsqueda web y resolución de CAPTCHA para 52 tipos. Desde $0.56 por 1.000 llamadas; las llamadas fallidas o vacías no se cobran.
 
 <table>
 <tr><th width="50%">Sin EveryInfra</th><th width="50%">Con EveryInfra</th></tr>

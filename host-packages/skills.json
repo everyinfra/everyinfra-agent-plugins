@@ -43,10 +43,10 @@
     },
     "everydata": {
       "runtime": "mcp",
-      "qoder_description": "Discovers and calls EveryInfra structured-data capabilities (573 across 106 platforms) such as TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, RedNote (Xiaohongshu) and Douyin. Applicable when the user asks for profiles, posts, comments, search results, listings, reviews, trending lists or other public platform data as structured JSON.",
+      "qoder_description": "Discovers and calls EveryInfra structured-data capabilities (612 across 106 platforms) such as TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, RedNote (Xiaohongshu) and Douyin. Applicable when the user asks for profiles, posts, comments, search results, listings, reviews, trending lists or other public platform data as structured JSON.",
       "clawhub": {
         "name": "EveryData - TikTok, Instagram, Amazon and 90 Platforms",
-        "description": "Discover and call EveryInfra structured-data capabilities (573 across 106 platforms): TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, plus RedNote (Xiaohongshu) and Douyin. Use when the user needs profiles, posts, comments, search results, listings or reviews as structured JSON.",
+        "description": "Discover and call EveryInfra structured-data capabilities (612 across 106 platforms): TikTok, Instagram, X, YouTube, LinkedIn, Reddit, Amazon, Google results, plus RedNote (Xiaohongshu) and Douyin. Use when the user needs profiles, posts, comments, search results, listings or reviews as structured JSON.",
         "categories": [
           "integrations",
           "research"

@@ -5,7 +5,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="../assets/hero-zh-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="../assets/hero-zh-light.svg">
-    <img alt="一只线条蜘蛛走过小红书笔记、TikTok 视频和亚马逊商品页，脚落到的字段逐字打成 JSON。106 个平台的 573 个数据接口。" src="../assets/hero-zh-light.svg" width="100%">
+    <img alt="一只线条蜘蛛走过小红书笔记、TikTok 视频和亚马逊商品页，脚落到的字段逐字打成 JSON。106 个平台的 612 个数据接口。" src="../assets/hero-zh-light.svg" width="100%">
   </picture>
 </p>
 
@@ -25,7 +25,7 @@
 
 # EveryInfra MCP Server 与 Agent 插件
 
-一个 API Key、一个 MCP 地址，拿到公开网页数据：**106 个平台的 573 个数据接口**，17 个搜索工具，52 种验证码识别。每千次调用 $0.56 起，失败或空结果不收费。
+一个 API Key、一个 MCP 地址，拿到公开网页数据：**106 个平台的 612 个数据接口**，17 个搜索工具，52 种验证码识别。每千次调用 $0.56 起，失败或空结果不收费。
 
 <table>
 <tr><th width="50%">没有 EveryInfra</th><th width="50%">用了 EveryInfra</th></tr>
